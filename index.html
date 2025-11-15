@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Scream4U.icu - Fast emergency alerts when you need help. Works without internet. Android app launching December 2025!">
+    <meta property="og:title" content="Scream4U.icu - Emergency Alerts in One Tap">
+    <meta property="og:description" content="Fast emergency alerts when you need help. Works without internet. Coming December 2025!">
+    <meta property="og:image" content="https://scream4u.icu/assets/og-image.png">
+    <meta property="og:url" content="https://scream4u.icu">
+    <title>Scream4U.icu - Emergency Alerts in One Tap | Coming December 2025</title>
+    <link rel="icon" type="image/png" href="assets/icon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --emergency-red: #FF6B6B;
+            --test-green: #51CF66;
+            --subscribe-blue: #228BE6;
+            --background: #FFFFFF;
+            --text: #212529;
+            --lock-grey: #ADB5BD;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text);
+            background: var(--background);
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 24px;
+            margin: 0 auto 30px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            background: var(--emergency-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+
+        .tagline {
+            font-size: 24px;
+            color: #495057;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        /* Coming Soon Section */
+        .coming-soon {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .coming-soon h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .launch-date {
+            font-size: 28px;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: inline-block;
+        }
+
+        .email-form {
+            max-width: 500px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .email-form h3 {
+            color: var(--text);
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .email-form p {
+            color: #6c757d;
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+
+        .email-input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .email-input {
+            flex: 1;
+            padding: 16px 20px;
+            border: 2px solid #dee2e6;
+            border-radius: 50px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .email-input:focus {
+            border-color: var(--emergency-red);
+        }
+
+        .email-submit {
+            background: var(--emergency-red);
+            color: white;
+            padding: 16px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+        }
+
+        .email-submit:hover {
+            background: #EE5A52;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        .platform-badges {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .platform-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 16px;
+        }
+
+        .platform-badge.available {
+            background: rgba(81, 207, 102, 0.3);
+        }
+
+        /* Screenshots Section */
+        .screenshots {
+            padding: 80px 20px;
+            background: #f8f9fa;
+            text-align: center;
+        }
+
+        .screenshots h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .screenshots p {
+            color: #6c757d;
+            margin-bottom: 50px;
+            font-size: 18px;
+        }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .screenshot-item {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .screenshot-placeholder {
+            width: 100%;
+            aspect-ratio: 9/16;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .screenshot-item h4 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .screenshot-item p {
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 60px;
+            color: var(--text);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .feature-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .feature-card p {
+            color: #6c757d;
+            font-size: 16px;
+        }
+
+        /* Pricing */
+        .pricing {
+            padding: 80px 20px;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            background: #f8f9fa;
+        }
+
+        .pricing h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .price {
+            font-size: 56px;
+            font-weight: 800;
+            color: var(--emergency-red);
+            margin-bottom: 20px;
+        }
+
+        .price-period {
+            font-size: 24px;
+            color: #6c757d;
+        }
+
+        .benefits {
+            text-align: left;
+            margin: 40px auto;
+            max-width: 400px;
+        }
+
+        .benefit {
+            padding: 12px 0;
+            font-size: 18px;
+        }
+
+        .benefit::before {
+            content: "✓";
+            color: var(--test-green);
+            font-weight: bold;
+            margin-right: 12px;
+        }
+
+        /* Timeline Section */
+        .timeline {
+            padding: 80px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 60px;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            align-items: flex-start;
+        }
+
+        .timeline-date {
+            min-width: 150px;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--emergency-red);
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid var(--emergency-red);
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .timeline-content p {
+            color: #6c757d;
+            font-size: 16px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text);
+            color: white;
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .footer-links a:hover {
+            color: var(--emergency-red);
+        }
+
+        .copyright {
+            color: #adb5bd;
+            font-size: 14px;
+            margin-top: 30px;
+        }
+
+        .beta-badge {
+            display: inline-block;
+            background: var(--subscribe-blue);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-left: 12px;
+        }
+
+        .success-message {
+            display: none;
+            background: var(--test-green);
+            color: white;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            .tagline {
+                font-size: 18px;
+            }
+
+            .coming-soon h2 {
+                font-size: 32px;
+            }
+
+            .launch-date {
+                font-size: 22px;
+            }
+
+            .email-input-group {
+                flex-direction: column;
+            }
+
+            .email-submit {
+                width: 100%;
+            }
+
+            .features h2,
+            .pricing h2,
+            .timeline h2 {
+                font-size: 28px;
+            }
+
+            .price {
+                font-size: 42px;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .timeline-date {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="app-icon">🆘</div>
+        <h1>
+            Scream4U.icu
+            <span class="beta-badge">COMING SOON</span>
+        </h1>
+        <p class="tagline">Fast emergency alerts when you need help<br>Works without internet</p>
+    </section>
+
+    <!-- Coming Soon Section -->
+    <section class="coming-soon">
+        <h2>📱 Android App Launching December 2025</h2>
+        <div class="launch-date">🚀 Available in 6 Weeks!</div>
+        
+        <div class="email-form">
+            <h3>Get Notified at Launch</h3>
+            <p>Be the first to download when we launch. Plus get an exclusive beta tester discount code!</p>
+            
+            <form id="emailForm" action="https://formspree.io/f/xeovgdpr" method="POST">
+                <div class="email-input-group">
+                    <input 
+                        type="email" 
+                        name="email" 
+                        class="email-input" 
+                        placeholder="Enter your email" 
+                        required
+                    >
+                    <button type="submit" class="email-submit">Notify Me</button>
+                </div>
+                <input type="hidden" name="platform" value="Android">
+                <input type="hidden" name="_subject" value="New Scream4U Launch Notification Signup">
+            </form>
+            
+            <div id="successMessage" class="success-message">
+                ✓ Thanks! We'll email you when we launch in December!
+            </div>
+        </div>
+
+        <div class="platform-badges">
+            <div class="platform-badge available">🤖 Android - December 2025</div>
+            <div class="platform-badge">🍎 iOS - Q2 2026</div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section class="screenshots">
+        <h2>See Scream4U.icu in Action</h2>
+        <p>Simple, fast, and designed for emergencies</p>
+        
+        <div class="screenshot-grid">
+            <div class="screenshot-item">
+                <div class="screenshot-placeholder">🏠</div>
+                <h4>Simple Setup</h4>
+                <p>Enter your name, address, and emergency contacts in minutes</p>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-placeholder">🚨</div>
+                <h4>One-Tap Alerts</h4>
+                <p>Four emergency types: Medical, Fire, Intruder, Safety</p>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-placeholder">📱</div>
+                <h4>Works Offline</h4>
+                <p>Only needs cellular signal for SMS. No internet required</p>
+            </div>
+            <div class="screenshot-item">
+                <div class="screenshot-placeholder">🧪</div>
+                <h4>Test Before Emergency</h4>
+                <p>Free test alerts to verify everything works</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>Why Scream4U.icu?</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📡</div>
+                <h3>Works Offline</h3>
+                <p>Only needs cellular signal for SMS. No internet or mobile data required.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">👴</div>
+                <h3>Perfect for Seniors</h3>
+                <p>Large buttons, simple interface, and easy setup. Designed for elderly users.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Fast Alerts</h3>
+                <p>Two-tap emergency alerts reach all your contacts in seconds.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Privacy First</h3>
+                <p>All data stored locally on your phone. No tracking, no cloud storage.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🧪</div>
+                <h3>Test Before Emergency</h3>
+                <p>Free test button lets you verify the system works before you need it.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Affordable</h3>
+                <p>Just $19.99 per year. Less than $2 per month for peace of mind.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing">
+        <h2>Simple Pricing</h2>
+        <div class="price">
+            $19.99
+            <span class="price-period">/year</span>
+        </div>
+        <p style="color: #6c757d; margin-bottom: 30px;">Launch day special: Get 20% off with early signup!</p>
+        
+        <div class="benefits">
+            <div class="benefit">Unlimited emergency alerts</div>
+            <div class="benefit">All 4 emergency types</div>
+            <div class="benefit">Free test alerts forever</div>
+            <div class="benefit">Works completely offline</div>
+            <div class="benefit">No hidden fees</div>
+            <div class="benefit">Cancel anytime</div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="timeline">
+        <h2>Launch Timeline</h2>
+        
+        <div class="timeline-item">
+            <div class="timeline-date">November 2025</div>
+            <div class="timeline-content">
+                <h3>✅ Website Launch</h3>
+                <p>Collecting emails, building anticipation, showcasing features</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">December 2025</div>
+            <div class="timeline-content">
+                <h3>🚀 Android APK Release</h3>
+                <p>Direct download from website. Email notification to waitlist with discount code.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">January 2026</div>
+            <div class="timeline-content">
+                <h3>📲 Google Play Store</h3>
+                <p>Official Play Store listing for easier discovery and updates</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">Q2 2026</div>
+            <div class="timeline-content">
+                <h3>🍎 iOS Version</h3>
+                <p>Apple App Store release. Email notification to iOS waitlist.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+            <a href="mailto:support@scream4u.icu">Contact Support</a>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Scream4U.icu. All rights reserved.</p>
+            <p style="margin-top: 12px; font-size: 12px;">
+                Android launch: December 2025 | iOS launch: Q2 2026
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Handle form submission
+        document.getElementById('emailForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const formData = new FormData(form);
+            
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById('successMessage').classList.add('show');
+                    form.reset();
+                    setTimeout(() => {
+                        document.getElementById('successMessage').classList.remove('show');
+                    }, 5000);
+                }
+            }).catch(error => {
+                alert('Oops! There was a problem. Please try again or email us directly at support@scream4u.icu');
+            });
+        });
+    </script>
+
+</body>
+</html>
