@@ -33,12 +33,88 @@
             scroll-behavior: smooth;
         }
 
+        /* Fixed Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 15, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 59, 92, 0.2);
+            padding: 20px 40px;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .header-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+        }
+
+        .app-name-header {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--emergency-red);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--emergency-red);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             color: var(--text);
             background: var(--background);
             line-height: 1.7;
             overflow-x: hidden;
+            padding-top: 90px;
         }
 
         /* Animated gradient background */
@@ -67,11 +143,12 @@
             text-align: center;
             padding: 120px 20px 80px;
             position: relative;
-            min-height: 90vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            background: linear-gradient(135deg, #000000 0%, #1a0a0f 50%, #2a0a15 100%);
         }
 
         .app-icon {
@@ -292,9 +369,19 @@
 
         /* Screenshots Section - Modern Cards */
         .screenshots {
-            padding: 120px 20px;
+            padding: 160px 40px;
             text-align: center;
             position: relative;
+        }
+
+        .screenshots::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--emergency-red), transparent);
         }
 
         .screenshots h2 {
@@ -365,9 +452,20 @@
 
         /* Features Section - Modern Grid */
         .features {
-            padding: 120px 20px;
-            max-width: 1300px;
+            padding: 160px 40px;
+            max-width: 1400px;
             margin: 0 auto;
+            position: relative;
+        }
+
+        .features::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--emergency-red), transparent);
         }
 
         .features h2 {
@@ -386,44 +484,79 @@
 
         .feature-card {
             text-align: center;
-            padding: 48px 32px;
-            background: rgba(26, 26, 36, 0.4);
+            padding: 48px 40px;
+            background: linear-gradient(135deg, rgba(255, 59, 92, 0.1), rgba(255, 107, 138, 0.05));
             backdrop-filter: blur(20px);
             border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 59, 92, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 59, 92, 0.2), transparent);
+            opacity: 0;
+            transition: opacity 0.4s;
         }
 
         .feature-card:hover {
             transform: translateY(-8px);
-            border-color: rgba(139, 92, 246, 0.3);
-            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.2);
+            border-color: rgba(255, 59, 92, 0.5);
+            box-shadow: 0 24px 64px rgba(255, 59, 92, 0.3);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
         }
 
         .feature-icon {
             font-size: 72px;
             margin-bottom: 28px;
-            filter: drop-shadow(0 4px 12px rgba(139, 92, 246, 0.3));
+            filter: drop-shadow(0 4px 12px rgba(255, 59, 92, 0.4));
+            position: relative;
+            z-index: 1;
         }
 
         .feature-card h3 {
             font-size: 26px;
             margin-bottom: 16px;
             font-weight: 700;
+            position: relative;
+            z-index: 1;
         }
 
         .feature-card p {
             color: var(--text-secondary);
             font-size: 17px;
             line-height: 1.7;
+            position: relative;
+            z-index: 1;
         }
 
         /* Pricing - Premium Card */
         .pricing {
-            padding: 120px 20px;
+            padding: 160px 40px;
             text-align: center;
             max-width: 700px;
             margin: 0 auto;
+            position: relative;
+        }
+
+        .pricing::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--emergency-red), transparent);
         }
 
         .pricing h2 {
@@ -713,9 +846,23 @@
     </style>
 </head>
 <body>
+    <!-- Fixed Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="app-icon.png" alt="Scream4U.icu" class="header-logo">
+                <span class="app-name-header">Scream4U.icu</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Home</a>
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+            </nav>
+        </div>
+    </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">""
         <div class="app-icon">
             <img src="app-icon.png" alt="Scream4U.icu App Icon" style="width: 100%; height: 100%; border-radius: 24px;">
         </div>
