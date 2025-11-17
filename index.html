@@ -8,7 +8,7 @@
     <meta property="og:description" content="Fast emergency alerts when you need help. Works without internet. Coming December 2025!">
     <meta property="og:image" content="https://scream4u.icu/assets/og-image.png">
     <meta property="og:url" content="https://scream4u.icu">
-    <title>Scream4U.icu - Emergency Alerts in One Tap | Coming December 2025</title>
+    <title>Scream4U.icu - Emergency Alerts | Coming December 2025</title>
     <link rel="icon" type="image/png" href="assets/icon.png">
     <style>
         * {
@@ -169,26 +169,14 @@
             overflow: hidden;
         }
 
-        .app-icon::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            animation: shine 3s infinite;
-        }
+
 
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
         }
 
-        @keyframes shine {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+
 
         h1 {
             font-size: 72px;
@@ -713,23 +701,7 @@
             margin-top: 40px;
         }
 
-        .beta-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--subscribe-blue) 0%, var(--accent) 100%);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 100px;
-            font-size: 15px;
-            font-weight: 700;
-            margin-left: 16px;
-            box-shadow: 0 4px 16px rgba(79, 70, 229, 0.4);
-            animation: pulse 2s ease-in-out infinite;
-        }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
 
         .success-message {
             display: none;
@@ -761,6 +733,31 @@
 
         /* Responsive - Mobile First */
         @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+
+            .header {
+                padding: 16px 24px;
+            }
+
+            .header-logo {
+                width: 40px;
+                height: 40px;
+            }
+
+            .app-name-header {
+                font-size: 1.25rem;
+            }
+
+            .nav-links {
+                gap: 24px;
+            }
+
+            .nav-links a {
+                font-size: 0.9rem;
+            }
+
             h1 {
                 font-size: 48px;
                 letter-spacing: -1px;
@@ -862,13 +859,12 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">""
+    <section class="hero" id="home">
         <div class="app-icon">
             <img src="app-icon.png" alt="Scream4U.icu App Icon" style="width: 100%; height: 100%; border-radius: 24px;">
         </div>
         <h1>
             Scream4U.icu
-            <span class="beta-badge">COMING SOON</span>
         </h1>
         <p class="tagline">Fast emergency alerts when you need help<br>Works without internet</p>
     </section>
@@ -880,7 +876,7 @@
         
         <div class="email-form">
             <h3>Get Notified at Launch</h3>
-            <p>Be the first to download when we launch. Plus get an exclusive beta tester discount code!</p>
+            <p>Be the first to download when we launch.</p>
             
             <form id="emailForm" action="https://formspree.io/f/xeovgdpr" method="POST">
                 <div class="email-input-group">
@@ -915,30 +911,22 @@
         
         <div class="screenshot-grid">
             <div class="screenshot-item">
-                <div class="screenshot-placeholder">🏠</div>
-                <h4>Simple Setup</h4>
-                <p>Enter your name, address, and emergency contacts in minutes</p>
+                <img src="screenshot1.png" alt="Welcome Screen" style="width: 100%; border-radius: 20px;">
             </div>
             <div class="screenshot-item">
-                <div class="screenshot-placeholder">🚨</div>
-                <h4>One-Tap Alerts</h4>
-                <p>Four emergency types: Medical, Fire, Intruder, Safety</p>
+                <img src="screenshot2.png" alt="Emergency Buttons" style="width: 100%; border-radius: 20px;">
             </div>
             <div class="screenshot-item">
-                <div class="screenshot-placeholder">📱</div>
-                <h4>Works Offline</h4>
-                <p>Only needs cellular signal for SMS. No internet required</p>
+                <img src="screenshot3.png" alt="Settings Screen" style="width: 100%; border-radius: 20px;">
             </div>
             <div class="screenshot-item">
-                <div class="screenshot-placeholder">🧪</div>
-                <h4>Test Before Emergency</h4>
-                <p>Free test alerts to verify everything works</p>
+                <img src="screenshot4.png" alt="FAQ Screen" style="width: 100%; border-radius: 20px;">
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section class="features">
+    <section class="features" id="features">
         <h2>Why Scream4U.icu?</h2>
         <div class="feature-grid">
             <div class="feature-card">
@@ -980,7 +968,7 @@
     </section>
 
     <!-- Pricing -->
-    <section class="pricing">
+    <section class="pricing" id="pricing"></section>
         <h2>Simple Pricing</h2>
         <div class="price">
             $19.99
