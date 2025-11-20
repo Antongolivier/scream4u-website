@@ -605,6 +605,91 @@
             flex-shrink: 0;
         }
 
+        /* FAQ Section */
+        .faq {
+            padding: 160px 40px;
+            position: relative;
+        }
+
+        .faq::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--emergency-red), transparent);
+        }
+
+        .faq h2 {
+            text-align: center;
+            font-size: 56px;
+            margin-bottom: 80px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .faq-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: rgba(26, 26, 36, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 59, 92, 0.2);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(255, 59, 92, 0.4);
+        }
+
+        .faq-item[open] {
+            border-color: rgba(255, 59, 92, 0.5);
+        }
+
+        .faq-item summary {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text);
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: '+';
+            font-size: 28px;
+            color: var(--emergency-red);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item[open] summary::after {
+            content: '−';
+        }
+
+        .faq-item p {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
         /* Timeline Section */
         .timeline {
             padding: 80px 20px;
@@ -851,9 +936,12 @@
                 <span class="app-name-header">Scream4U.icu</span>
             </div>
             <nav class="nav-links">
-                <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Home</a>
+                <a href="#home">Home</a>
+                <a href="#coming-soon">Action</a>
                 <a href="#features">Features</a>
                 <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
+                <a href="contact.html">Contact</a>
             </nav>
         </div>
     </header>
@@ -870,7 +958,7 @@
     </section>
 
     <!-- Coming Soon Section -->
-    <section class="coming-soon">
+    <section class="coming-soon" id="coming-soon">
         <h2>📱 Android App Launching December 2025</h2>
         <div class="launch-date">🚀 Available in 6 Weeks!</div>
         
