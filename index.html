@@ -1338,6 +1338,7 @@
             }
         });
 // Currency conversion based on user location
+        // Currency conversion based on user location
         const currencyRates = {
             // Major currencies (updated Nov 2024)
             'USD': { rate: 1, symbol: '$', format: 'before' },        // United States
@@ -1382,40 +1383,57 @@
 
         const basePrice = 19.99; // USD base price
 
-        function detectUserCurrency() {
-            // Try to detect currency from browser locale
+        // Map country codes to currencies
+        const countryCurrencyMap = {
+            'US': 'USD', 'GB': 'GBP', 'AU': 'AUD', 'CA': 'CAD', 'NZ': 'NZD',
+            'ZA': 'ZAR', 'IN': 'INR', 'SG': 'SGD', 'HK': 'HKD', 'BR': 'BRL',
+            'MX': 'MXN', 'AR': 'ARS', 'CL': 'CLP', 'CO': 'COP', 'PE': 'PEN',
+            'JP': 'JPY', 'CN': 'CNY', 'TW': 'TWD', 'KR': 'KRW', 'TH': 'THB',
+            'VN': 'VND', 'ID': 'IDR', 'MY': 'MYR', 'PH': 'PHP', 'SE': 'SEK',
+            'NO': 'NOK', 'DK': 'DKK', 'PL': 'PLN', 'CH': 'CHF', 'TR': 'TRY',
+            'RU': 'RUB', 'AE': 'AED', 'SA': 'SAR', 'IL': 'ILS', 'EG': 'EGP',
+            'NG': 'NGN', 'KE': 'KES',
+            // Eurozone countries
+            'DE': 'EUR', 'FR': 'EUR', 'IT': 'EUR', 'ES': 'EUR', 'NL': 'EUR',
+            'BE': 'EUR', 'AT': 'EUR', 'PT': 'EUR', 'IE': 'EUR', 'FI': 'EUR',
+            'GR': 'EUR', 'LU': 'EUR', 'SI': 'EUR', 'EE': 'EUR', 'CY': 'EUR',
+            'MT': 'EUR', 'SK': 'EUR', 'LV': 'EUR', 'LT': 'EUR',
+        };
+
+        async function detectUserCurrency() {
+            try {
+                // Try IP-based geolocation first (most accurate)
+                const response = await fetch('https://ipapi.co/json/');
+                const data = await response.json();
+                
+                if (data.country_code && countryCurrencyMap[data.country_code]) {
+                    return countryCurrencyMap[data.country_code];
+                }
+                
+                // Fallback to browser currency if available
+                if (data.currency && currencyRates[data.currency]) {
+                    return data.currency;
+                }
+            } catch (error) {
+                console.log('IP detection failed, using browser locale fallback');
+            }
+
+            // Fallback: Use browser locale
             try {
                 const locale = navigator.language || navigator.userLanguage;
-                const currencies = {
-                    'en-US': 'USD', 'en-GB': 'GBP', 'en-AU': 'AUD', 'en-CA': 'CAD', 
-                    'en-NZ': 'NZD', 'en-ZA': 'ZAR', 'en-IN': 'INR', 'en-SG': 'SGD',
-                    'de': 'EUR', 'fr': 'EUR', 'es': 'EUR', 'it': 'EUR', 'nl': 'EUR',
-                    'pt-BR': 'BRL', 'es-MX': 'MXN', 'es-AR': 'ARS', 'es-CL': 'CLP',
-                    'ja': 'JPY', 'zh-CN': 'CNY', 'zh-TW': 'TWD', 'ko': 'KRW',
-                    'sv': 'SEK', 'no': 'NOK', 'da': 'DKK', 'pl': 'PLN',
-                    'th': 'THB', 'vi': 'VND', 'id': 'IDR', 'ms': 'MYR',
-                    'tr': 'TRY', 'ru': 'RUB', 'ar': 'SAR', 'he': 'ILS',
+                const localeCurrencies = {
+                    'en-ZA': 'ZAR', 'en-GB': 'GBP', 'en-AU': 'AUD', 'en-CA': 'CAD',
+                    'en-NZ': 'NZD', 'en-IN': 'INR', 'en-SG': 'SGD', 'pt-BR': 'BRL',
                 };
 
-                // Check exact match first
-                if (currencies[locale]) {
-                    return currencies[locale];
+                if (localeCurrencies[locale]) {
+                    return localeCurrencies[locale];
                 }
-
-                // Check language code only (en-US -> en)
-                const langCode = locale.split('-')[0];
-                const langMatches = {
-                    'en': 'USD', 'de': 'EUR', 'fr': 'EUR', 'es': 'EUR',
-                    'pt': 'BRL', 'ja': 'JPY', 'zh': 'CNY', 'ko': 'KRW',
-                    'sv': 'SEK', 'no': 'NOK', 'da': 'DKK', 'pl': 'PLN',
-                    'th': 'THB', 'vi': 'VND', 'id': 'IDR', 'ms': 'MYR',
-                    'tr': 'TRY', 'ru': 'RUB', 'ar': 'SAR', 'he': 'ILS',
-                };
-
-                return langMatches[langCode] || 'USD';
             } catch (e) {
-                return 'USD'; // Fallback to USD
+                console.log('Locale detection failed');
             }
+
+            return 'USD'; // Final fallback
         }
 
         function formatPrice(price, currency) {
@@ -1440,8 +1458,8 @@
             }
         }
 
-        function updatePrice() {
-            const userCurrency = detectUserCurrency();
+        async function updatePrice() {
+            const userCurrency = await detectUserCurrency();
             const currencyInfo = currencyRates[userCurrency];
 
             if (currencyInfo) {
