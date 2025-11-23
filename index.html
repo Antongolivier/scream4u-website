@@ -1142,11 +1142,14 @@
     <!-- Pricing -->
     <section class="pricing" id="pricing">
         <h2>Simple Pricing</h2>
-        <div class="price">
-            $19.99
-            <span class="price-period">/year</span>
-        </div>
-        <p style="color: #A0A0B8; margin-bottom: 30px;">Launch day special: Get 20% off with early signup!</p>
+        <div class="price" id="displayPrice">
+    $19.99
+    <span class="price-period">/year</span>
+</div>
+<p style="color: #A0A0B8; font-size: 14px; margin-top: 16px; margin-bottom: 8px; opacity: 0.8;">
+    *Price shown in your local currency. Final amount may vary slightly due to exchange rate fluctuations.
+</p>
+<p style="color: #A0A0B8; margin-bottom: 30px;">Launch day special: Get 20% off with early signup!</p>
         
         <div class="benefits">
             <div class="benefit">Unlimited emergency alerts</div>
@@ -1208,6 +1211,19 @@
                     <summary>How are emergency SMS messages sent?</summary>
                     <p>When you press an emergency button, the app opens your phone's SMS app with pre-filled messages for all your emergency contacts. You'll see the messages ready to send - just tap the Send button. This works completely offline, requiring only cellular signal for SMS delivery.</p>
                 </details>
+
+                <details class="faq-item">
+                    <summary>Why is the price different at checkout?</summary>
+                    <p>The price shown on our website is automatically converted to your local currency for convenience. However, the final price at checkout is processed by Stripe using live exchange rates, which fluctuate daily. The difference is typically minimal (within 1-3%), but exchange rates can vary. Your bank statement will show the exact amount in your local currency based on the rate at the time of purchase.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Is there an iPhone/iOS version?</summary>
+                    <p>Currently Scream4U.icu is available for Android only. We're working on an iOS version planned for release in Q2 2026 (April-June). Want to be notified? Email support@scream4u.icu with 'iOS Waitlist' in the subject line.</p>
+                </details>
+            </div>
+        </div>
+    </section>
 
                 <details class="faq-item">
                     <summary>Is there an iPhone/iOS version?</summary>
@@ -1321,6 +1337,130 @@
                 closeMobileMenu();
             }
         });
+// Currency conversion based on user location
+        const currencyRates = {
+            // Major currencies (updated Nov 2024)
+            'USD': { rate: 1, symbol: '$', format: 'before' },        // United States
+            'ZAR': { rate: 18.25, symbol: 'R', format: 'before' },    // South Africa
+            'GBP': { rate: 0.79, symbol: '£', format: 'before' },     // United Kingdom
+            'EUR': { rate: 0.92, symbol: '€', format: 'before' },     // Eurozone
+            'AUD': { rate: 1.54, symbol: 'A$', format: 'before' },    // Australia
+            'CAD': { rate: 1.39, symbol: 'C$', format: 'before' },    // Canada
+            'INR': { rate: 83.75, symbol: '₹', format: 'before' },    // India
+            'JPY': { rate: 149.75, symbol: '¥', format: 'before' },   // Japan
+            'CNY': { rate: 7.24, symbol: '¥', format: 'before' },     // China
+            'BRL': { rate: 4.98, symbol: 'R$', format: 'before' },    // Brazil
+            'MXN': { rate: 17.15, symbol: '$', format: 'before' },    // Mexico
+            'NZD': { rate: 1.67, symbol: 'NZ$', format: 'before' },   // New Zealand
+            'SGD': { rate: 1.35, symbol: 'S$', format: 'before' },    // Singapore
+            'HKD': { rate: 7.82, symbol: 'HK$', format: 'before' },   // Hong Kong
+            'SEK': { rate: 10.98, symbol: 'kr', format: 'after' },    // Sweden
+            'NOK': { rate: 11.05, symbol: 'kr', format: 'after' },    // Norway
+            'DKK': { rate: 6.88, symbol: 'kr', format: 'after' },     // Denmark
+            'CHF': { rate: 0.88, symbol: 'Fr', format: 'before' },    // Switzerland
+            'PLN': { rate: 4.06, symbol: 'zł', format: 'after' },     // Poland
+            'THB': { rate: 34.85, symbol: '฿', format: 'before' },    // Thailand
+            'MYR': { rate: 4.48, symbol: 'RM', format: 'before' },    // Malaysia
+            'PHP': { rate: 56.15, symbol: '₱', format: 'before' },    // Philippines
+            'IDR': { rate: 15685, symbol: 'Rp', format: 'before' },   // Indonesia
+            'KRW': { rate: 1320, symbol: '₩', format: 'before' },     // South Korea
+            'AED': { rate: 3.67, symbol: 'د.إ', format: 'before' },   // UAE
+            'SAR': { rate: 3.75, symbol: 'ر.س', format: 'before' },   // Saudi Arabia
+            'ILS': { rate: 3.65, symbol: '₪', format: 'before' },     // Israel
+            'TRY': { rate: 28.50, symbol: '₺', format: 'before' },    // Turkey
+            'RUB': { rate: 92.50, symbol: '₽', format: 'before' },    // Russia
+            'NGN': { rate: 795, symbol: '₦', format: 'before' },      // Nigeria
+            'KES': { rate: 129, symbol: 'KSh', format: 'before' },    // Kenya
+            'EGP': { rate: 30.90, symbol: 'E£', format: 'before' },   // Egypt
+            'ARS': { rate: 350, symbol: '$', format: 'before' },      // Argentina
+            'CLP': { rate: 890, symbol: '$', format: 'before' },      // Chile
+            'COP': { rate: 4100, symbol: '$', format: 'before' },     // Colombia
+            'PEN': { rate: 3.75, symbol: 'S/', format: 'before' },    // Peru
+            'VND': { rate: 24500, symbol: '₫', format: 'after' },     // Vietnam
+            'TWD': { rate: 31.50, symbol: 'NT$', format: 'before' },  // Taiwan
+        };
+
+        const basePrice = 19.99; // USD base price
+
+        function detectUserCurrency() {
+            // Try to detect currency from browser locale
+            try {
+                const locale = navigator.language || navigator.userLanguage;
+                const currencies = {
+                    'en-US': 'USD', 'en-GB': 'GBP', 'en-AU': 'AUD', 'en-CA': 'CAD', 
+                    'en-NZ': 'NZD', 'en-ZA': 'ZAR', 'en-IN': 'INR', 'en-SG': 'SGD',
+                    'de': 'EUR', 'fr': 'EUR', 'es': 'EUR', 'it': 'EUR', 'nl': 'EUR',
+                    'pt-BR': 'BRL', 'es-MX': 'MXN', 'es-AR': 'ARS', 'es-CL': 'CLP',
+                    'ja': 'JPY', 'zh-CN': 'CNY', 'zh-TW': 'TWD', 'ko': 'KRW',
+                    'sv': 'SEK', 'no': 'NOK', 'da': 'DKK', 'pl': 'PLN',
+                    'th': 'THB', 'vi': 'VND', 'id': 'IDR', 'ms': 'MYR',
+                    'tr': 'TRY', 'ru': 'RUB', 'ar': 'SAR', 'he': 'ILS',
+                };
+
+                // Check exact match first
+                if (currencies[locale]) {
+                    return currencies[locale];
+                }
+
+                // Check language code only (en-US -> en)
+                const langCode = locale.split('-')[0];
+                const langMatches = {
+                    'en': 'USD', 'de': 'EUR', 'fr': 'EUR', 'es': 'EUR',
+                    'pt': 'BRL', 'ja': 'JPY', 'zh': 'CNY', 'ko': 'KRW',
+                    'sv': 'SEK', 'no': 'NOK', 'da': 'DKK', 'pl': 'PLN',
+                    'th': 'THB', 'vi': 'VND', 'id': 'IDR', 'ms': 'MYR',
+                    'tr': 'TRY', 'ru': 'RUB', 'ar': 'SAR', 'he': 'ILS',
+                };
+
+                return langMatches[langCode] || 'USD';
+            } catch (e) {
+                return 'USD'; // Fallback to USD
+            }
+        }
+
+        function formatPrice(price, currency) {
+            const currencyInfo = currencyRates[currency];
+            
+            // Round to nearest whole number for most currencies
+            let roundedPrice = Math.round(price);
+            
+            // Keep 2 decimals for currencies typically shown that way
+            if (['USD', 'GBP', 'EUR', 'AUD', 'CAD', 'CHF', 'NZD', 'SGD'].includes(currency)) {
+                roundedPrice = price.toFixed(2);
+            }
+
+            // Format with thousands separator
+            const formatted = roundedPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+            // Return with symbol before or after based on currency format
+            if (currencyInfo.format === 'after') {
+                return `${formatted} ${currencyInfo.symbol}`;
+            } else {
+                return `${currencyInfo.symbol}${formatted}`;
+            }
+        }
+
+        function updatePrice() {
+            const userCurrency = detectUserCurrency();
+            const currencyInfo = currencyRates[userCurrency];
+
+            if (currencyInfo) {
+                const convertedPrice = basePrice * currencyInfo.rate;
+                const formattedPrice = formatPrice(convertedPrice, userCurrency);
+                
+                const priceElement = document.getElementById('displayPrice');
+                if (priceElement) {
+                    priceElement.innerHTML = `
+                        ${formattedPrice}
+                        <span class="price-period">/year</span>
+                    `;
+                }
+            }
+        }
+
+        // Run currency detection when page loads
+        document.addEventListener('DOMContentLoaded', updatePrice);
+
     </script>
 
 </body>
