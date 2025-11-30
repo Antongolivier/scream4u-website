@@ -1191,7 +1191,7 @@
 </div>
 
 <p style="color: #A0A0B8; margin-bottom: 30px; font-size: 18px;">
-    <strong>🎉 Launch Special:</strong> First 1000 subscribers get <strong style="color: var(--emergency-red);">LIFETIME 50% OFF</strong> - just $9.99/year forever!
+   <strong>🎉 Launch Special:</strong> First 1000 subscribers get <strong style="color: var(--emergency-red);">LIFETIME 50% OFF</strong> - just <span id="discountPrice">$9.99</span>/year forever!
 </p>
         
         <div class="benefits">
@@ -1498,6 +1498,7 @@
             const currencyInfo = currencyRates[userCurrency];
 
             if (currencyInfo) {
+                // Update main price ($19.99)
                 const convertedPrice = basePrice * currencyInfo.rate;
                 const formattedPrice = formatPrice(convertedPrice, userCurrency);
                 
@@ -1507,6 +1508,16 @@
                         ${formattedPrice}
                         <span class="price-period">/year</span>
                     `;
+                }
+
+                // Update discounted price ($9.99)
+                const discountedBasePrice = 9.99;
+                const convertedDiscountPrice = discountedBasePrice * currencyInfo.rate;
+                const formattedDiscountPrice = formatPrice(convertedDiscountPrice, userCurrency);
+                
+                const discountPriceElement = document.getElementById('discountPrice');
+                if (discountPriceElement) {
+                    discountPriceElement.textContent = formattedDiscountPrice;
                 }
             }
         }
