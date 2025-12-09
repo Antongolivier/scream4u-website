@@ -1381,46 +1381,54 @@
             const specialPrice = 9.99; // 50% discount
 
             try {
-                // Detect user's currency via IP geolocation
+                // Step 1: Detect user's currency via IP geolocation
                 let currency = "USD";
-                let userLocale = navigator.language || "en-US";
-
-                try {
-                    const geoRes = await fetch("https://ipapi.co/json/");
-                    const geoData = await geoRes.json();
-                    if (geoData.currency) {
-                        currency = geoData.currency;
-                    }
-                    if (geoData.country_code) {
-                        // Map country to locale for better formatting
-                        const countryLocaleMap = {
-                            'ZA': 'en-ZA', 'GB': 'en-GB', 'AU': 'en-AU', 'CA': 'en-CA',
-                            'NZ': 'en-NZ', 'IN': 'en-IN', 'SG': 'en-SG', 'BR': 'pt-BR',
-                            'MX': 'es-MX', 'JP': 'ja-JP', 'CN': 'zh-CN', 'KR': 'ko-KR',
-                            'DE': 'de-DE', 'FR': 'fr-FR', 'IT': 'it-IT', 'ES': 'es-ES'
-                        };
-                        userLocale = countryLocaleMap[geoData.country_code] || userLocale;
-                    }
-                } catch (geoError) {
-                    console.log("Geolocation failed, using browser locale");
+                let countryCode = "US";
+                
+                console.log("Fetching geolocation data...");
+                const geoRes = await fetch("https://ipapi.co/json/");
+                const geoData = await geoRes.json();
+                console.log("Geolocation data:", geoData);
+                
+                if (geoData.currency) {
+                    currency = geoData.currency;
+                    console.log("Detected currency:", currency);
+                }
+                if (geoData.country_code) {
+                    countryCode = geoData.country_code;
+                    console.log("Detected country:", countryCode);
                 }
 
-                // Fetch USD → Local conversion rate from live API
-                const res = await fetch("https://api.exchangerate.host/latest?base=USD");
-                const data = await res.json();
-                const rate = data.rates[currency] || 1;
+                // Step 2: Fetch live exchange rates
+                console.log("Fetching exchange rates...");
+                const rateRes = await fetch(`https://api.exchangerate-api.com/v4/latest/USD`);
+                const rateData = await rateRes.json();
+                console.log("Exchange rate data:", rateData);
+                
+                const rate = rateData.rates[currency] || 1;
+                console.log(`Exchange rate for ${currency}:`, rate);
 
-                // Convert prices using live exchange rate
+                // Step 3: Convert prices
                 const localAnnual = usdPrice * rate;
                 const localSpecial = specialPrice * rate;
+                console.log("Converted annual price:", localAnnual);
+                console.log("Converted special price:", localSpecial);
 
-                // Update the main price display
+                // Step 4: Format and display prices
+                const userLocale = countryCode === 'ZA' ? 'en-ZA' : 
+                                   countryCode === 'GB' ? 'en-GB' :
+                                   countryCode === 'AU' ? 'en-AU' :
+                                   countryCode === 'CA' ? 'en-CA' :
+                                   navigator.language || 'en-US';
+
                 const priceElement = document.getElementById("displayPrice");
                 if (priceElement) {
                     const formattedPrice = new Intl.NumberFormat(userLocale, { 
                         style: "currency", 
-                        currency 
+                        currency: currency
                     }).format(localAnnual);
+                    
+                    console.log("Formatted price:", formattedPrice);
                     
                     priceElement.innerHTML = `
                         ${formattedPrice}
@@ -1428,14 +1436,18 @@
                     `;
                 }
 
-                // Update the special discount price
                 const discountPriceElement = document.getElementById("discountPrice");
                 if (discountPriceElement) {
-                    discountPriceElement.textContent = new Intl.NumberFormat(userLocale, { 
+                    const formattedDiscount = new Intl.NumberFormat(userLocale, { 
                         style: "currency", 
-                        currency 
+                        currency: currency
                     }).format(localSpecial);
+                    
+                    console.log("Formatted discount price:", formattedDiscount);
+                    discountPriceElement.textContent = formattedDiscount;
                 }
+
+                console.log("Price update completed successfully!");
 
             } catch (e) {
                 console.error("Currency update failed:", e);
@@ -1455,7 +1467,7 @@
         }
 
         // Run price update when page loads
-        document.addEventListener('DOMContentLoaded', updatePrices);
+        updatePrices();
 
     </script>
 
