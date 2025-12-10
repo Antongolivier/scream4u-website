@@ -40,18 +40,27 @@
             margin-bottom: 30px;
         }
         .close-button {
-            background: #e53e3e;
+            background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
             color: white;
             border: none;
-            padding: 15px 30px;
-            border-radius: 10px;
-            font-size: 16px;
+            padding: 18px 40px;
+            border-radius: 15px;
+            font-size: 18px;
             font-weight: bold;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(229, 62, 62, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .close-button:hover {
-            background: #c53030;
+            background: linear-gradient(135deg, #c53030 0%, #a02626 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(229, 62, 62, 0.4);
+        }
+        .close-button:active {
+            transform: translateY(0);
+            box-shadow: 0 6px 15px rgba(229, 62, 62, 0.3);
         }
         .instructions {
             background: #f7fafc;
@@ -69,7 +78,7 @@
         <h1>Payment Successful!</h1>
         <p>Your subscription to Scream4U has been processed successfully. All emergency buttons are now unlocked and ready to use.</p>
         
-        <button class="close-button" onclick="closeWindow()">Close & Return to App</button>
+        <button class="close-button" onclick="closeWindow()">🚀 Return to App</button>
         
         <div class="instructions">
             <strong>Next Steps:</strong><br>
@@ -81,19 +90,52 @@
 
     <script>
         function closeWindow() {
-            // Try to close the window/tab
-            if (window.opener) {
+            // Multiple methods to close the browser/return to app
+            try {
+                // Method 1: Try to close the window
                 window.close();
-            } else {
-                // If can't close, show instructions
-                alert('Please close this tab and return to the Scream4U app. Your subscription is now active!');
+            } catch (e) {
+                console.log('Window.close() failed:', e);
             }
+            
+            try {
+                // Method 2: Try to go back in history
+                if (window.history.length > 1) {
+                    window.history.back();
+                } else {
+                    // Method 3: Try to redirect to a close URL
+                    window.location.href = 'about:blank';
+                }
+            } catch (e) {
+                console.log('History.back() failed:', e);
+            }
+            
+            // Method 4: Show instructions if nothing else works
+            setTimeout(() => {
+                alert('Please manually close this tab and return to the Scream4U app. Your subscription is now active!');
+            }, 1000);
         }
 
-        // Auto-close after 5 seconds
+        // Auto-close after 3 seconds (reduced from 5)
         setTimeout(() => {
             closeWindow();
-        }, 5000);
+        }, 3000);
+
+        // Add countdown display
+        let countdown = 3;
+        const countdownElement = document.createElement('p');
+        countdownElement.style.cssText = 'color: #666; font-size: 14px; margin-top: 10px;';
+        countdownElement.textContent = `Auto-closing in ${countdown} seconds...`;
+        document.querySelector('.container').appendChild(countdownElement);
+
+        const countdownTimer = setInterval(() => {
+            countdown--;
+            countdownElement.textContent = `Auto-closing in ${countdown} seconds...`;
+            if (countdown <= 0) {
+                clearInterval(countdownTimer);
+                countdownElement.textContent = 'Closing now...';
+            }
+        }, 1000);
     </script>
 </body>
 </html>
