@@ -271,9 +271,13 @@
                     document.getElementById('successMessage').classList.add('show');
                     form.reset();
                     window.scrollTo(0, 0);
+                } else {
+                    console.error('Form submission failed:', response.status, response.statusText);
+                    alert('Message could not be sent. Please email us directly at support@scream4u.icu or try again later.');
                 }
             }).catch(error => {
-                alert('Oops! There was a problem. Please try again or email us directly at support@scream4u.icu');
+                console.error('Form submission error:', error);
+                alert('Connection error. Please check your internet connection and try again, or email us at support@scream4u.icu');
             });
         });
     </script>
