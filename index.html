@@ -1054,14 +1054,32 @@
         <!-- Download Button -->
         <div style="margin: 50px auto; max-width: 600px;">
             <a href="https://expo.dev/artifacts/eas/hMVdrryHFycEjZYunkYJuR.apk" 
+               id="downloadButton"
                style="display: inline-block; background: linear-gradient(135deg, #00D9A3 0%, #00B386 100%); color: white; padding: 24px 60px; border-radius: 20px; font-size: 24px; font-weight: 700; text-decoration: none; box-shadow: 0 12px 40px rgba(0, 217, 163, 0.4); transition: all 0.3s ease;"
                onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 16px 48px rgba(0, 217, 163, 0.5)';"
-               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 12px 40px rgba(0, 217, 163, 0.4)';">
+               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 12px 40px rgba(0, 217, 163, 0.4)';"
+               onclick="return handleDownload(event);">
                 📥 Download APK (Android)
             </a>
             <p style="margin-top: 20px; color: var(--text-secondary); font-size: 16px;">
                 Version 1.0.0 • 4.5 MB • Direct Download
             </p>
+            
+            <!-- Non-Android Device Message (Hidden by default) -->
+            <div id="nonAndroidMessage" style="display: none; margin-top: 30px; background: rgba(255, 107, 138, 0.15); border: 2px solid rgba(255, 59, 92, 0.3); padding: 30px; border-radius: 20px;">
+                <h3 style="color: #FF6B6B; margin-bottom: 15px; font-size: 22px;">📱 Android Device Required</h3>
+                <p style="color: var(--text); font-size: 18px; line-height: 1.6; margin-bottom: 20px;">
+                    This app is designed for Android devices only. To download and install:
+                </p>
+                <ol style="color: var(--text); font-size: 16px; line-height: 1.8; text-align: left; max-width: 500px; margin: 0 auto;">
+                    <li>Open this page on your Android phone or tablet</li>
+                    <li>Or scan the QR code below with your Android device</li>
+                    <li>Then tap the download button</li>
+                </ol>
+                <p style="color: var(--text-secondary); font-size: 14px; margin-top: 20px;">
+                    iOS version coming Q2 2026
+                </p>
+            </div>
         </div>
 
         <!-- QR Code Section -->
@@ -1488,6 +1506,34 @@
     <!-- QR Code Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script>
+        // Device Detection and Download Handler
+        function isAndroidDevice() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            return /android/i.test(userAgent);
+        }
+
+        function handleDownload(event) {
+            if (!isAndroidDevice()) {
+                event.preventDefault();
+                
+                // Hide download button
+                document.getElementById('downloadButton').style.display = 'none';
+                
+                // Show non-Android message
+                document.getElementById('nonAndroidMessage').style.display = 'block';
+                
+                // Scroll to message
+                document.getElementById('nonAndroidMessage').scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+                
+                return false;
+            }
+            // Allow download for Android devices
+            return true;
+        }
+
         // Generate QR Code for APK download
         if (document.getElementById('qrcode')) {
             new QRCode(document.getElementById('qrcode'), {
