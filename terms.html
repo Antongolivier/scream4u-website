@@ -37,9 +37,9 @@
     <h1>Terms & Conditions</h1>
     
     <div class="last-updated">
-        <strong>Last Updated:</strong> December 2025<br>
-        <strong>Effective Date:</strong> December 2025<br>
-        <strong>Version:</strong> 2.1
+        <strong>Last Updated:</strong> December 24, 2025<br>
+        <strong>Effective Date:</strong> December 24, 2025<br>
+        <strong>Version:</strong> 3.0
     </div>
 
     <button class="print-button" onclick="window.print()">🖨️ Print These Terms</button>
@@ -61,10 +61,12 @@
         <p><strong>The essentials:</strong></p>
         <ul>
             <li>⚠️ <strong>NOT emergency services</strong> - always call 911/112 first</li>
-            <li>💰 <strong>$19.99/year</strong> (or $9.99 for first 1,000 users) - 30-day money-back guarantee</li>
+            <li>💰 <strong>$19.99/year</strong> (or $9.99 for first 1,000 "Founders") - 30-day money-back guarantee</li>
+            <li>🏆 <strong>Founders pricing locked forever</strong> - first 1,000 subscribers keep $9.99 rate for life</li>
             <li>📱 <strong>One device per subscription</strong> - can transfer to new device</li>
             <li>📍 <strong>Manual address updates</strong> - no GPS tracking, you control location</li>
             <li>📨 <strong>SMS not guaranteed</strong> - depends on cellular network</li>
+            <li>📧 <strong>Valid email required</strong> - for renewal reminders and subscription management</li>
             <li>✅ <strong>3 free tests</strong> - unlimited with subscription</li>
             <li>🔒 <strong>Your responsibility</strong> - keep address current, verify contacts, test regularly</li>
         </ul>
@@ -145,88 +147,135 @@
             <td>3 test alerts, app setup, settings access</td>
         </tr>
         <tr>
-            <td><strong>Annual</strong></td>
+            <td><strong>Founders</strong></td>
+            <td>$9.99 USD/year</td>
+            <td>All emergency types, unlimited alerts, up to 5 contacts, <strong>price locked forever</strong></td>
+        </tr>
+        <tr>
+            <td><strong>Regular</strong></td>
             <td>$19.99 USD/year</td>
             <td>All emergency types, unlimited alerts, up to 5 contacts</td>
         </tr>
-        <tr>
-            <td><strong>Launch Discount</strong></td>
-            <td>$9.99 USD/year (50% off)</td>
-            <td>Same as Annual - First 1,000 subscribers only</td>
-        </tr>
     </table>
 
-    <p><strong>Payment Processing:</strong> All payments processed securely by Paystack (https://paystack.com), a PCI-DSS compliant payment processor.</p>
+    <p><strong>Payment Processing:</strong> All payments processed securely by PayPal (https://paypal.com), a PCI-DSS compliant payment processor.</p>
     
-    <p><strong>Currency:</strong> Prices shown in USD. Paystack may process payments in South African Rand (ZAR) or your local currency depending on your location and bank. Exchange rates are determined by Paystack at time of payment.</p>
+    <p><strong>Currency:</strong> Prices shown in USD. PayPal may process payments in your local currency depending on your location and bank. Exchange rates are determined by PayPal at time of payment.</p>
 
-    <h3>3.2 Launch Discount (First 1,000 Subscribers)</h3>
-    <p><strong>Special Promotional Pricing:</strong> The first 1,000 subscribers receive a 50% lifetime discount ($9.99/year instead of $19.99/year).</p>
+    <h3>3.2 Founders Tier - Lifetime Pricing Lock</h3>
+    <p><strong>Special Promotional Pricing:</strong> The first 1,000 subscribers receive "Founders" tier status with $9.99/year pricing locked for life.</p>
     
-    <p><strong>Discount Terms:</strong></p>
+    <p><strong>Founders Tier Benefits:</strong></p>
     <ul>
-        <li>Applies for the life of the subscription while continuously maintained</li>
-        <li>Valid only while subscription remains active without lapsing</li>
-        <li>If subscription is cancelled or lapses, the discount is permanently forfeited</li>
-        <li>Cannot be reinstated after cancellation or lapse</li>
-        <li>Discount is non-transferable and applies to the original subscriber only</li>
-        <li>Discount cannot be combined with other promotional offers</li>
-        <li>After 1,000 redemptions, all new subscribers pay standard $19.99/year rate</li>
+        <li><strong>Lifetime Price Lock:</strong> Your rate remains $9.99/year forever, regardless of future price increases</li>
+        <li><strong>Guaranteed Forever:</strong> As long as your subscription remains active and in good standing</li>
+        <li><strong>Renewal Protection:</strong> You must use the personalized PayPal.me link in renewal reminder emails to maintain Founders pricing</li>
+        <li><strong>Transferable:</strong> Founders pricing transfers with your subscription to new devices</li>
     </ul>
 
-    <p><strong>Discount Tracking:</strong> Discount status is managed by Paystack and linked to your subscription email and device ID.</p>
-
-    <h3>3.3 Billing and Renewal</h3>
+    <p><strong>Founders Tier Terms:</strong></p>
     <ul>
-        <li>Billed annually in advance ($19.99/year or $9.99/year with launch discount)</li>
-        <li>Automatic renewal unless cancelled before renewal date</li>
-        <li>Launch discount pricing maintained on renewal if subscription remains active</li>
-        <li>Email notifications may be sent before billing</li>
-        <li>Manage subscription: Contact support@scream4u.icu</li>
-        <li>Charges appear as "Scream4U.icu" or via Paystack merchant descriptor on statements</li>
+        <li>Limited to first 1,000 subscribers only</li>
+        <li>Pricing maintained ONLY if subscription remains active without lapsing</li>
+        <li>If subscription lapses or is cancelled, Founders pricing is <strong>permanently lost</strong></li>
+        <li>Renewal reminders sent 30 days before expiration with personalized $9.99 PayPal link</li>
+        <li>Founders MUST use personalized link to maintain $9.99 pricing</li>
+        <li>After 1,000 redemptions, all new subscribers pay $19.99/year</li>
     </ul>
 
-    <h3>3.4 Device Limitations</h3>
+    <h3>3.3 Payment Flow and Activation</h3>
+    <p><strong>Payment Process:</strong></p>
+    <ol>
+        <li>You initiate payment in app</li>
+        <li>App opens PayPal.me link with dynamic pricing</li>
+        <li>You complete payment via PayPal ($9.99 or $19.99)</li>
+        <li>PayPal sends confirmation to our Gmail account (pay@scream4u.icu)</li>
+        <li>Our automated system (Google Apps Script) processes payment every 5 minutes</li>
+        <li>System generates unique 16-character activation code (SUBS-XXXX-XXXX-XXXX-XXXX)</li>
+        <li>Code is emailed to your PayPal email address within 2-5 minutes</li>
+        <li>You enter code in app to activate 365-day subscription</li>
+    </ol>
+
+    <p><strong>Activation Code Details:</strong></p>
+    <ul>
+        <li>Code format: SUBS-XXXX-XXXX-XXXX-XXXX (16 alphanumeric characters)</li>
+        <li>Code does not expire and can be activated anytime after purchase</li>
+        <li>Once activated, subscription is valid for 365 days from activation date (not purchase date)</li>
+        <li>Code is stored hashed (SHA-256) on device for security</li>
+        <li>Device ID recorded when code is activated</li>
+    </ul>
+
+    <h3>3.4 Billing and Renewal</h3>
+    <ul>
+        <li>Billed annually in advance ($19.99/year or $9.99/year for Founders)</li>
+        <li><strong>No automatic renewal</strong> - you must manually purchase new subscription</li>
+        <li>Renewal reminder sent 30 days before expiration (daily check at 9 AM)</li>
+        <li>Renewal email contains personalized PayPal.me link with correct pricing for your tier</li>
+        <li>You receive a NEW activation code when you renew</li>
+        <li>New code starts a NEW 365-day period (doesn't extend old period)</li>
+        <li>Founders pricing maintained on renewal if subscription remains active</li>
+    </ul>
+
+    <h3>3.5 Device Limitations</h3>
     <ul>
         <li><strong>One Device Per Subscription:</strong> Each subscription is linked to one active device via device identifier</li>
-        <li><strong>Transfer Anytime:</strong> Use Settings → Transfer Device to move subscription to new device</li>
-        <li><strong>Transfer Process:</strong> On new device, tap "Restore Purchase" → "Transfer to This Device" (previous device auto-deactivated)</li>
+        <li><strong>Transfer Anytime:</strong> Enter same activation code on new device to transfer</li>
+        <li><strong>Transfer Process:</strong> On new device, enter activation code → old device auto-deactivated</li>
         <li><strong>Note:</strong> Address information does NOT transfer - you must re-enter it on the new device</li>
         <li><strong>Sharing Prohibited:</strong> Using one subscription on multiple devices simultaneously is prohibited and may result in termination</li>
     </ul>
 
-    <h3>3.5 Promotional Lifetime Access Codes</h3>
-    <p>Scream4U.icu may grant select users a complimentary lifetime activation code at our sole discretion for promotional, charitable, or other purposes.</p>
-    
-    <p><strong>Lifetime Code Terms:</strong></p>
+    <h3>3.6 Email Requirements</h3>
+    <p><strong>Critical for Service:</strong> Your email address is the ONLY method we use to communicate:</p>
     <ul>
-        <li><strong>Non-Transferable:</strong> Codes are unique, single-use, and cannot be shared or transferred</li>
-        <li><strong>Device-Locked:</strong> Once activated, codes are permanently locked to that specific device</li>
-        <li><strong>No Restoration:</strong> Cannot be restored or transferred to a different device under any circumstances</li>
-        <li><strong>No Monetary Value:</strong> Codes have no cash value and cannot be redeemed for refunds or credits</li>
-        <li><strong>Revocable:</strong> We reserve the right to revoke codes in cases of:
-            <ul>
-                <li>Fraud, abuse, or misuse</li>
-                <li>Violation of these Terms</li>
-                <li>Attempted transfer or sharing</li>
-                <li>Any other terms violations</li>
-            </ul>
-        </li>
-        <li><strong>No Guarantee:</strong> Codes are provided "as is" with no guarantee of continued access if device is lost, stolen, or damaged</li>
-        <li><strong>Subject to Terms:</strong> All other Terms & Conditions apply to lifetime code users</li>
+        <li>Activation code delivery after payment</li>
+        <li>Renewal reminders 30 days before expiration (sent at 9 AM daily when check runs)</li>
+        <li>Subscription status notifications</li>
+        <li>Service updates and important announcements</li>
     </ul>
 
-    <p><strong>Lost Device:</strong> If you lose access to a device with a lifetime code, the code cannot be recovered or reissued. Standard subscription purchase required for new device.</p>
+    <p><strong>Your Responsibilities:</strong></p>
+    <ul>
+        <li>Provide valid, active email address</li>
+        <li>Maintain access to email account</li>
+        <li>Check email regularly for renewal reminders</li>
+        <li>Configure spam filters to allow messages from pay@scream4u.icu</li>
+        <li>Update email address if it changes (Settings → Update Email Address)</li>
+    </ul>
 
-    <h3>3.6 Refunds and Cancellation</h3>
+    <p><strong>Consequences of Invalid Email:</strong> You will NOT receive renewal reminders and may miss expiration. We are NOT responsible for missed communications due to invalid email or spam filters.</p>
+
+    <h3>3.7 Promotional Free Subscription Codes</h3>
+    <p>We may grant select users complimentary activation codes for promotional, charitable, or testing purposes.</p>
+    
+    <p><strong>Promotional Code Terms:</strong></p>
+    <ul>
+        <li><strong>Standard Duration:</strong> Promotional codes provide standard 365-day subscription access</li>
+        <li><strong>Non-Transferable:</strong> Codes cannot be shared, sold, or transferred</li>
+        <li><strong>Device-Locked:</strong> Once activated, codes are permanently locked to that device</li>
+        <li><strong>No Restoration:</strong> Codes cannot be restored or transferred to different device (Note: Device verification exception applies)</li>
+        <li><strong>No Monetary Value:</strong> Codes have no cash value and cannot be redeemed for refunds</li>
+        <li><strong>Revocable:</strong> We reserve the right to revoke codes for fraud, abuse, or Terms violations</li>
+        <li><strong>No Renewal Guarantee:</strong> No obligation to provide renewal codes after expiration</li>
+    </ul>
+
+    <p><strong>Lost Device:</strong> If you lose device with promotional code, the code cannot be recovered or reissued. Standard paid subscription required for new device.</p>
+
+    <h3>3.8 Refunds and Cancellation</h3>
     
     <p><strong>30-Day Money-Back Guarantee:</strong></p>
     <ul>
         <li>Full refund available within 30 days of purchase</li>
         <li>Email support@scream4u.icu with "Refund Request"</li>
         <li>Include: subscription email and reason</li>
-        <li>Processed via Paystack to original payment method</li>
-        <li>Allow 5-10 business days</li>
+        <li>Refund processed manually via PayPal to original payment method</li>
+        <li>Allow 3-5 business days for processing</li>
+    </ul>
+
+    <p><strong>Failed Payment Refunds:</strong></p>
+    <ul>
+        <li><strong>Incorrect Amount:</strong> If you pay amount other than $9.99 or $19.99, you receive automatic rejection email. Refund processed manually through PayPal within 3-5 business days.</li>
+        <li><strong>Founders Tier Full:</strong> If you pay $9.99 but Founders tier is full (1,000/1,000), you receive automatic rejection email offering Regular tier at $19.99. Refund processed manually through PayPal within 3-5 business days.</li>
     </ul>
 
     <p><strong>Cancellation:</strong></p>
@@ -285,6 +334,7 @@
     <ul>
         <li>You are responsible for SMS charges from your cellular carrier</li>
         <li>Standard messaging rates apply</li>
+        <li>International SMS may incur additional charges</li>
         <li>Must manually tap "Send" in SMS app</li>
         <li>Verify messages before sending</li>
     </ul>
@@ -341,7 +391,7 @@
     <h3>5.3 SMS Delivery Not Guaranteed</h3>
     <p>SMS messages may fail or be delayed due to:</p>
     <ul>
-        <li>No cellular signal or weak signal</li>
+        <li>No cellular signal or weak signal strength</li>
         <li>Invalid or incorrect phone numbers</li>
         <li>Carrier network issues or restrictions</li>
         <li>Recipient phone off or out of service</li>
@@ -366,7 +416,7 @@
     <p><strong>TO THE MAXIMUM EXTENT PERMITTED BY LAW:</strong></p>
     <ul>
         <li>We are not liable for any direct, indirect, incidental, special, consequential, or punitive damages</li>
-        <li>Our total liability shall not exceed $19.99 USD (the subscription amount)</li>
+        <li>Our total liability shall not exceed the subscription amount ($9.99 or $19.99 USD)</li>
         <li>We are not liable for:
             <ul>
                 <li>SMS delivery failures, delays, or network outages</li>
@@ -376,7 +426,7 @@
                 <li>Device malfunctions or battery failures</li>
                 <li>Actions or inactions of emergency contacts</li>
                 <li>Harm resulting from false, delayed, or failed alerts</li>
-                <li>Payment processing issues handled by Paystack</li>
+                <li>Payment processing issues handled by PayPal</li>
             </ul>
         </li>
     </ul>
@@ -399,7 +449,8 @@
     <h3>7.1 Data Storage Summary</h3>
     <ul>
         <li><strong>Local Only:</strong> Name, address, contacts stored on your device (we cannot access)</li>
-        <li><strong>Paystack:</strong> Email, device ID, subscription status, payment info (handled by Paystack)</li>
+        <li><strong>Google Sheets:</strong> Email, device ID, subscription status, activation codes, payment logs</li>
+        <li><strong>PayPal:</strong> Payment information (handled by PayPal)</li>
         <li><strong>No Cloud:</strong> We don't operate servers for your personal data</li>
         <li><strong>No Tracking:</strong> No analytics, GPS tracking, or location services</li>
     </ul>
@@ -408,6 +459,7 @@
     <ul>
         <li>Update address anytime: Settings → Edit Home Address</li>
         <li>Manage contacts: Settings → Edit Emergency Contacts</li>
+        <li>Update email: Settings → Update Email Address</li>
         <li>Delete data: Uninstall app or Settings → Home button</li>
     </ul>
 
@@ -510,7 +562,7 @@
     <p>You may not assign these Terms without our written consent. We may assign (e.g., merger/acquisition).</p>
 
     <h3>12.5 Force Majeure</h3>
-    <p>Not liable for delays due to circumstances beyond reasonable control (natural disasters, war, pandemics, network failures, Paystack service interruptions, etc.).</p>
+    <p>Not liable for delays due to circumstances beyond reasonable control (natural disasters, war, pandemics, network failures, PayPal service interruptions, etc.).</p>
 
     <h3>12.6 Age Requirements</h3>
     <ul>
@@ -520,7 +572,7 @@
     </ul>
 
     <h3>12.7 Third-Party Beneficiaries</h3>
-    <p>Paystack is a third-party beneficiary regarding payment processing provisions.</p>
+    <p>PayPal is a third-party beneficiary regarding payment processing provisions.</p>
 
     <div class="contact-info">
         <h2>13. Contact Information</h2>
@@ -529,6 +581,7 @@
             <li><strong>Email:</strong> support@scream4u.icu</li>
             <li><strong>Website:</strong> https://scream4u.icu</li>
             <li><strong>Response Time:</strong> Within 48 hours</li>
+            <li><strong>Mailing Address:</strong> Available upon written request to support@scream4u.icu</li>
         </ul>
         
         <p><strong>Subject Line Guidelines:</strong></p>
@@ -548,14 +601,17 @@
             <li>✅ NOT a replacement for emergency services</li>
             <li>✅ SMS delivery not guaranteed</li>
             <li>✅ You must manually update address when location changes</li>
-            <li>✅ One subscription = one device</li>
+            <li>✅ One subscription = one device (transferable)</li>
+            <li>✅ Valid email required for renewal reminders</li>
+            <li>✅ Founders pricing locked forever (first 1,000 subscribers)</li>
             <li>✅ 30-day money-back guarantee</li>
             <li>✅ All personal data stored locally on device</li>
         </ul>
     </div>
 
     <p style="text-align: center; color: #666; margin-top: 40px; font-size: 14px;">
-        © 2025 Scream4U.icu. All rights reserved.
+        © 2025 Scream4U.icu. All rights reserved.<br>
+        <strong>Version 3.0</strong> | Last Updated: December 24, 2025
     </p>
 
 </body>
