@@ -35,50 +35,60 @@
 </head>
 <body>
     <h1>Privacy Policy</h1>
-    
+
     <div class="last-updated">
-        <strong>Last Updated:</strong> December 24, 2025<br>
-        <strong>Effective Date:</strong> December 24, 2025<br>
-        <strong>Version:</strong> 4.0
+        <strong>Last Updated:</strong> ** December 24, 2025<br>
+        <strong>Effective Date:</strong> ** December 24, 2025<br>
+        <strong>Version:</strong> ** 4.0
     </div>
 
     <button class="print-button" onclick="window.print()">🖨️ Print This Policy</button>
 
+
+
     <div class="emergency-disclaimer">
         <h3>⚠️ CRITICAL SAFETY NOTICE</h3>
-        <p><strong>Scream4U.icu is a personal notification tool for alerting family and friends. It is NOT a substitute for professional emergency services.</strong></p>
-        <p><strong>In life-threatening emergencies, ALWAYS call your local emergency number (911, 112, etc.) directly before or instead of using this app.</strong></p>
-        <p><strong>Your Responsibility:</strong></p>
-        <ul>
-                <li>Keep your address accurate and current</li>
-                <li>Manually update your location when traveling or moving</li>
-            </ul>
-        </div>
+    </div>
 
-        <div class="summary-box">
-            <h2>📋 Quick Summary</h2>
-            <p><strong>Your privacy in 30 seconds:</strong></p>
-            <ul>
-                <li><strong>All personal data stays on your device</strong> - we cannot access it</li>
-                <li><strong>No tracking, no analytics, no data collection</strong></li>
-                <li><strong>No GPS tracking</strong> - you manually enter your address</li>
-                <li><strong>Works completely offline</strong> (internet only for payments)</li>
-                <li><strong>Payment via PayPal</strong> - we never see your credit card</li>
-                <li><strong>Only your email stored</strong> - for sending activation codes</li>
-                <li><strong>You control everything</strong> - update or delete anytime</li>
-            </ul>
-            <p><strong>Bottom line:</strong> We built this app to be as private as possible. Your emergency information stays on your device, period.</p>
-        </div>
 
-        <hr>
+    <p><strong>Scream4U.icu is a personal notification tool for alerting family and friends. It is NOT a substitute for professional emergency services.</strong></p>
 
-        <p><strong>Privacy-First Approach:</strong> Scream4U.icu is designed with privacy as a core principle. All your personal data (name, address, contacts) is stored locally on your device only. We do not collect, store, or have access to your personal information on our servers.</p>
+    <p><strong>In life-threatening emergencies, ALWAYS call your local emergency number (911, 112, etc.) directly before or instead of using this app.</strong></p>
 
-        <h2>1. How Scream4U.icu Works</h2>
-        
+    <p><strong>Your Responsibility:</strong></p>
+    <ul>
+        <li>Keep your address accurate and current</li>
+        <li>Manually update your location when traveling or moving</li>
+
+
+    <div class="tldr-box">
+        <h2>📋 Quick Summary</h2>
+        </ul>
+    </div>
+
+
+    <p><strong>Your privacy in 30 seconds:</strong></p>
+
+    <ul>
+        <li>✅ <strong>All personal data stays on your device</strong> - we cannot access it</li>
+        <li>✅ <strong>No tracking, no analytics, no data collection</strong></li>
+        <li>✅ <strong>No GPS tracking</strong> - you manually enter your address</li>
+        <li>✅ <strong>Works completely offline</strong> (internet only for payments)</li>
+        <li>✅ <strong>Payment via PayPal</strong> - we never see your credit card</li>
+        <li>✅ <strong>Only your email stored</strong> - for sending activation codes</li>
+        <li>✅ <strong>You control everything</strong> - update or delete anytime</li>
+
+    </ul>
+
+    <p><strong>Bottom line:</strong> We built this app to be as private as possible. Your emergency information stays on your device, period.</p>
+
+
+    <h2>1. How Scream4U.icu Works</h2>
+
+
+    <div class="local-storage-box">
         <h3>📱 Local Storage Model</h3>
         <p><strong>Scream4U.icu is designed with privacy as its foundation.</strong> All your personal information is stored exclusively on your device using secure local storage (React Native AsyncStorage, encrypted by iOS Keychain or Android Keystore).</p>
-        
         <p><strong>What this means:</strong></p>
         <ul>
             <li>Your name, address, and emergency contacts <strong>never leave your device</strong></li>
@@ -86,437 +96,999 @@
             <li>We cannot access, view, or retrieve your information</li>
             <li>Your data is protected by your device's operating system encryption</li>
             <li>Uninstalling the app permanently deletes all local data</li>
-        </ul>
-
         <p><strong>Internet is only used for:</strong></p>
-        <ul>
             <li>Initial app download from app stores</li>
             <li>One-time subscription payment (via PayPal)</li>
             <li>Receiving activation code email</li>
-        </ul>
-
+            <li>Email change requests (if needed)</li>
+            <li>Dynamic pricing fetches</li>
         <p><strong>Everything else works offline.</strong></p>
-
-        <h2>2. Information Stored on Your Device</h2>
-        <p>When you set up Scream4U.icu, the app stores the following information locally on your device:</p>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Data Type</th>
-                    <th>What You Enter</th>
-                    <th>How It's Used</th>
-                    <th>Storage Location</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Your Name</strong></td>
-                    <td>Full name</td>
-                    <td>Included in emergency SMS to identify you to contacts</td>
-                    <td>Device only</td>
-                </tr>
-                <tr>
-                    <td><strong>Home Address</strong></td>
-                    <td>Complete address with details</td>
-                    <td>Tells contacts WHERE you need help</td>
-                    <td>Device only</td>
-                </tr>
-                <tr>
-                    <td><strong>Emergency Contacts</strong></td>
-                    <td>Up to 5 names & phone numbers (manually entered)</td>
-                    <td>Recipients of emergency alerts</td>
-                    <td>Device only</td>
-                </tr>
-                <tr>
-                    <td><strong>App Preferences</strong></td>
-                    <td>SMS method (group/individual), test count</td>
-                    <td>App functionality</td>
-                    <td>Device only</td>
-                </tr>
-                <tr>
-                    <td><strong>Activation Code</strong></td>
-                    <td>16-character code from email</td>
-                    <td>Unlock premium features, device validation</td>
-                    <td>Device only</td>
-                </tr>
-                <tr>
-                    <td><strong>Subscription Status</strong></td>
-                    <td>Expiry date calculated from activation</td>
-                    <td>Determine if features are unlocked</td>
-                    <td>Device only</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h3>Address Flexibility</h3>
-        <p><strong>Important:</strong> The app does NOT track your location via GPS. You manually enter your address, and you can update it anytime:</p>
-        <ul>
-            <li>When traveling → update to hotel/vacation address</li>
-            <li>When moving → update to new home</li>
-            <li>When visiting family → update to their address</li>
+        <p>---</p>
         </ul>
-        <p><strong>Your Responsibility:</strong> Keep your address current and accurate so contacts can find you in an emergency.</p>
+    </div>
 
-        <h3>What We Do NOT Collect</h3>
-        <p>We explicitly do NOT collect, access, or store:</p>
-        <ul class="no-list">
-            <li>GPS location or coordinates</li>
-            <li>Device contacts (you manually enter them)</li>
-            <li>SMS message content or delivery status</li>
-            <li>Usage analytics or tracking data</li>
-            <li>Crash reports or diagnostics</li>
-            <li>Advertising identifiers</li>
-            <li>Photos, videos, or other media</li>
-            <li>Call logs, browsing history, or biometric data</li>
-            <li>Credit card or payment information</li>
-        </ul>
+    <h2>2. Information Stored on Your Device</h2>
 
-        <h2>3. How Emergency Alerts Work</h2>
-        <p><strong>Two-Tap Emergency Process:</strong></p>
-        <ol>
-            <li><strong>First Tap:</strong> Press emergency button (Medical, Fire, Intruder, or Safety)</li>
-            <li>The app generates an SMS message containing:
-                <ul>
-                    <li>Emergency type</li>
-                    <li>Your name</li>
-                    <li>Your address</li>
-                    <li>Current timestamp</li>
-                </ul>
-            </li>
-            <li>Your device's native SMS app opens with pre-filled messages for your emergency contacts</li>
-            <li><strong>Second Tap:</strong> You must manually tap "Send" in your SMS app</li>
-            <li>SMS is sent via your cellular carrier, not through our app or servers</li>
-        </ol>
 
-        <p><strong>Accidental Activation:</strong> If you tap an emergency button by mistake, simply close the SMS app or don't tap "Send" - no messages will be sent.</p>
+    <p>When you set up Scream4U.icu, the app stores the following information locally on your device:</p>
 
-        <p><strong>We do NOT:</strong></p>
-        <ul>
-            <li>Send SMS messages automatically</li>
-            <li>Store SMS content after generation</li>
-            <li>Track whether messages were sent or delivered</li>
-            <li>Access your SMS history</li>
-            <li>Monitor or log your emergency alerts</li>
-        </ul>
+    <table>
+        <tr>
+            <th>Data Type</th>
+            <th>What You Enter</th>
+            <th>How It's Used</th>
+            <th>Storage Location</th>
+        </tr>
+        <tr>
+            <td><strong>Your Name</strong></td>
+            <td>Full name</td>
+            <td>Included in emergency SMS to identify you to contacts</td>
+            <td>Device only</td>
+        </tr>
+        <tr>
+            <td><strong>Home Address</strong></td>
+            <td>Complete address with details</td>
+            <td>Tells contacts WHERE you need help</td>
+            <td>Device only</td>
+        </tr>
+        <tr>
+            <td><strong>Emergency Contacts</strong></td>
+            <td>Up to 5 names & phone numbers (manually entered)</td>
+            <td>Recipients of emergency alerts</td>
+            <td>Device only</td>
+        </tr>
+        <tr>
+            <td><strong>App Preferences</strong></td>
+            <td>SMS method (group/individual), test count</td>
+            <td>App functionality</td>
+            <td>Device only</td>
+        </tr>
+        <tr>
+            <td><strong>Activation Code</strong></td>
+            <td>16-character code from email (hashed)</td>
+            <td>Unlock premium features, device validation</td>
+            <td>Device only</td>
+        </tr>
+        <tr>
+            <td><strong>Subscription Status</strong></td>
+            <td>Expiry date calculated from activation</td>
+            <td>Determine if features are unlocked</td>
+            <td>Device only</td>
+        </tr>
+        <tr>
+            <td><strong>Device ID</strong></td>
+            <td>Unique device identifier</td>
+            <td>Prevent subscription sharing</td>
+            <td>Device only</td>
+        </tr>
+    </table>
 
-        <h2>4. Payment and Activation Code System</h2>
-        <p>Subscription payments are processed through <strong>PayPal</strong> (<a href="https://paypal.com" target="_blank">https://paypal.com</a>). We use a simple activation code system that maximizes your privacy.</p>
 
-        <h3>Information We Collect for Payments:</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Data</th>
-                    <th>Purpose</th>
-                    <th>Storage Location</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Email address</td>
-                    <td>Send activation code after payment</td>
-                    <td>Google Sheets (encrypted)</td>
-                </tr>
-                <tr>
-                    <td>Payment amount</td>
-                    <td>Verify payment received, track discount users</td>
-                    <td>Google Sheets</td>
-                </tr>
-                <tr>
-                    <td>Activation code</td>
-                    <td>Validate subscription on device</td>
-                    <td>Google Sheets</td>
-                </tr>
-                <tr>
-                    <td>Payment date</td>
-                    <td>Calculate 365-day expiry</td>
-                    <td>Google Sheets</td>
-                </tr>
-                <tr>
-                    <td>Device ID (when activated)</td>
-                    <td>Prevent simultaneous multi-device use</td>
-                    <td>Google Sheets</td>
-                </tr>
-            </tbody>
-        </table>
+    <h3>Address Flexibility</h3>
 
-        <h3>How the Activation System Works:</h3>
-        <ol>
-            <li>You pay via PayPal ($9.99 or $19.99)</li>
-            <li>Our automated system (Google Apps Script) detects payment</li>
-            <li>System generates unique 16-character activation code (e.g., A1B2-C3D4-E5F6-G7H8)</li>
-            <li>Code is emailed to your PayPal email address</li>
-            <li>You enter code in the app to activate 365-day subscription</li>
-            <li>App validates code is genuine and not expired</li>
-            <li>Your device ID is logged to prevent code sharing</li>
-        </ol>
+    <p><strong>Important:</strong> The app does NOT track your location via GPS. You manually enter your address, and you can update it anytime:</p>
+    <ul>
+        <li>When traveling → update to hotel/vacation address</li>
+        <li>When moving → update to new home</li>
+        <li>When visiting family → update to their address</li>
 
-        <h3>Device Transfers:</h3>
-        <ul>
-            <li>You can transfer to a new device by entering the <strong>same activation code</strong></li>
-            <li>Old device is automatically deactivated when new device activates</li>
-            <li>No email requests or manual processes needed</li>
-            <li>Your activation code remains valid for 365 days from original purchase</li>
-        </ul>
+    </ul>
 
-        <h3>What We Store in Google Sheets:</h3>
-        <ul>
-            <li>Your email address (to send activation code)</li>
-            <li>Generated activation code</li>
-            <li>Payment amount and date</li>
-            <li>Subscription expiry date (365 days from payment)</li>
-            <li>Device ID (only when code is activated)</li>
-            <li>Activation status (pending/active/expired/transferred)</li>
-        </ul>
+    <p><strong>Your Responsibility:</strong> Keep your address current and accurate so contacts can find you in an emergency.</p>
 
-        <h3>What We Do NOT Store:</h3>
-        <ul class="no-list">
-            <li>Credit card information (handled entirely by PayPal)</li>
-            <li>Your name (not needed for activation system)</li>
-            <li>Your address (stays on your device only)</li>
-            <li>Your emergency contacts (stays on your device only)</li>
-            <li>Any personal emergency information</li>
-        </ul>
+    <h3>What We Do NOT Collect</h3>
 
-        <p><strong>Important:</strong> Your credit card information is entered directly into PayPal's secure payment form. We never see or store your payment details. PayPal is PCI-DSS compliant.</p>
+    <p>We explicitly do NOT collect, access, or store:</p>
+    <ul>
+        <li>❌ GPS location or coordinates</li>
+        <li>❌ Device contacts (you manually enter them)</li>
+        <li>❌ SMS message content or delivery status</li>
+        <li>❌ Usage analytics or tracking data</li>
+        <li>❌ Crash reports or diagnostics</li>
+        <li>❌ Advertising identifiers</li>
+        <li>❌ Photos, videos, or other media</li>
+        <li>❌ Call logs, browsing history, or biometric data</li>
+        <li>❌ Credit card or payment information</li>
 
-        <p><strong>Payment Currency:</strong> Prices shown in USD ($9.99 or $19.99/year). PayPal may process in your local currency based on your location.</p>
 
-        <p><strong>No Automatic Renewal:</strong> Subscriptions do NOT auto-renew. After 365 days, you manually purchase a new activation code if you wish to continue using premium features.</p>
+    <h2>3. How Emergency Alerts Work</h2>
 
-        <p><strong>PayPal Privacy Policy:</strong> <a href="https://www.paypal.com/privacy" target="_blank">https://www.paypal.com/privacy</a></p>
 
-        <h2>5. Data Security</h2>
-        <p>We implement multiple security measures to protect your information:</p>
-        <ul>
-            <li><strong>Device Encryption:</strong> All local data is encrypted by iOS Keychain (iOS) or Android Keystore (Android)</li>
-            <li><strong>HTTPS Only:</strong> All network communications use encrypted HTTPS connections</li>
-            <li><strong>No Backend Servers:</strong> We don't operate servers that could store or compromise your personal data</li>
-            <li><strong>Minimal Data Collection:</strong> We only collect email address for activation code delivery</li>
-            <li><strong>No Third-Party Tracking:</strong> No analytics, advertising, or tracking services</li>
-            <li><strong>Payment Security:</strong> PayPal handles all payment processing with PCI-DSS compliance</li>
-            <li><strong>Google Sheets Security:</strong> Payment logs stored in private Google Sheets with restricted access</li>
-            <li><strong>Activation Code Security:</strong> Codes are single-use per device and time-limited (365 days)</li>
-        </ul>
+    </ul>
 
-        <h2>6. Data Sharing and Third Parties</h2>
-        
-        <h3>We Do Not Share Your Personal Data</h3>
-        <p>Because your personal information (name, address, contacts) is stored locally on your device, we cannot and do not:</p>
-        <ul>
-            <li>Share your data with third parties</li>
-            <li>Sell your information</li>
-            <li>Use your data for marketing or advertising</li>
-            <li>Access your personal data for any purpose</li>
-        </ul>
+    <p><strong>Two-Tap Emergency Process:</strong></p>
 
-        <h3>Third-Party Services We Use:</h3>
-        
-        <h4>PayPal (Payment Processing):</h4>
-        <ul>
-            <li><strong>Processes:</strong> Payment information only</li>
-            <li><strong>Purpose:</strong> One-time subscription payments</li>
-            <li><strong>Compliance:</strong> GDPR, PCI-DSS</li>
-            <li><strong>Privacy Policy:</strong> <a href="https://www.paypal.com/privacy" target="_blank">https://www.paypal.com/privacy</a></li>
-        </ul>
+    <ol>
+        <li><strong>First Tap:</strong> Press emergency button (Medical, Fire, Intruder, or Safety)</li>
+        <li>The app generates an SMS message containing:</li>
+    </ol>
 
-        <h4>Google Services (Automation):</h4>
-        <ul>
-            <li><strong>Gmail:</strong> Receives PayPal payment notifications</li>
-            <li><strong>Google Apps Script:</strong> Generates and sends activation codes</li>
-            <li><strong>Google Sheets:</strong> Stores email, activation codes, payment logs</li>
-            <li><strong>Purpose:</strong> Automated activation code delivery system</li>
-            <li><strong>Privacy Policy:</strong> <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></li>
-        </ul>
+    <p>   - Emergency type</p>
+    <p>   - Your name</p>
+    <p>   - Your address</p>
+    <p>   - Current timestamp</p>
+    <ol>
+        <li>Your device's native SMS app opens with pre-filled messages for your emergency contacts</li>
+        <li><strong>Second Tap:</strong> You must manually tap "Send" in your SMS app</li>
+        <li>SMS is sent via your cellular carrier, not through our app or servers</li>
+    </ol>
 
-        <h4>Your Device's SMS App:</h4>
-        <ul>
-            <li>Opens when you send emergency alerts</li>
-            <li>Managed by your device and cellular carrier</li>
-            <li>Not controlled by Scream4U.icu</li>
-        </ul>
 
-        <h4>App Stores (Apple/Google):</h4>
-        <ul>
-            <li>Handle app distribution only</li>
-            <li>Subject to their respective privacy policies</li>
-        </ul>
+    <p><strong>Accidental Activation:</strong> If you tap an emergency button by mistake, simply close the SMS app or don't tap "Send" - no messages will be sent.</p>
 
-        <h3>Legal Disclosure</h3>
-        <p>Since we do not collect or store your personal data on our servers, we cannot disclose information we do not possess. In rare legal requests, we can only provide:</p>
-        <ul>
-            <li>General app functionality information</li>
-            <li>Email addresses and activation codes from Google Sheets (if legally required)</li>
-            <li>PayPal payment records (handled by PayPal)</li>
-        </ul>
+    <p><strong>We do NOT:</strong></p>
+    <ul>
+        <li>Send SMS messages automatically</li>
+        <li>Store SMS content after generation</li>
+        <li>Track whether messages were sent or delivered</li>
+        <li>Access your SMS history</li>
+        <li>Monitor or log your emergency alerts</li>
 
-        <h2>7. Your Rights and Control</h2>
-        
-        <h3>Access and Modify Your Data</h3>
-        <p>You have complete control over all information stored in the app:</p>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Action</th>
-                    <th>How To</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>View all data</strong></td>
-                    <td>Settings screen shows all stored information</td>
-                </tr>
-                <tr>
-                    <td><strong>Update your name</strong></td>
-                    <td>Settings → Edit Your Name</td>
-                </tr>
-                <tr>
-                    <td><strong>Update address</strong></td>
-                    <td>Settings → Edit Home Address</td>
-                </tr>
-                <tr>
-                    <td><strong>Manage contacts</strong></td>
-                    <td>Settings → Edit Emergency Contacts</td>
-                </tr>
-                <tr>
-                    <td><strong>Change SMS method</strong></td>
-                    <td>Settings → SMS Method Preference</td>
-                </tr>
-                <tr>
-                    <td><strong>View subscription status</strong></td>
-                    <td>Settings → Subscription Status</td>
-                </tr>
-                <tr>
-                    <td><strong>Transfer to new device</strong></td>
-                    <td>Enter same activation code on new device</td>
-                </tr>
-                <tr>
-                    <td><strong>Reset all data</strong></td>
-                    <td>Settings → Home button (returns to welcome screen)</td>
-                </tr>
-                <tr>
-                    <td><strong>Delete everything</strong></td>
-                    <td>Uninstall the app</td>
-                </tr>
-            </tbody>
-        </table>
+    <h2>4. Payment and Activation Code System</h2>
 
-        <h3>Subscription Management</h3>
-        <ul>
-            <li><strong>View Status:</strong> Settings → Subscription Status shows expiry date</li>
-            <li><strong>No Auto-Renewal:</strong> Subscription expires after 365 days, no automatic charges</li>
-            <li><strong>Renew Manually:</strong> Purchase new activation code when current subscription expires</li>
-            <li><strong>Transfer Device:</strong> Enter same activation code on new device</li>
-            <li><strong>Cancel:</strong> Simply let subscription expire - no action needed</li>
-        </ul>
 
-        <h3>Your Email Data</h3>
-        <ul>
-            <li><strong>View:</strong> Your email is stored in our Google Sheets (linked to activation code)</li>
-            <li><strong>Update:</strong> Email support@scream4u.icu to update email address on record</li>
-            <li><strong>Delete:</strong> Email support@scream4u.icu with "Delete My Data" to remove from Google Sheets</li>
-        </ul>
+    <h3>4.1 Payment Processing</h3>
 
-        <h3>Data Deletion</h3>
-        <p><strong>Local Data (Device):</strong> Deleted immediately when you uninstall the app or tap the Home button in Settings.</p>
-        <p><strong>Google Sheets Data (Email & Activation):</strong> Retained for accounting and fraud prevention. Email support@scream4u.icu to request deletion. We will delete within 30 days unless legally required to retain.</p>
+    </ul>
 
-        <h2>8. Data Retention</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Data Type</th>
-                    <th>Retention Period</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Personal data (name, address, contacts)</td>
-                    <td>Until you delete it or uninstall the app</td>
-                </tr>
-                <tr>
-                    <td>Email address and activation code</td>
-                    <td>5 years for accounting and fraud prevention</td>
-                </tr>
-                <tr>
-                    <td>Payment logs</td>
-                    <td>5 years for legal and accounting requirements</td>
-                </tr>
-                <tr>
-                    <td>Device backups</td>
-                    <td>May be included in iOS/Android cloud backups (managed by your device settings)</td>
-                </tr>
-            </tbody>
-        </table>
+    <p>Subscription payments are processed through <strong>PayPal</strong> (https://paypal.com). We use a simple activation code system that maximizes your privacy.</p>
 
-        <h2>9. Children's Privacy</h2>
-        <p>Scream4U.icu is not intended for children under 13. The app requires:</p>
-        <ul>
-            <li>Understanding of emergency situations</li>
-            <li>Ability to enter accurate information</li>
-            <li>Judgment to use emergency features appropriately</li>
-            <li>Understanding of when to call official emergency services</li>
-        </ul>
-        <p>We do not knowingly collect information from children under 13. If you believe a child has provided information, contact us immediately at support@scream4u.icu.</p>
+    <p><strong>Payment Flow:</strong></p>
+    <ol>
+        <li>You initiate payment in the app</li>
+        <li>App opens PayPal.me link with dynamic pricing</li>
+        <li>You complete payment via PayPal ($9.99 or $19.99)</li>
+        <li>PayPal sends confirmation email to our Gmail account (`pay@scream4u.icu`)</li>
+        <li>Our automated system (Google Apps Script) processes payment</li>
+        <li>System generates unique 16-character activation code</li>
+        <li>Code is emailed to your PayPal email address</li>
+        <li>You enter code in the app to activate 365-day subscription</li>
+    </ol>
 
-        <h2>10. International Users and Data Transfers</h2>
-        <p>Since all personal data is stored locally on your device, there are no international data transfers of your personal information.</p>
-        <p>Email addresses and activation codes stored in Google Sheets (Google Cloud) may be processed internationally in accordance with Google's privacy policy and applicable data protection laws (GDPR, etc.).</p>
-        <p>PayPal may process payment data internationally in accordance with their privacy policy.</p>
 
-        <h2>11. Legal Compliance</h2>
-        
-        <h3>GDPR (European Union)</h3>
-        <p>For EU users, our legal basis for processing includes:</p>
-        <ul>
-            <li><strong>Consent:</strong> You provide explicit consent when entering information during setup and payment</li>
-            <li><strong>Contract:</strong> Processing necessary to provide subscription services</li>
-            <li><strong>Legitimate Interest:</strong> Preventing subscription fraud through activation code system</li>
-        </ul>
+    <h3>4.2 Information We Collect for Payments</h3>
 
-        <p><strong>Your GDPR Rights:</strong></p>
-        <ul>
-            <li>Right to access (view in Settings; email us for Google Sheets data)</li>
-            <li>Right to rectification (edit in Settings; email us to update Google Sheets)</li>
-            <li>Right to erasure (uninstall app; email us to delete Google Sheets data)</li>
-            <li>Right to data portability (email us for export of stored email/activation data)</li>
-            <li>Right to object (don't use the app; request data deletion)</li>
-        </ul>
+    <table>
+        <tr>
+            <th>Data</th>
+            <th>Purpose</th>
+            <th>Storage Location</th>
+            <th>Retention</th>
+        </tr>
+        <tr>
+            <td>Email address</td>
+            <td>Send activation code after payment</td>
+            <td>Google Sheets</td>
+            <td>5 years</td>
+        </tr>
+        <tr>
+            <td>Payment amount</td>
+            <td>Verify payment received, track discount tier</td>
+            <td>Google Sheets</td>
+            <td>5 years</td>
+        </tr>
+        <tr>
+            <td>Activation code</td>
+            <td>Validate subscription on device</td>
+            <td>Google Sheets</td>
+            <td>5 years</td>
+        </tr>
+        <tr>
+            <td>Payment date</td>
+            <td>Calculate 365-day expiry</td>
+            <td>Google Sheets</td>
+            <td>5 years</td>
+        </tr>
+        <tr>
+            <td>Device ID (when activated)</td>
+            <td>Prevent simultaneous multi-device use</td>
+            <td>Google Sheets</td>
+            <td>5 years</td>
+        </tr>
+        <tr>
+            <td>Subscription tier</td>
+            <td>Determine Founder ($9.99) vs Regular ($19.99) pricing</td>
+            <td>Google Sheets</td>
+            <td>5 years</td>
+        </tr>
+        <tr>
+            <td>Activation status</td>
+            <td>Track pending/active/expired/transferred</td>
+            <td>Google Sheets</td>
+            <td>5 years</td>
+        </tr>
+    </table>
 
-        <h3>CCPA (California)</h3>
-        <p>California residents have the right to:</p>
-        <ul>
-            <li><strong>Know:</strong> What personal information we collect (Section 2 & 4)</li>
-            <li><strong>Delete:</strong> Request deletion of email/activation data (email support@scream4u.icu)</li>
-            <li><strong>Opt-Out of Sale:</strong> We do not sell personal information</li>
-            <li><strong>Non-Discrimination:</strong> We do not discriminate based on privacy choices</li>
-        </ul>
-        <p>To exercise CCPA rights, email support@scream4u.icu with "CCPA Request" in the subject line.</p>
 
-        <h2>12. App Permissions</h2>
-        
-        <h3>Android Permissions:</h3>
-        <ul>
-            <li><strong>SEND_SMS:</strong> Opens native SMS app with pre-filled messages (you tap "Send")</li>
-            <li><strong>INTERNET:</strong> Required for PayPal payment page only</li>
-        </ul>
+    <h3>4.3 Pricing Structure</h3>
 
-        <h3>iOS Permissions:</h3>
-        <ul>
-            <li>No special permissions required</li>
-            <li>SMS uses standard sms:// URL scheme</li>
-        </ul>
+    <ul>
+        <li><strong>Founder Tier:</strong> $9.99 USD/year (first 1,000 subscribers only)</li>
+        <li><strong>Regular Tier:</strong> $19.99 USD/year (subscriber 1,001+)</li>
+        <li><strong>Dynamic Pricing:</strong> App fetches current price in real-time from our Google Apps Script API</li>
+        <li><strong>Currency:</strong> USD only (PayPal handles currency conversion)</li>
 
-        <h2>13. Changes to This Privacy Policy</h2>
-        <p>We may update this policy from time to time. Changes will be communicated by:</p>
-        <ul>
-            <li>Posting the updated policy on this page</li>
-            <li>Updating the "Last Updated" date</li>
-            <li>In-app notification for material changes</li>
-        </ul>
-        <p>Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+    <h3>4.4 Device Transfers</h3>
 
-        <div class="contact-box">
-            <h2>14. Contact Us</h2
+        <li>You can transfer to a new device by entering the <strong>same activation code</strong></li>
+        <li>Old device is automatically deactivated when new device activates</li>
+        <li>No email requests or manual processes needed</li>
+        <li>Your subscription remains valid for 365 days from the date you first activated it</li>
+        <li>Device ID is updated in Google Sheets when transfer occurs</li>
+
+    <h3>4.5 What We Do NOT Store</h3>
+
+        <li>❌ Credit card information (handled entirely by PayPal)</li>
+        <li>❌ Your name (not needed for activation system)</li>
+        <li>❌ Your address (stays on your device only)</li>
+        <li>❌ Your emergency contacts (stays on your device only)</li>
+        <li>❌ Any personal emergency information</li>
+
+    </ul>
+
+    <p><strong>Important:</strong> Your credit card information is entered directly into PayPal's secure payment form. We never see or store your payment details. PayPal is PCI-DSS compliant.</p>
+
+    <p><strong>Payment Currency:</strong> Prices shown in USD ($9.99 or $19.99/year). PayPal may process in your local currency based on your location.</p>
+
+    <p><strong>No Automatic Renewal:</strong> Subscriptions do NOT auto-renew. After 365 days, you manually purchase a new subscription and receive a NEW activation code if you wish to continue using premium features.</p>
+
+    <p><strong>PayPal Privacy Policy:</strong> https://www.paypal.com/privacy</p>
+
+
+    <h2>5. Email Communications</h2>
+
+
+    <p>We send automated emails for subscription management. All emails are sent from `pay@scream4u.icu` via Gmail.</p>
+
+    <h3>5.1 Activation Email (Sent Within 2-5 Minutes After Payment)</h3>
+
+    <p><strong>Subject:</strong> 🎉 Your Scream4U Activation Code</p>
+    <p><strong>Content:</strong></p>
+    <ul>
+        <li>Your 16-character activation code (SUBS-XXXX-XXXX-XXXX-XXXX)</li>
+        <li>Instructions to enter code in app</li>
+        <li>Warning about email address importance</li>
+        <li>Notification about 30-day renewal reminder</li>
+        <li>Instructions for updating email address</li>
+        <li>Consequences of not maintaining valid email</li>
+
+    </ul>
+
+    <p><strong>Purpose:</strong> Deliver activation code and educate about email importance</p>
+
+    <h3>5.2 Renewal Reminder Email (30 Days Before Expiry)</h3>
+
+    <p><strong>Subject:</strong> ⏰ Your Scream4U Subscription Expires in 30 Days</p>
+    <p><strong>Content:</strong></p>
+    <ul>
+        <li>Your subscription expiry date</li>
+        <li>Tier-specific renewal price (Founders: $9.99, Regular: $19.99)</li>
+        <li><strong>Personalized PayPal.me link</strong> with correct price for your tier</li>
+        <li>Your current activation code</li>
+        <li>Warning for Founders to use personalized link to maintain $9.99 pricing</li>
+
+    </ul>
+
+    <p><strong>Purpose:</strong> Remind users to renew before expiry and preserve Founder tier pricing</p>
+
+    <p><strong>Frequency:</strong> Once only, 30 days before expiry</p>
+    <p><strong>Trigger:</strong> Daily automated check at 9 AM (Google Apps Script)</p>
+
+    <h3>5.3 Email Change Verification Emails</h3>
+
+    <p><strong>Scenario A: User Has Access to Old Email (Dual Verification)</strong></p>
+    <ul>
+        <li>Email to old address: Confirm email change request</li>
+        <li>Email to new address: Verify new email ownership</li>
+        <li>Both must be verified to complete change</li>
+
+    </ul>
+
+    <p><strong>Scenario B: User Lost Access to Old Email (Device ID Verification)</strong></p>
+    <ul>
+        <li>Email to new address only: Verify new email ownership</li>
+        <li>Device ID must match subscription record to proceed</li>
+
+    </ul>
+
+    <p><strong>Scenario C: Device ID Mismatch</strong></p>
+    <ul>
+        <li>User directed to contact support@scream4u.icu for manual verification</li>
+
+    </ul>
+
+    <p><strong>Verification Link Expiry:</strong> 24 hours</p>
+
+    <h3>5.4 Email Change Confirmation</h3>
+
+    <p><strong>Subject:</strong> ✅ Email Address Updated - Scream4U</p>
+    <p><strong>Content:</strong></p>
+    <ul>
+        <li>Confirmation of email change</li>
+        <li>New email address on record</li>
+        <li>Activation code (unchanged)</li>
+        <li>Security notice</li>
+
+    <h3>5.5 Rejection Emails</h3>
+
+    </ul>
+
+    <p><strong>A. Invalid Payment Amount</strong></p>
+    <ul>
+        <li>Sent when payment is not $9.99 or $19.99</li>
+        <li>Explains correct pricing</li>
+        <li>Refund processed automatically (3-5 business days)</li>
+
+    </ul>
+
+    <p><strong>B. Founders Tier Full</strong></p>
+    <ul>
+        <li>Sent when $9.99 payment received but Founders tier full (1,000/1,000)</li>
+        <li>Explains Founders limit reached</li>
+        <li>Offers Regular tier at $19.99</li>
+        <li>Refund processed automatically (3-5 business days)</li>
+
+    <h3>5.6 Opting Out of Emails</h3>
+
+    </ul>
+
+    <p>You cannot opt out of transactional emails (activation codes, email change verifications) as they are essential to service functionality. However, you can:</p>
+    <ul>
+        <li>Update your email address to a different one</li>
+        <li>Request account deletion (see Section 8.3)</li>
+        <li>Let your subscription expire (stops renewal reminders)</li>
+
+
+    <h2>6. Data Security</h2>
+
+
+    </ul>
+
+    <p>We implement multiple security measures to protect your information:</p>
+
+    <h3>6.1 Technical Security Measures</h3>
+
+    <ul>
+        <li><strong>Device Encryption:</strong> All local data encrypted by iOS Keychain (iOS) or Android Keystore (Android)</li>
+        <li><strong>HTTPS Only:</strong> All network communications use encrypted HTTPS connections</li>
+        <li><strong>No Backend Servers:</strong> We don't operate servers that could store or compromise your personal data</li>
+        <li><strong>Minimal Data Collection:</strong> We only collect email address for activation code delivery</li>
+        <li><strong>No Third-Party Tracking:</strong> No analytics, advertising, or tracking services</li>
+        <li><strong>Payment Security:</strong> PayPal handles all payment processing with PCI-DSS compliance</li>
+        <li><strong>Google Account Security:</strong> Payment logs stored in private Google Sheets with restricted access (only accessible by authorized personnel: antonolivier12345@gmail.com)</li>
+        <li><strong>Activation Code Hashing:</strong> Codes are hashed using SHA-256 before storage on device</li>
+        <li><strong>Email Verification:</strong> Token-based verification for email changes with 24-hour expiry</li>
+        <li><strong>Rate Limiting:</strong> API endpoints rate-limited to prevent abuse</li>
+
+    <h3>6.2 Google Apps Script Security</h3>
+
+        <li>Runs in our private Google account with restricted access</li>
+        <li>Uses OAuth 2.0 for secure API authentication</li>
+        <li>All scripts version-controlled and auditable</li>
+        <li>No third-party access to scripts or data</li>
+        <li>Automated processes run on secure Google infrastructure</li>
+
+    <h3>6.3 Data Breach Notification</h3>
+
+    </ul>
+
+    <p>In the unlikely event of a data breach affecting email addresses or activation codes stored in Google Sheets:</p>
+    <ul>
+        <li>We will notify affected users as soon as reasonably possible, and within 72 hours as required by GDPR</li>
+        <li>Notification will include: nature of breach, data affected, steps taken, and recommended actions</li>
+        <li>We will also notify relevant data protection authorities as required by law (GDPR, CCPA, POPIA, etc.)</li>
+
+
+    <h2>7. Data Sharing and Third Parties</h2>
+
+
+    <h3>7.1 We Do Not Share Your Personal Data</h3>
+
+    </ul>
+
+    <p>Because your personal information (name, address, contacts) is stored locally on your device, we cannot and do not:</p>
+    <ul>
+        <li>Share your data with third parties</li>
+        <li>Sell your information</li>
+        <li>Use your data for marketing or advertising</li>
+        <li>Access your personal data for any purpose</li>
+
+    <h3>7.2 Third-Party Services We Use</h3>
+
+    </ul>
+
+    <p><strong>PayPal (Payment Processing):</strong></p>
+    <ul>
+        <li><strong>Processes:</strong> Payment information only</li>
+        <li><strong>Purpose:</strong> One-time subscription payments</li>
+        <li><strong>Data Shared:</strong> Payment amount, customer email</li>
+        <li><strong>Data Collected by PayPal:</strong> Payment card details, billing address, transaction history</li>
+        <li><strong>Compliance:</strong> GDPR, PCI-DSS</li>
+        <li><strong>Privacy Policy:</strong> https://www.paypal.com/privacy</li>
+        <li><strong>User Control:</strong> Manage payment methods in PayPal account</li>
+
+    </ul>
+
+    <p><strong>Google Services (Automation Backend):</strong></p>
+    <ul>
+        <li><strong>Gmail:</strong> Receives PayPal payment notifications, sends activation codes</li>
+        <li><strong>Google Apps Script:</strong> Generates and sends activation codes, processes email changes</li>
+        <li><strong>Google Sheets:</strong> Stores email addresses, activation codes, payment logs, subscription tiers, failed email logs, and rejected payment records</li>
+        <li><strong>Purpose:</strong> Automated activation code delivery and subscription management</li>
+        <li><strong>Data Processor:</strong> Google LLC</li>
+        <li><strong>Compliance:</strong> GDPR, CCPA</li>
+        <li><strong>Privacy Policy:</strong> https://policies.google.com/privacy</li>
+        <li><strong>Data Location:</strong> Stored in Google Sheets via our Google account; may be processed internationally per Google's data center locations</li>
+
+    </ul>
+
+    <p><strong>Expo (Development Framework):</strong></p>
+    <ul>
+        <li><strong>Service:</strong> React Native development framework</li>
+        <li><strong>Data Collected:</strong> None (analytics disabled)</li>
+        <li><strong>Purpose:</strong> App development and deployment</li>
+        <li><strong>Privacy Policy:</strong> https://expo.dev/privacy</li>
+
+    </ul>
+
+    <p><strong>expo-sms (SMS Functionality):</strong></p>
+    <ul>
+        <li><strong>Service:</strong> Opens device native SMS app via URL scheme</li>
+        <li><strong>Data Collected:</strong> None</li>
+        <li><strong>Privacy:</strong> Uses device's native SMS, no data transmitted through app</li>
+        <li><strong>Purpose:</strong> Send emergency SMS alerts</li>
+
+    </ul>
+
+    <p><strong>expo-device (Device Identification):</strong></p>
+    <ul>
+        <li><strong>Service:</strong> Device ID generation for subscription management</li>
+        <li><strong>Data Collected:</strong> Device ID (osInternalBuildId or modelId)</li>
+        <li><strong>Privacy:</strong> Stored locally and in Google Sheets</li>
+        <li><strong>Purpose:</strong> Prevent subscription sharing across multiple devices</li>
+
+    </ul>
+
+    <p><strong>Your Device's SMS App:</strong></p>
+    <ul>
+        <li><strong>Service:</strong> Native SMS application on your device</li>
+        <li><strong>Managed By:</strong> Your device manufacturer and cellular carrier</li>
+        <li><strong>Not Controlled By:</strong> Scream4U.icu</li>
+        <li><strong>Privacy Policy:</strong> Refer to your device manufacturer and carrier</li>
+
+    </ul>
+
+    <p><strong>App Stores (Apple App Store / Google Play Store):</strong></p>
+    <ul>
+        <li><strong>Service:</strong> App distribution only</li>
+        <li><strong>Data Collected:</strong> Per their respective policies</li>
+        <li><strong>Privacy Policies:</strong></li>
+        <li>Apple: https://www.apple.com/legal/privacy/</li>
+        <li>Google: https://policies.google.com/privacy</li>
+
+    <h3>7.3 Service Providers</h3>
+
+    </ul>
+
+    <p>We use the above third-party services as data processors. They process data on our behalf under contractual obligations to:</p>
+    <ul>
+        <li>Only process data as instructed</li>
+        <li>Implement appropriate security measures</li>
+        <li>Not use data for their own purposes (except as required by law)</li>
+        <li>Comply with applicable data protection laws</li>
+
+    <h3>7.4 Legal Disclosure</h3>
+
+    </ul>
+
+    <p>We may disclose information if required by law, court order, or government authority. Since we do not collect or store your personal data on our servers, we can only disclose:</p>
+    <ul>
+        <li>Email addresses and activation codes from Google Sheets (if legally compelled)</li>
+        <li>PayPal payment records (handled by PayPal directly)</li>
+        <li>General app functionality information</li>
+
+    </ul>
+
+    <p>We will notify affected users of legal requests unless prohibited by law.</p>
+
+    <h3>7.5 Business Transfers</h3>
+
+    <p>In the event of a merger, acquisition, bankruptcy, or sale of assets, user data (email addresses and activation codes in Google Sheets) may be transferred to the acquiring entity. We will notify users via email before any such transfer and provide options to delete data if desired.</p>
+
+
+    <h2>8. Your Rights and Control</h2>
+
+
+    <h3>8.1 Access and Modify Your Data</h3>
+
+    <p>You have complete control over all information stored in the app:</p>
+
+    <table>
+        <tr>
+            <th>Action</th>
+            <th>How To</th>
+        </tr>
+        <tr>
+            <td><strong>View all data</strong></td>
+            <td>Settings screen shows all stored information</td>
+        </tr>
+        <tr>
+            <td><strong>Update your name</strong></td>
+            <td>Settings → Edit Your Name</td>
+        </tr>
+        <tr>
+            <td><strong>Update address</strong></td>
+            <td>Settings → Edit Home Address</td>
+        </tr>
+        <tr>
+            <td><strong>Manage contacts</strong></td>
+            <td>Settings → Edit Emergency Contacts</td>
+        </tr>
+        <tr>
+            <td><strong>Change SMS method</strong></td>
+            <td>Settings → SMS Method Preference</td>
+        </tr>
+        <tr>
+            <td><strong>View subscription status</strong></td>
+            <td>Settings → Subscription Status</td>
+        </tr>
+        <tr>
+            <td><strong>Update email address</strong></td>
+            <td>Settings → Update Email Address</td>
+        </tr>
+        <tr>
+            <td><strong>Transfer to new device</strong></td>
+            <td>Enter same activation code on new device</td>
+        </tr>
+        <tr>
+            <td><strong>Reset all data</strong></td>
+            <td>Settings → Home button (returns to welcome screen)</td>
+        </tr>
+        <tr>
+            <td><strong>Delete everything</strong></td>
+            <td>Uninstall the app</td>
+        </tr>
+    </table>
+
+
+    <h3>8.2 Subscription Management</h3>
+
+    <ul>
+        <li><strong>View Status:</strong> Settings → Subscription Status shows expiry date</li>
+        <li><strong>No Auto-Renewal:</strong> Subscription expires after 365 days, no automatic charges</li>
+        <li><strong>Renew Manually:</strong> Purchase new activation code when current subscription expires</li>
+        <li><strong>Transfer Device:</strong> Enter same activation code on new device (old device auto-deactivated)</li>
+        <li><strong>Cancel:</strong> Simply let subscription expire - no action needed</li>
+
+    <h3>8.3 Your Email Data</h3>
+
+    </ul>
+
+    <p><strong>Access:</strong> Your email is stored in our Google Sheets database (linked to activation code and subscription)</p>
+
+    <p><strong>Update:</strong> Use in-app feature (Settings → Update Email Address) with verification process, or email support@scream4u.icu</p>
+
+    <p><strong>Delete:</strong> Email support@scream4u.icu with subject "Delete My Data" to remove your email address and activation code from Google Sheets. We will respond within 30 days and delete your data unless legally required to retain (e.g., for accounting, fraud prevention, or legal compliance).</p>
+
+    <p><strong>Export:</strong> Email support@scream4u.icu with subject "Data Export Request" to receive a copy of your stored data (email address, activation code, payment date, expiry date, device ID, subscription tier).</p>
+
+    <h3>8.4 Data Deletion</h3>
+
+    <p><strong>Local Data (Device):</strong> Deleted immediately when you uninstall the app or tap the Home button in Settings.</p>
+
+    <p><strong>Google Sheets Data (Email & Activation):</strong> Retained for 5 years for accounting, fraud prevention, and legal compliance. To request earlier deletion, email support@scream4u.icu with "Delete My Data." We will respond within 30 days and manually delete your data unless legally required to retain.</p>
+
+    <p><strong>Exceptions to Deletion:</strong> We may retain data longer if:</p>
+    <ul>
+        <li>Required by law (e.g., tax records, anti-fraud regulations)</li>
+        <li>Necessary to resolve disputes or enforce agreements</li>
+        <li>Required for legal claims or investigations</li>
+
+
+    <h2>9. Data Retention</h2>
+
+
+    <table>
+        <tr>
+            <th>Data Type</th>
+            <th>Retention Period</th>
+            <th>Purpose</th>
+        </tr>
+        <tr>
+            <td>Personal data (name, address, contacts)</td>
+            <td>Until you delete it or uninstall the app</td>
+            <td>Local functionality</td>
+        </tr>
+        <tr>
+            <td>Email address</td>
+            <td>5 years from payment date</td>
+            <td>Accounting, fraud prevention, renewal reminders</td>
+        </tr>
+        <tr>
+            <td>Activation code</td>
+            <td>5 years from payment date</td>
+            <td>Subscription validation, accounting</td>
+        </tr>
+        <tr>
+            <td>Payment logs</td>
+            <td>5 years from payment date</td>
+            <td>Legal and accounting requirements</td>
+        </tr>
+        <tr>
+            <td>Device ID</td>
+            <td>5 years from payment date</td>
+            <td>Prevent subscription sharing</td>
+        </tr>
+        <tr>
+            <td>Subscription tier</td>
+            <td>5 years from payment date</td>
+            <td>Renewal pricing accuracy</td>
+        </tr>
+        <tr>
+            <td>Email change logs</td>
+            <td>5 years from request date</td>
+            <td>Security audit trail</td>
+        </tr>
+        <tr>
+            <td>Failed email logs</td>
+            <td>5 years from attempt date</td>
+            <td>Delivery audit trail, dispute resolution</td>
+        </tr>
+        <tr>
+            <td>Rejected payment logs</td>
+            <td>5 years from rejection date</td>
+            <td>Fraud prevention, refund tracking</td>
+        </tr>
+        <tr>
+            <td>Device backups</td>
+            <td>Per your device backup settings</td>
+            <td>Managed by iOS iCloud or Android Google Drive</td>
+        </tr>
+    </table>
+
+
+    </ul>
+
+    <p><strong>After Retention Period:</strong> Data will be manually deleted from Google Sheets and cannot be recovered.</p>
+
+
+    <h2>10. International Users and Data Transfers</h2>
+
+
+    <h3>10.1 Local Data (No Transfers)</h3>
+
+    <p>Since all personal data (name, address, contacts) is stored locally on your device, there are no international data transfers of this personal information.</p>
+
+    <h3>10.2 Google Sheets Data</h3>
+
+    <p>Email addresses and activation codes stored in Google Sheets may be processed internationally in accordance with Google's data center locations and privacy policy. Google complies with:</p>
+    <ul>
+        <li><strong>GDPR</strong> (for EU users)</li>
+        <li><strong>EU-U.S. Data Privacy Framework</strong></li>
+        <li><strong>Swiss-U.S. Data Privacy Framework</strong></li>
+        <li><strong>Standard Contractual Clauses</strong> for international transfers</li>
+
+    <h3>10.3 PayPal Data</h3>
+
+    </ul>
+
+    <p>PayPal may process payment data internationally in accordance with their privacy policy and applicable data protection frameworks.</p>
+
+    <h3>10.4 Legal Basis for Processing (GDPR)</h3>
+
+    <p>For users in the European Economic Area (EEA), UK, and Switzerland, our legal basis for processing includes:</p>
+    <ul>
+        <li><strong>Consent:</strong> You provide explicit consent when entering information during setup and payment</li>
+        <li><strong>Contract:</strong> Processing necessary to provide subscription services you requested</li>
+        <li><strong>Legitimate Interest:</strong> Preventing subscription fraud through activation code and device ID system</li>
+
+
+    <h2>11. Legal Compliance</h2>
+
+
+    <h3>11.1 GDPR (European Union, UK, Switzerland)</h3>
+
+    </ul>
+
+    <p>For users in the EEA, UK, and Switzerland, you have the following rights under GDPR:</p>
+
+    <table>
+        <tr>
+            <th>Right</th>
+            <th>How to Exercise</th>
+        </tr>
+        <tr>
+            <td><strong>Right to Access</strong></td>
+            <td>View in Settings; email support@scream4u.icu for Google Sheets data</td>
+        </tr>
+        <tr>
+            <td><strong>Right to Rectification</strong></td>
+            <td>Edit in Settings; email support@scream4u.icu to update Google Sheets data</td>
+        </tr>
+        <tr>
+            <td><strong>Right to Erasure</strong></td>
+            <td>Uninstall app; email support@scream4u.icu to delete Google Sheets data</td>
+        </tr>
+        <tr>
+            <td><strong>Right to Data Portability</strong></td>
+            <td>Email support@scream4u.icu for export of stored email/activation data (JSON format)</td>
+        </tr>
+        <tr>
+            <td><strong>Right to Object</strong></td>
+            <td>Don't use the app; request data deletion</td>
+        </tr>
+        <tr>
+            <td><strong>Right to Restrict Processing</strong></td>
+            <td>Email support@scream4u.icu with specific restriction request</td>
+        </tr>
+        <tr>
+            <td><strong>Right to Withdraw Consent</strong></td>
+            <td>Cancel subscription and request data deletion</td>
+        </tr>
+        <tr>
+            <td><strong>Right to Lodge Complaint</strong></td>
+            <td>Contact your local data protection authority</td>
+        </tr>
+    </table>
+
+
+    <p><strong>Data Controller:</strong> Anton Olivier (Scream4U.icu), support@scream4u.icu</p>
+
+    <p><strong>Data Processor:</strong> Google LLC (for Google Sheets data), PayPal Holdings, Inc. (for payment data)</p>
+
+    <p><strong>EU Representative:</strong> Not applicable (we are a small business under GDPR Article 27 exemption)</p>
+
+    <p>To exercise GDPR rights, email support@scream4u.icu with subject "GDPR Request" and specify your request. We will respond within 30 days.</p>
+
+    <h3>11.2 CCPA (California)</h3>
+
+    <p>California residents have the right to:</p>
+
+    <table>
+        <tr>
+            <th>Right</th>
+            <th>How to Exercise</th>
+        </tr>
+        <tr>
+            <td><strong>Right to Know</strong></td>
+            <td>Email support@scream4u.icu for details on what data we collect (see Section 2 & 4)</td>
+        </tr>
+        <tr>
+            <td><strong>Right to Delete</strong></td>
+            <td>Email support@scream4u.icu with "Delete My Data"</td>
+        </tr>
+        <tr>
+            <td><strong>Right to Opt-Out of Sale</strong></td>
+            <td>We do not sell personal information</td>
+        </tr>
+        <tr>
+            <td><strong>Right to Non-Discrimination</strong></td>
+            <td>We do not discriminate based on privacy choices</td>
+        </tr>
+        <tr>
+            <td><strong>Right to Correct</strong></td>
+            <td>Email support@scream4u.icu to correct inaccurate data</td>
+        </tr>
+        <tr>
+            <td><strong>Right to Limit Use of Sensitive Data</strong></td>
+            <td>Not applicable (we don't collect sensitive personal information)</td>
+        </tr>
+    </table>
+
+
+    <p><strong>Categories of Personal Information Collected:</strong></p>
+    <ul>
+        <li>Identifiers (email address, device ID)</li>
+        <li>Commercial information (payment amount, subscription tier)</li>
+        <li>Internet/network activity (activation date, device transfers)</li>
+
+    </ul>
+
+    <p><strong>Business Purpose:</strong> Provide subscription-based emergency alert service</p>
+
+    <p><strong>Third Parties with Access:</strong> PayPal (payment processing), Google (data storage and automation)</p>
+
+    <p>To exercise CCPA rights, email support@scream4u.icu with "CCPA Request" in the subject line. We will respond within 45 days.</p>
+
+    <h3>11.3 South African POPIA (Protection of Personal Information Act)</h3>
+
+    <p>For South African users, we comply with POPIA by:</p>
+    <ul>
+        <li>Processing data lawfully and minimizing collection</li>
+        <li>Ensuring data quality and accuracy</li>
+        <li>Implementing security safeguards</li>
+        <li>Providing transparency about data use</li>
+        <li>Respecting your rights to access, correct, and delete data</li>
+
+    </ul>
+
+    <p><strong>Information Officer:</strong> Anton Olivier, support@scream4u.icu</p>
+
+    <p>To exercise POPIA rights, email support@scream4u.icu with "POPIA Request."</p>
+
+    <h3>11.4 Children's Privacy</h3>
+
+    <p>Scream4U.icu is not intended for children under 13 years. The app requires:</p>
+    <ul>
+        <li>Understanding of emergency situations</li>
+        <li>Ability to enter accurate information</li>
+        <li>Judgment to use emergency features appropriately</li>
+        <li>Understanding of when to call official emergency services</li>
+
+    </ul>
+
+    <p>We do not knowingly collect information from children under 13. If you believe a child under 13 has provided information, contact us immediately at support@scream4u.icu and we will:</p>
+    <ul>
+        <li>Delete all data associated with the subscription within 24 hours</li>
+        <li>Remove email address and activation code from Google Sheets</li>
+        <li>Refund any payment made</li>
+
+    </ul>
+
+    <p><strong>Parental Consent:</strong> For users aged 13-17, parental consent is recommended. Parents/guardians are responsible for minors' use of the app.</p>
+
+
+    <h2>12. App Permissions</h2>
+
+
+    <h3>12.1 Android Permissions</h3>
+
+    <p><strong>SEND_SMS (Implicit via expo-sms):</strong></p>
+    <ul>
+        <li><strong>Purpose:</strong> Open device native SMS app with pre-filled emergency message</li>
+        <li><strong>Data Access:</strong> None - app does not send SMS directly or read SMS</li>
+        <li><strong>User Control:</strong> You must manually tap "Send" in native SMS app</li>
+        <li><strong>Can Be Denied:</strong> No (required for core functionality)</li>
+
+    </ul>
+
+    <p><strong>INTERNET (Implicit):</strong></p>
+    <ul>
+        <li><strong>Purpose:</strong> PayPal payment processing, Google Apps Script API calls, dynamic pricing fetch</li>
+        <li><strong>Data Access:</strong> Network access for payment and subscription management only</li>
+        <li><strong>User Control:</strong> Cannot be denied (required for subscription)</li>
+        <li><strong>When Used:</strong> Only during subscription purchase, email changes, and pricing fetch</li>
+
+    <h3>12.2 iOS Permissions</h3>
+
+    </ul>
+
+    <p><strong>No Special Permissions Required:</strong></p>
+    <ul>
+        <li>iOS does not require permission to open native SMS app via `sms://` URL scheme</li>
+        <li>No location, contacts, or other sensitive permissions requested</li>
+
+    <h3>12.3 Permissions NOT Required</h3>
+
+    </ul>
+
+    <p>We do NOT request or use:</p>
+    <ul>
+        <li>❌ READ_SMS or RECEIVE_SMS</li>
+        <li>❌ READ_CONTACTS or WRITE_CONTACTS</li>
+        <li>❌ ACCESS_FINE_LOCATION or ACCESS_COARSE_LOCATION</li>
+        <li>❌ CAMERA</li>
+        <li>❌ MICROPHONE</li>
+        <li>❌ READ_EXTERNAL_STORAGE or WRITE_EXTERNAL_STORAGE</li>
+        <li>❌ READ_PHONE_STATE</li>
+        <li>❌ CALL_PHONE</li>
+        <li>❌ Any biometric permissions</li>
+
+
+    <h2>13. Cookies and Tracking</h2>
+
+
+    </ul>
+
+    <p><strong>We Do NOT Use:</strong></p>
+    <ul>
+        <li>❌ Cookies</li>
+        <li>❌ Web beacons</li>
+        <li>❌ Analytics services (Google Analytics, Firebase, etc.)</li>
+        <li>❌ Advertising trackers</li>
+        <li>❌ Social media pixels</li>
+        <li>❌ Crash reporting services</li>
+        <li>❌ A/B testing tools</li>
+        <li>❌ Session recording</li>
+
+    </ul>
+
+    <p><strong>Third-Party Cookies:</strong></p>
+    <ul>
+        <li>PayPal may use cookies during payment process (managed by PayPal)</li>
+        <li>Google may use cookies during email change verification links (managed by Google)</li>
+
+    </ul>
+
+    <p><strong>Your Control:</strong> Manage cookies through your browser settings when using PayPal or clicking email verification links.</p>
+
+
+    <h2>14. Changes to This Privacy Policy</h2>
+
+
+    <h3>14.1 How We Notify You</h3>
+
+    <p>We may update this policy from time to time. Changes will be communicated by:</p>
+    <ul>
+        <li>Posting the updated policy at https://scream4u.icu/privacy</li>
+        <li>Updating the "Last Updated" date at the top of this document</li>
+        <li>In-app notification for material changes</li>
+        <li>Email notification for significant changes affecting your rights</li>
+
+    <h3>14.2 Your Acceptance</h3>
+
+    </ul>
+
+    <p>Continued use of the app after changes constitutes acceptance of the updated policy. If you disagree with changes:</p>
+    <ul>
+        <li>Stop using the app</li>
+        <li>Cancel your subscription</li>
+        <li>Request data deletion</li>
+
+    <h3>14.3 Version History</h3>
+
+    </ul>
+
+    <p>We maintain a version history of this Privacy Policy. Previous versions available upon request at support@scream4u.icu.</p>
+
+
+    <div class="contact-info">
+    <h2>15. Contact Us</h2>
+
+
+    <p>For questions about this Privacy Policy or to exercise your privacy rights:</p>
+
+    <p><strong>Email:</strong> support@scream4u.icu</p>
+    <p><strong>Website:</strong> https://scream4u.icu</p>
+    <p><strong>Response Time:</strong> Within 48 hours (business days)</p>
+
+    <p><strong>Subject Line Guidelines:</strong></p>
+    <ul>
+        <li>GDPR requests: "GDPR Request"</li>
+        <li>CCPA requests: "CCPA Request"</li>
+        <li>POPIA requests: "POPIA Request"</li>
+        <li>Data deletion: "Delete My Data"</li>
+        <li>Data export: "Data Export Request"</li>
+        <li>Email update: "Update Email Address"</li>
+        <li>General privacy: "Privacy Question"</li>
+
+    </ul>
+
+    <p><strong>Mailing Address (for formal legal notices):</strong></p>
+    <p>Scream4U.icu</p>
+    <p>South Africa</p>
+    <p>Physical address available upon written request to support@scream4u.icu</p>
+
+    <p><strong>Information Officer (POPIA):</strong> Anton Olivier, support@scream4u.icu</p>
+    <p>Physical address available upon request for formal POPIA notices</p>
+
+
+    </div>
+
+    <div class="important">
+        <h3>Privacy Guarantee Summary</h3>
+
+
+    <p>✅ All personal data stored on YOUR device only</p>
+    <p>✅ We cannot access your name, address, or contacts</p>
+    <p>✅ Only your email stored for activation code delivery</p>
+    <p>✅ No GPS tracking - you control your address</p>
+    <p>✅ No analytics, tracking, or data collection</p>
+    <p>✅ Payment via PayPal (PCI-DSS compliant)</p>
+    <p>✅ Works completely offline after activation</p>
+    <p>✅ Complete control - update or delete anytime</p>
+    <p>✅ GDPR, CCPA, and POPIA compliant</p>
+    <p>✅ 5-year data retention (deletable on request)</p>
+
+
+    <p></div>
+
+    <p style="text-align: center; color: #666; margin-top: 40px; font-size: 14px;">
+        © 2025 Scream4U.icu. All rights reserved.</p>
+
+    <p><strong>Last Reviewed:</strong> December 24, 2025</p>
+    <p><strong>Next Scheduled Review:</strong> June 24, 2026</p>
+
+</body>
+</html>
