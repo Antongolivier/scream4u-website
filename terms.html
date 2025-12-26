@@ -37,9 +37,9 @@
     <h1>Terms & Conditions</h1>
     
     <div class="last-updated">
-        <strong>Last Updated:</strong> December 24, 2025<br>
-        <strong>Effective Date:</strong> December 24, 2025<br>
-        <strong>Version:</strong> 3.0
+        <strong>Last Updated:</strong> December 26, 2025<br>
+        <strong>Effective Date:</strong> December 26, 2025<br>
+        <strong>Version:</strong> 3.1
     </div>
 
     <button class="print-button" onclick="window.print()">🖨️ Print These Terms</button>
@@ -64,7 +64,8 @@
             <li>💰 <strong>$19.99/year</strong> (or $9.99 for first 1,000 "Founders") - 30-day money-back guarantee</li>
             <li>🏆 <strong>Founders pricing locked forever</strong> - first 1,000 subscribers keep $9.99 rate for life</li>
             <li>📱 <strong>One device per subscription</strong> - can transfer to new device</li>
-            <li>📍 <strong>Manual address updates</strong> - no GPS tracking, you control location</li>
+            <li>📍 <strong>Manual address updates</strong> - you control location</li>
+            <li>🌍 <strong>Optional GPS location</strong> - enable for more accurate emergency alerts (v1.0.2+)</li>
             <li>📨 <strong>SMS not guaranteed</strong> - depends on cellular network</li>
             <li>📧 <strong>Valid email required</strong> - for renewal reminders and subscription management</li>
             <li>✅ <strong>3 free tests</strong> - unlimited with subscription</li>
@@ -94,7 +95,7 @@
     <p><strong>Two-Tap Emergency Process:</strong></p>
     <ol>
         <li><strong>First Tap:</strong> Press an emergency button (Medical, Fire, Intruder, or Personal Safety)</li>
-        <li>The app generates an SMS containing: emergency type, your name, your address, and timestamp</li>
+        <li>The app generates an SMS containing: emergency type, your name, your address, GPS coordinates (if enabled), and timestamp</li>
         <li>Your device's SMS app opens with pre-filled messages for your contacts</li>
         <li><strong>Second Tap:</strong> You manually tap "Send" in your SMS app</li>
         <li>SMS is sent via your cellular carrier (not through our servers)</li>
@@ -103,10 +104,18 @@
     <p><strong>Accidental Activation:</strong> If you press an emergency button by mistake, simply close the SMS app or don't tap "Send" in your SMS app - no messages will be sent. The app does NOT send messages automatically.</p>
 
     <div class="key-point-box">
-        <h4>📍 Address Information - Critical Points</h4>
-        <p><strong>Manual Updates Only:</strong> The app does NOT use GPS or track your location. You manually enter your address and must update it when your location changes (traveling, moving, etc.).</p>
+        <h4>📍 Address and Location Information - Critical Points</h4>
+        <p><strong>Manual Address Entry:</strong> You manually enter your home address and must update it when your location changes (traveling, moving, etc.).</p>
+        <p><strong>Optional GPS Location (v1.0.2+):</strong></p>
+        <ul>
+            <li>The app offers optional GPS location access for more accurate emergency alerts</li>
+            <li>GPS is ONLY accessed when you send an emergency alert (not tracked in background)</li>
+            <li>GPS coordinates are included in SMS as a Google Maps link if permission granted</li>
+            <li>You can enable or disable location permission anytime in Settings</li>
+            <li>If GPS fails or is disabled, SMS still sends with your home address</li>
+        </ul>
         <p><strong>Your Responsibility:</strong> You are solely responsible for keeping your address accurate and current. Emergency contacts receive the address you provide - if it's wrong or outdated, they cannot find you.</p>
-        <p><strong>Update Anytime:</strong> Settings → Edit Home Address</p>
+        <p><strong>Update Anytime:</strong> Settings → Edit Home Address | Settings → Location Permission</p>
     </div>
 
     <h3>2.3 Alert Types</h3>

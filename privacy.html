@@ -37,9 +37,9 @@
     <h1>Privacy Policy</h1>
 
     <div class="last-updated">
-        <strong>Last Updated:</strong> ** December 24, 2025<br>
-        <strong>Effective Date:</strong> ** December 24, 2025<br>
-        <strong>Version:</strong> ** 4.0
+        <strong>Last Updated:</strong> December 26, 2025<br>
+        <strong>Effective Date:</strong> December 26, 2025<br>
+        <strong>Version:</strong> 4.1
     </div>
 
     <button class="print-button" onclick="window.print()">🖨️ Print This Policy</button>
@@ -72,7 +72,7 @@
     <ul>
         <li>✅ <strong>All personal data stays on your device</strong> - we cannot access it</li>
         <li>✅ <strong>No tracking, no analytics, no data collection</strong></li>
-        <li>✅ <strong>No GPS tracking</strong> - you manually enter your address</li>
+        <li>✅ <strong>Optional GPS location</strong> - only accessed during emergencies if you enable it</li>
         <li>✅ <strong>Works completely offline</strong> (internet only for payments)</li>
         <li>✅ <strong>Payment via PayPal</strong> - we never see your credit card</li>
         <li>✅ <strong>Only your email stored</strong> - for sending activation codes</li>
@@ -166,7 +166,7 @@
 
     <h3>Address Flexibility</h3>
 
-    <p><strong>Important:</strong> The app does NOT track your location via GPS. You manually enter your address, and you can update it anytime:</p>
+    <p><strong>Important:</strong> You manually enter your home address, and you can update it anytime:</p>
     <ul>
         <li>When traveling → update to hotel/vacation address</li>
         <li>When moving → update to new home</li>
@@ -176,11 +176,40 @@
 
     <p><strong>Your Responsibility:</strong> Keep your address current and accurate so contacts can find you in an emergency.</p>
 
+    <h3>Optional GPS Location Feature (v1.0.2+)</h3>
+
+    <p><strong>Starting with version 1.0.2, Scream4U.icu offers an optional GPS location feature:</strong></p>
+
+    <p><strong>How It Works:</strong></p>
+    <ul>
+        <li>During setup, you can choose to grant location permission</li>
+        <li>If enabled, the app accesses your device's GPS <strong>only when you send an emergency alert</strong></li>
+        <li>GPS coordinates are included in the emergency SMS message as a Google Maps link</li>
+        <li>Contacts can tap the link to see your exact location</li>
+    </ul>
+
+    <p><strong>Important Details:</strong></p>
+    <ul>
+        <li><strong>Completely Optional:</strong> You can skip location permission during setup</li>
+        <li><strong>No Tracking:</strong> Location is ONLY accessed when you press an emergency button</li>
+        <li><strong>Not Stored:</strong> GPS coordinates are never saved or logged by the app</li>
+        <li><strong>Works Offline:</strong> GPS uses satellites, no internet required</li>
+        <li><strong>Fallback:</strong> If GPS fails or is disabled, SMS still sends with your home address</li>
+        <li><strong>Control:</strong> Enable or disable anytime in Settings → Location Permission</li>
+    </ul>
+
+    <p><strong>What We Do NOT Do:</strong></p>
+    <ul>
+        <li>❌ Track your location in the background</li>
+        <li>❌ Store location history</li>
+        <li>❌ Share location with third parties</li>
+        <li>❌ Use location for any purpose other than emergency alerts</li>
+    </ul>
+
     <h3>What We Do NOT Collect</h3>
 
     <p>We explicitly do NOT collect, access, or store:</p>
     <ul>
-        <li>❌ GPS location or coordinates</li>
         <li>❌ Device contacts (you manually enter them)</li>
         <li>❌ SMS message content or delivery status</li>
         <li>❌ Usage analytics or tracking data</li>
@@ -189,6 +218,7 @@
         <li>❌ Photos, videos, or other media</li>
         <li>❌ Call logs, browsing history, or biometric data</li>
         <li>❌ Credit card or payment information</li>
+    </ul>
 
 
     <h2>3. How Emergency Alerts Work</h2>
@@ -205,7 +235,8 @@
 
     <p>   - Emergency type</p>
     <p>   - Your name</p>
-    <p>   - Your address</p>
+    <p>   - Your home address</p>
+    <p>   - GPS coordinates (if location permission enabled)</p>
     <p>   - Current timestamp</p>
     <ol>
         <li>Your device's native SMS app opens with pre-filled messages for your emergency contacts</li>
