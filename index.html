@@ -965,7 +965,7 @@
         .about-block p {
             font-size: 18px;
             line-height: 1.8;
-            color: var(--text-secondary);
+            color: var(--text);
         }
 
         .about-section {
@@ -992,7 +992,7 @@
         .about-section p {
             font-size: 17px;
             line-height: 1.8;
-            color: var(--text-secondary);
+            color: var(--text);
             margin-bottom: 16px;
         }
 
@@ -1054,7 +1054,7 @@
         .commitment-card p {
             font-size: 15px;
             line-height: 1.6;
-            color: var(--text-secondary);
+            color: var(--text);
         }
 
         .about-list {
@@ -1066,7 +1066,7 @@
         .about-list li {
             font-size: 17px;
             line-height: 1.8;
-            color: var(--text-secondary);
+            color: var(--text);
             padding: 12px 0 12px 40px;
             position: relative;
         }
@@ -1126,7 +1126,7 @@
         .about-cta p {
             font-size: 20px;
             line-height: 1.7;
-            color: var(--text-secondary);
+            color: var(--text);
             margin-bottom: 16px;
             max-width: 800px;
             margin-left: auto;
@@ -1353,7 +1353,6 @@
                 <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Home</a>
                 <a href="#about">About</a>
                 <a href="#action">Action</a>
-                <a href="#features">Features</a>
                 <a href="#pricing">Pricing</a>
                 <a href="#faq">FAQ</a>
                 <a href="contact.html">Contact</a>
@@ -1370,7 +1369,6 @@
             <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); closeMobileMenu(); return false;">Home</a>
             <a href="#about" onclick="closeMobileMenu()">About</a>
             <a href="#action" onclick="closeMobileMenu()">Action</a>
-            <a href="#features" onclick="closeMobileMenu()">Features</a>
             <a href="#pricing" onclick="closeMobileMenu()">Pricing</a>
             <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
             <a href="contact.html" onclick="closeMobileMenu()">Contact</a>
@@ -1575,51 +1573,37 @@
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <h2>Why Scream4U.icu?</h2>
-        <div class="feature-grid">
-            <div class="feature-card">
-                <div class="feature-icon">📡</div>
-                <h3>Works Offline</h3>
-                <p>Only needs cellular signal for SMS. No internet or mobile data required.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">👴</div>
-                <h3>Easy for Everyone</h3>
-                <p>Large buttons, simple interface, and intuitive design. Perfect for all ages.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3>Fast Alerts</h3>
-                <p>Two-tap emergency alerts reach all your contacts in seconds.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">🔒</div>
-                <h3>Privacy First</h3>
-                <p>All data stored locally on your phone. No tracking, no cloud storage.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">✅</div>
-                <h3>Test Before Emergency</h3>
-                <p>Free test button lets you verify the system works before you need it.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">💰</div>
-                <h3>Affordable</h3>
-                <p>Less than the cost of a coffee per month for complete peace of mind.</p>
-            </div>
-        </div>
-    </section>
-
     <!-- Pricing -->
     <section class="pricing" id="pricing">
-        <h2>📱 Android App NOW AVAILABLE!</h2>
+        <h2 style="margin-top: 0;">Simple Pricing</h2>
+        <div class="price" id="displayPrice">
+    $19.99
+    <span class="price-period">/year</span>
+</div>
+
+<p style="color: #A0A0B8; margin-bottom: 20px; font-size: 18px;">
+   <strong>🎉 Launch Special:</strong> First 1000 subscribers get <strong style="color: var(--emergency-red);">LIFETIME 50% OFF</strong> - just <span id="discountPrice">$9.99</span>/year forever!
+</p>
+
+<div style="background: rgba(255, 59, 92, 0.15); border: 2px solid rgba(255, 59, 92, 0.4); border-radius: 16px; padding: 20px; margin-bottom: 30px; text-align: left;">
+    <p style="color: #FF3B5C; font-size: 16px; font-weight: 600; margin: 0; line-height: 1.6;">
+        ⚠️ <strong>Important:</strong> This discount applies for the life of the subscription, provided the subscription remains active and does not lapse.
+    </p>
+</div>
+    <p style="color: #A0A0B8; font-size: 13px; margin-top: 0; margin-bottom: 30px; opacity: 0.7; font-style: italic;">
+    *Price based on USD but shown in your local currency. Final amount may vary slightly due to exchange rate fluctuations.
+</p>
+       
+    <div class="benefits">
+            <div class="benefit">Unlimited emergency alerts</div>
+            <div class="benefit">All 6 emergency types</div>
+            <div class="benefit">Free test alerts forever</div>
+            <div class="benefit">Works completely offline</div>
+            <div class="benefit">No hidden fees</div>
+            <div class="benefit">Cancel anytime</div>
+        </div>
+
+        <h2 style="margin-top: 80px;">📱 Android App NOW AVAILABLE!</h2>
         <div class="launch-date" style="margin-bottom: 50px;">🎉 Download Now - December 24, 2025</div>
         
         <!-- Download Button -->
@@ -1696,34 +1680,6 @@
         <div class="platform-badges">
             <div class="platform-badge available">🤖 Android - AVAILABLE NOW!</div>
             <div class="platform-badge">🍎 iOS - Q2 2026</div>
-        </div>
-
-        <h2 style="margin-top: 80px;">Simple Pricing</h2>
-        <div class="price" id="displayPrice">
-    $19.99
-    <span class="price-period">/year</span>
-</div>
-
-<p style="color: #A0A0B8; margin-bottom: 20px; font-size: 18px;">
-   <strong>🎉 Launch Special:</strong> First 1000 subscribers get <strong style="color: var(--emergency-red);">LIFETIME 50% OFF</strong> - just <span id="discountPrice">$9.99</span>/year forever!
-</p>
-
-<div style="background: rgba(255, 59, 92, 0.15); border: 2px solid rgba(255, 59, 92, 0.4); border-radius: 16px; padding: 20px; margin-bottom: 30px; text-align: left;">
-    <p style="color: #FF3B5C; font-size: 16px; font-weight: 600; margin: 0; line-height: 1.6;">
-        ⚠️ <strong>Important:</strong> This discount applies for the life of the subscription, provided the subscription remains active and does not lapse.
-    </p>
-</div>
-    <p style="color: #A0A0B8; font-size: 13px; margin-top: 0; margin-bottom: 30px; opacity: 0.7; font-style: italic;">
-    *Price based on USD but shown in your local currency. Final amount may vary slightly due to exchange rate fluctuations.
-</p>
-       
-    <div class="benefits">
-            <div class="benefit">Unlimited emergency alerts</div>
-            <div class="benefit">All 6 emergency types</div>
-            <div class="benefit">Free test alerts forever</div>
-            <div class="benefit">Works completely offline</div>
-            <div class="benefit">No hidden fees</div>
-            <div class="benefit">Cancel anytime</div>
         </div>
     </section>
 
