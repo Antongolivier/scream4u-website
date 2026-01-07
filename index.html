@@ -889,6 +889,294 @@
             display: block;
         }
 
+        /* About Section Styles */
+        .about {
+            padding: 160px 40px;
+            position: relative;
+            background: linear-gradient(135deg, rgba(10, 10, 15, 0.95) 0%, rgba(26, 26, 36, 0.95) 100%);
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--emergency-red), transparent);
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about h2 {
+            text-align: center;
+            font-size: 56px;
+            margin-bottom: 60px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .about-hero {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px;
+            background: rgba(255, 59, 92, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 59, 92, 0.2);
+        }
+
+        .about-hero h3 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--emergency-red) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+        .about-intro {
+            font-size: 22px;
+            line-height: 1.7;
+            color: var(--text);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        .about-block {
+            background: rgba(26, 26, 36, 0.4);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .about-block p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .about-section {
+            background: rgba(26, 26, 36, 0.4);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .about-section:hover {
+            border-color: rgba(255, 59, 92, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .about-section h4 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        .about-section p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .about-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-commitments {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(79, 70, 229, 0.1) 100%);
+            backdrop-filter: blur(20px);
+            padding: 50px 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .about-commitments h4 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--text);
+        }
+
+        .commitment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .commitment-card {
+            background: rgba(26, 26, 36, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 32px 24px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .commitment-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(139, 92, 246, 0.4);
+            box-shadow: 0 12px 40px rgba(139, 92, 246, 0.2);
+        }
+
+        .commitment-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            filter: drop-shadow(0 4px 12px rgba(139, 92, 246, 0.4));
+        }
+
+        .commitment-card h5 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .commitment-card p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        .about-list {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+        }
+
+        .about-list li {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            padding: 12px 0 12px 40px;
+            position: relative;
+        }
+
+        .about-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--test-green);
+            font-weight: bold;
+            font-size: 20px;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 217, 163, 0.15);
+            border-radius: 50%;
+            top: 8px;
+        }
+
+        .about-note {
+            margin-top: 24px;
+            padding: 20px;
+            background: rgba(0, 217, 163, 0.1);
+            border-left: 4px solid var(--test-green);
+            border-radius: 8px;
+        }
+
+        .about-note p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text);
+            margin: 0;
+        }
+
+        .about-note strong {
+            color: var(--test-green);
+        }
+
+        .about-cta {
+            text-align: center;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, rgba(255, 59, 92, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 59, 92, 0.3);
+        }
+
+        .about-cta h3 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        .about-cta p {
+            font-size: 20px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about-tagline {
+            font-size: 22px;
+            margin-bottom: 40px;
+        }
+
+        .about-tagline strong {
+            color: var(--emergency-red);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--emergency-red) 0%, var(--emergency-red-light) 100%);
+            color: white;
+            padding: 20px 50px;
+            border-radius: 16px;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 12px 40px rgba(255, 59, 92, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(255, 59, 92, 0.5);
+        }
+
         /* Show hamburger on mobile */
         @media (max-width: 768px) {
             .hamburger {
@@ -992,6 +1280,47 @@
                 width: 120px;
                 height: 120px;
             }
+
+            .about h2 {
+                font-size: 40px;
+            }
+
+            .about-hero h3 {
+                font-size: 28px;
+            }
+
+            .about-intro {
+                font-size: 18px;
+            }
+
+            .about-section h4 {
+                font-size: 24px;
+            }
+
+            .about-commitments h4 {
+                font-size: 28px;
+            }
+
+            .commitment-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-cta h3 {
+                font-size: 28px;
+            }
+
+            .about-cta p {
+                font-size: 18px;
+            }
+
+            .about-tagline {
+                font-size: 19px;
+            }
+
+            .cta-button {
+                padding: 18px 40px;
+                font-size: 18px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1022,6 +1351,7 @@
             <!-- Desktop Navigation -->
             <nav class="nav-links">
                 <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Home</a>
+                <a href="#about">About</a>
                 <a href="#action">Action</a>
                 <a href="#features">Features</a>
                 <a href="#pricing">Pricing</a>
@@ -1038,6 +1368,7 @@
         <!-- Mobile Menu -->
         <nav class="mobile-menu" id="mobileMenu">
             <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); closeMobileMenu(); return false;">Home</a>
+            <a href="#about" onclick="closeMobileMenu()">About</a>
             <a href="#action" onclick="closeMobileMenu()">Action</a>
             <a href="#features" onclick="closeMobileMenu()">Features</a>
             <a href="#pricing" onclick="closeMobileMenu()">Pricing</a>
@@ -1134,6 +1465,107 @@
         <div class="platform-badges">
             <div class="platform-badge available">🤖 Android - AVAILABLE NOW!</div>
             <div class="platform-badge">🍎 iOS - Q2 2026</div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <h2>About Scream4U.icu</h2>
+            
+            <div class="about-hero">
+                <h3>Your Safety. Your Voice. Always Within Reach.</h3>
+                <p class="about-intro">
+                    Scream4U.icu was born from a simple but powerful belief: everyone deserves to feel safe, and help should never be more than a button press away.
+                </p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-block">
+                    <p>
+                        In moments of crisis, seconds matter. Whether you're facing a medical emergency, feeling threatened, or need urgent assistance, Scream4U.icu ensures your voice is heard instantly—by the people who matter most to you. Our mission is to empower individuals and communities with a reliable, accessible emergency alert system that works when it matters most.
+                    </p>
+                </div>
+
+                <div class="about-section">
+                    <h4>🎯 What Makes Us Different</h4>
+                    <p>
+                        We built Scream4U.icu with a deep respect for your privacy and a commitment to reliability. Unlike other safety apps that require constant internet connectivity and track your location in the background, Scream4U.icu works without internet using SMS technology—the most reliable form of mobile communication. As long as you have cellular signal, your emergency alerts reach your trusted contacts even when data networks fail.
+                    </p>
+                    <p>
+                        With just two taps, your chosen emergency contacts receive an SMS with your location, the nature of your emergency, and a plea for immediate help. No complicated setup. No monthly fees eating away at your budget. No invasive tracking. Just straightforward, dependable protection.
+                    </p>
+                </div>
+
+                <div class="about-section">
+                    <h4>🤝 Empowering Communities, One Person at a Time</h4>
+                    <p>
+                        Safety isn't just an individual concern—it's a community responsibility. Scream4U.icu strengthens the bonds between family members, friends, neighbors, and colleagues by creating instant communication channels when emergencies strike. When you activate an alert, you're not just calling for help—you're activating your personal safety network, empowering those who care about you to respond quickly and effectively.
+                    </p>
+                    <p>
+                        We believe that by giving individuals the tools to protect themselves and others, we build stronger, more resilient communities where people look out for one another. From parents ensuring their children's safety to elderly individuals maintaining their independence, Scream4U.icu serves as a quiet guardian—always ready, never intrusive.
+                    </p>
+                </div>
+
+                <div class="about-commitments">
+                    <h4>💎 Our Commitment to You</h4>
+                    <div class="commitment-grid">
+                        <div class="commitment-card">
+                            <div class="commitment-icon">🔒</div>
+                            <h5>Privacy First</h5>
+                            <p>Your location is only accessed when you press an emergency button. We don't track you, sell your data, or run background processes.</p>
+                        </div>
+                        <div class="commitment-card">
+                            <div class="commitment-icon">💰</div>
+                            <h5>Affordable Protection</h5>
+                            <p>For less than the cost of a monthly coffee, you get year-round peace of mind with our transparent annual subscription.</p>
+                        </div>
+                        <div class="commitment-card">
+                            <div class="commitment-icon">⚡</div>
+                            <h5>Simple and Reliable</h5>
+                            <p>No complex features to learn. No dependencies on app servers or internet connection. Just straightforward emergency alerts that work with cellular signal.</p>
+                        </div>
+                        <div class="commitment-card">
+                            <div class="commitment-icon">🎉</div>
+                            <h5>Founder Pricing</h5>
+                            <p>We're rewarding our early supporters with lifetime founder pricing—because those who believe in us first deserve to be recognized.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-section">
+                    <h4>👥 Who We Serve</h4>
+                    <p>Scream4U.icu is for anyone who values safety and independence:</p>
+                    <ul class="about-list">
+                        <li>Students living on or off campus who want quick access to emergency help</li>
+                        <li>Individuals living alone who want a reliable safety net</li>
+                        <li>Parents who want to ensure their children can call for help instantly</li>
+                        <li>Elderly users who want to maintain independence while staying protected</li>
+                        <li>Anyone who works late hours or travels through unfamiliar areas</li>
+                        <li>Communities that believe in looking out for one another</li>
+                    </ul>
+                    <div class="about-note">
+                        <p><strong>Note:</strong> GPS location sharing is completely optional. If your home address in the app matches your current location, you're already protected—your emergency contacts will receive your address with every alert. GPS simply adds a map link when you're away from home.</p>
+                    </div>
+                </div>
+
+                <div class="about-section">
+                    <h4>🚀 Looking Forward</h4>
+                    <p>
+                        We're just getting started. While Scream4U.icu currently serves Android users, we're committed to expanding our reach—bringing our offline emergency alert system to iOS, adding multi-language support, and continuously improving based on feedback from our community.
+                    </p>
+                    <p>
+                        Every subscription helps us grow and improve the service. Every user who activates Scream4U.icu becomes part of a community that believes safety should be simple, accessible, and reliable.
+                    </p>
+                </div>
+
+                <div class="about-cta">
+                    <h3>Ready to take control of your safety?</h3>
+                    <p>Join the Scream4U.icu community today. Because when it comes to emergencies, you shouldn't have to hope for connectivity—you should have certainty.</p>
+                    <p class="about-tagline"><strong>Scream4U.icu: Empowering you to protect yourself and those you love.</strong></p>
+                    <a href="#pricing" class="cta-button">Get Started Today</a>
+                </div>
+            </div>
         </div>
     </section>
 
