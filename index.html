@@ -1386,88 +1386,6 @@
         <p class="tagline">Fast emergency alerts when you need help<br>Works without internet</p>
     </section>
 
-    <!-- Coming Soon Section -->
-    <section class="coming-soon" id="coming-soon">
-        <h2>📱 Android App NOW AVAILABLE!</h2>
-        <div class="launch-date">🎉 Download Now - December 24, 2025</div>
-        
-        <!-- Download Button -->
-        <div style="margin: 50px auto; max-width: 600px;">
-            <a href="https://github.com/Antongolivier/Scream4u.icu-APK/releases/download/v1.0.4/scream4u-v1.0.4.apk" 
-               id="downloadButton"
-               style="display: inline-block; background: linear-gradient(135deg, #00D9A3 0%, #00B386 100%); color: white; padding: 24px 60px; border-radius: 20px; font-size: 24px; font-weight: 700; text-decoration: none; box-shadow: 0 12px 40px rgba(0, 217, 163, 0.4); transition: all 0.3s ease;"
-               onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 16px 48px rgba(0, 217, 163, 0.5)';"
-               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 12px 40px rgba(0, 217, 163, 0.4)';"
-               onclick="return handleDownload(event);">
-                📥 Download APK (Android)
-            </a>
-            <p style="margin-top: 20px; color: var(--text-secondary); font-size: 16px;">
-                Version 1.0.4 • Direct Download
-            </p>
-            
-            <!-- Non-Android Device Message (Hidden by default) -->
-            <div id="nonAndroidMessage" style="display: none; margin-top: 30px; background: rgba(255, 107, 138, 0.15); border: 2px solid rgba(255, 59, 92, 0.3); padding: 30px; border-radius: 20px;">
-                <h3 style="color: #FF6B6B; margin-bottom: 15px; font-size: 22px;">📱 Android Device Required</h3>
-                <p style="color: var(--text); font-size: 18px; line-height: 1.6; margin-bottom: 20px;">
-                    This app is designed for Android devices only. To download and install:
-                </p>
-                <ol style="color: var(--text); font-size: 16px; line-height: 1.8; text-align: left; max-width: 500px; margin: 0 auto;">
-                    <li>Open this page on your Android phone or tablet</li>
-                    <li>Or scan the QR code below with your Android device</li>
-                    <li>Then tap the download button</li>
-                </ol>
-                <div style="margin-top: 30px; padding: 20px; background: rgba(0, 0, 0, 0.3); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
-                    <p style="color: var(--text); font-size: 15px; line-height: 1.7; text-align: left; margin: 0;">
-                        <strong style="color: var(--emergency-red);">Installation Note:</strong><br>
-                        On devices running Android 8.0 (API level 26) and higher, you must navigate to the <strong>Install unknown apps</strong> system settings screen to enable app installations from a particular location (i.e. the web browser you are downloading the app from).<br><br>
-                        On devices running Android 7.1.1 (API level 25) and lower, you should enable the <strong>Unknown sources</strong> system setting, found in Settings > Security on your device.
-                    </p>
-                </div>
-                <p style="color: var(--text-secondary); font-size: 14px; margin-top: 20px;">
-                    iOS version coming Q2 2026
-                </p>
-            </div>
-        </div>
-
-        <!-- QR Code Section -->
-        <div style="margin: 50px auto; max-width: 400px; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); padding: 40px; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.1);">
-            <h3 style="margin-bottom: 20px; font-size: 24px;">📱 Scan to Download</h3>
-            <div id="qrcode" style="display: flex; justify-content: center; margin: 20px 0;"></div>
-            <p style="color: var(--text-secondary); font-size: 14px; margin-top: 20px;">
-                Scan this QR code with your Android phone to download the app
-            </p>
-        </div>
-        
-        <div class="email-form">
-            <h3>Get Updates</h3>
-            <p>Stay informed about new features and updates.</p>
-            
-            <form id="emailForm" action="https://formspree.io/f/xeovgdpr" method="POST">
-                <div class="email-input-group">
-                    <input 
-                        type="email" 
-                        name="email" 
-                        class="email-input" 
-                        placeholder="Enter your email" 
-                        required
-                    >
-                    <button type="submit" class="email-submit">Subscribe</button>
-                </div>
-                <input type="hidden" name="platform" value="Android">
-                <input type="hidden" name="_subject" value="New Scream4U Updates Subscription">
-            </form>
-            
-            <div id="successMessage" class="success-message">
-                ✓ Thanks! We'll keep you updated!
-            </div>
-        </div>
-
-        <div class="platform-badges">
-            <div class="platform-badge available">🤖 Android - AVAILABLE NOW!</div>
-            <div class="platform-badge">🍎 iOS - Q2 2026</div>
-        </div>
-    </section>
-
     <!-- About Section -->
     <section class="about" id="about">
         <div class="about-container">
@@ -1701,7 +1619,86 @@
 
     <!-- Pricing -->
     <section class="pricing" id="pricing">
-        <h2>Simple Pricing</h2>
+        <h2>📱 Android App NOW AVAILABLE!</h2>
+        <div class="launch-date" style="margin-bottom: 50px;">🎉 Download Now - December 24, 2025</div>
+        
+        <!-- Download Button -->
+        <div style="margin: 50px auto; max-width: 600px;">
+            <a href="https://github.com/Antongolivier/Scream4u.icu-APK/releases/download/v1.0.4/scream4u-v1.0.4.apk" 
+               id="downloadButton"
+               style="display: inline-block; background: linear-gradient(135deg, #00D9A3 0%, #00B386 100%); color: white; padding: 24px 60px; border-radius: 20px; font-size: 24px; font-weight: 700; text-decoration: none; box-shadow: 0 12px 40px rgba(0, 217, 163, 0.4); transition: all 0.3s ease;"
+               onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 16px 48px rgba(0, 217, 163, 0.5)';"
+               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 12px 40px rgba(0, 217, 163, 0.4)';"
+               onclick="return handleDownload(event);">
+                📥 Download APK (Android)
+            </a>
+            <p style="margin-top: 20px; color: var(--text-secondary); font-size: 16px;">
+                Version 1.0.4 • Direct Download
+            </p>
+            
+            <!-- Non-Android Device Message (Hidden by default) -->
+            <div id="nonAndroidMessage" style="display: none; margin-top: 30px; background: rgba(255, 107, 138, 0.15); border: 2px solid rgba(255, 59, 92, 0.3); padding: 30px; border-radius: 20px;">
+                <h3 style="color: #FF6B6B; margin-bottom: 15px; font-size: 22px;">📱 Android Device Required</h3>
+                <p style="color: var(--text); font-size: 18px; line-height: 1.6; margin-bottom: 20px;">
+                    This app is designed for Android devices only. To download and install:
+                </p>
+                <ol style="color: var(--text); font-size: 16px; line-height: 1.8; text-align: left; max-width: 500px; margin: 0 auto;">
+                    <li>Open this page on your Android phone or tablet</li>
+                    <li>Or scan the QR code below with your Android device</li>
+                    <li>Then tap the download button</li>
+                </ol>
+                <div style="margin-top: 30px; padding: 20px; background: rgba(0, 0, 0, 0.3); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                    <p style="color: var(--text); font-size: 15px; line-height: 1.7; text-align: left; margin: 0;">
+                        <strong style="color: var(--emergency-red);">Installation Note:</strong><br>
+                        On devices running Android 8.0 (API level 26) and higher, you must navigate to the <strong>Install unknown apps</strong> system settings screen to enable app installations from a particular location (i.e. the web browser you are downloading the app from).<br><br>
+                        On devices running Android 7.1.1 (API level 25) and lower, you should enable the <strong>Unknown sources</strong> system setting, found in Settings > Security on your device.
+                    </p>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 14px; margin-top: 20px;">
+                    iOS version coming Q2 2026
+                </p>
+            </div>
+        </div>
+
+        <!-- QR Code Section -->
+        <div style="margin: 50px auto; max-width: 400px; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); padding: 40px; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.1);">
+            <h3 style="margin-bottom: 20px; font-size: 24px;">📱 Scan to Download</h3>
+            <div id="qrcode" style="display: flex; justify-content: center; margin: 20px 0;"></div>
+            <p style="color: var(--text-secondary); font-size: 14px; margin-top: 20px;">
+                Scan this QR code with your Android phone to download the app
+            </p>
+        </div>
+        
+        <div class="email-form">
+            <h3>Get Updates</h3>
+            <p>Stay informed about new features and updates.</p>
+            
+            <form id="emailForm" action="https://formspree.io/f/xeovgdpr" method="POST">
+                <div class="email-input-group">
+                    <input 
+                        type="email" 
+                        name="email" 
+                        class="email-input" 
+                        placeholder="Enter your email" 
+                        required
+                    >
+                    <button type="submit" class="email-submit">Subscribe</button>
+                </div>
+                <input type="hidden" name="platform" value="Android">
+                <input type="hidden" name="_subject" value="New Scream4U Updates Subscription">
+            </form>
+            
+            <div id="successMessage" class="success-message">
+                ✓ Thanks! We'll keep you updated!
+            </div>
+        </div>
+
+        <div class="platform-badges">
+            <div class="platform-badge available">🤖 Android - AVAILABLE NOW!</div>
+            <div class="platform-badge">🍎 iOS - Q2 2026</div>
+        </div>
+
+        <h2 style="margin-top: 80px;">Simple Pricing</h2>
         <div class="price" id="displayPrice">
     $19.99
     <span class="price-period">/year</span>
