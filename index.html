@@ -1589,6 +1589,10 @@
    <strong>🎉 Launch Special:</strong> First 1000 subscribers get <strong style="color: var(--emergency-red);">LIFETIME 50% OFF</strong> - just <span id="discountPrice">$9.99</span>/year forever!
 </p>
 
+<p id="founderCounter" style="color: #FFD700; margin-bottom: 20px; font-size: 20px; font-weight: 700; text-align: center;">
+   ⏰ Loading founder spots...
+</p>
+
 <div style="background: rgba(255, 59, 92, 0.15); border: 2px solid rgba(255, 59, 92, 0.4); border-radius: 16px; padding: 20px; margin-bottom: 30px; text-align: left;">
     <p style="color: #FF3B5C; font-size: 16px; font-weight: 600; margin: 0; line-height: 1.6;">
         ⚠️ <strong>Important:</strong> This discount applies for the life of the subscription, provided the subscription remains active and does not lapse.
@@ -1961,6 +1965,43 @@
 
         // Run price update when page loads
         updatePrices();
+
+        // Fetch and display founder count
+        async function updateFounderCount() {
+            try {
+                const apiUrl = 'https://script.google.com/macros/s/AKfycbw9MtiKec4ymiIlsg0Pw5dyVzCNkOnldjByqyUMOxG9hkJLiJ5qvn1FzKc28jZfGr3v/exec';
+                const response = await fetch(`${apiUrl}?action=getFounderCount`);
+                
+                if (!response.ok) {
+                    throw new Error('Failed to fetch founder count');
+                }
+                
+                const data = await response.json();
+                const counterElement = document.getElementById('founderCounter');
+                
+                if (counterElement && data.success) {
+                    const remaining = data.foundersRemaining;
+                    const total = data.founderLimit;
+                    
+                    if (remaining > 0) {
+                        counterElement.innerHTML = `⏰ Only <strong>${remaining}</strong> of ${total} Founder spots remaining!`;
+                        counterElement.style.color = '#FFD700';
+                    } else {
+                        counterElement.innerHTML = `🎉 Founder tier is full! (${data.founderCount}/${total})`;
+                        counterElement.style.color = '#FF3B5C';
+                    }
+                }
+            } catch (error) {
+                console.error('Failed to fetch founder count:', error);
+                const counterElement = document.getElementById('founderCounter');
+                if (counterElement) {
+                    counterElement.style.display = 'none';
+                }
+            }
+        }
+
+        // Update founder count on page load
+        updateFounderCount();
 
     </script>
 
