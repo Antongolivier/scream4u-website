@@ -1,9 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N660YFQQ80"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-N660YFQQ80');
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scream4U.icu - Under Maintenance</title>
+    <meta name="description" content="Scream4U.icu - Fast emergency alerts when you need help. Works without internet. Android app available now!">
+    <meta property="og:title" content="Scream4U.icu - Emergency Alerts in One Tap">
+    <meta property="og:description" content="Fast emergency alerts when you need help. Works without internet. Download now for Android!">
+    <meta property="og:image" content="https://scream4u.icu/assets/og-image.png">
+    <meta property="og:url" content="https://scream4u.icu">
+    <title>Scream4U.icu - Emergency Alerts | Available Now</title>
+    <link rel="icon" type="image/png" href="assets/icon.png">
     <style>
         * {
             margin: 0;
@@ -11,86 +26,2036 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --emergency-red: #FF3B5C;
+            --emergency-red-light: #FF6B8A;
+            --test-green: #00D9A3;
+            --subscribe-blue: #4F46E5;
+            --background: #0A0A0F;
+            --surface: #1A1A24;
+            --text: #FFFFFF;
+            --text-secondary: #A0A0B8;
+            --accent: #8B5CF6;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Fixed Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 15, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 59, 92, 0.2);
+            padding: 20px 40px;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .header-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+        }
+
+        .app-name-header {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--emergency-red);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--emergency-red);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a24 100%);
-            color: white;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--text);
+            background: var(--background);
+            line-height: 1.7;
+            overflow-x: hidden;
+            padding-top: 90px;
+        }
+
+        /* Animated gradient background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 59, 92, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(0, 217, 163, 0.1) 0%, transparent 50%);
+            z-index: -1;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        /* Hero Section - Ultra Modern */
+        .hero {
+            text-align: center;
+            padding: 120px 20px 80px;
+            position: relative;
             min-height: 100vh;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            padding: 20px;
+            align-items: center;
+            background: linear-gradient(135deg, #000000 0%, #1a0a0f 50%, #2a0a15 100%);
         }
 
-        .container {
-            text-align: center;
-            max-width: 600px;
-        }
-
-        .logo {
-            width: 120px;
-            height: 120px;
+        .app-icon {
+            width: 140px;
+            height: 140px;
+            border-radius: 32px;
             margin: 0 auto 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 30px;
+            box-shadow: 
+                0 20px 60px rgba(255, 59, 92, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+            background: linear-gradient(135deg, var(--emergency-red) 0%, var(--emergency-red-light) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 60px;
+            font-size: 72px;
+            animation: float 6s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
 
         h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #00D9A3 0%, #00B386 100%);
+            font-size: 72px;
+            font-weight: 900;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #A0A0B8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: -2px;
+            line-height: 1.1;
         }
 
-        p {
-            font-size: 20px;
-            color: rgba(255, 255, 255, 0.7);
+        .tagline {
+            font-size: 28px;
+            color: var(--text-secondary);
+            margin-bottom: 50px;
+            font-weight: 400;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Coming Soon Section - Glassmorphism */
+        .coming-soon {
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .coming-soon h2 {
+            font-size: 56px;
+            margin-bottom: 30px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .launch-date {
+            font-size: 32px;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px 40px;
+            border-radius: 100px;
+            display: inline-block;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .email-form {
+            max-width: 540px;
+            margin: 50px auto;
+            background: rgba(26, 26, 36, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 50px;
+            border-radius: 32px;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .email-form h3 {
+            color: var(--text);
+            margin-bottom: 16px;
+            font-size: 32px;
+            font-weight: 800;
+        }
+
+        .email-form p {
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            font-size: 18px;
             line-height: 1.6;
-            margin-bottom: 15px;
         }
 
-        .spinner {
-            width: 50px;
-            height: 50px;
-            margin: 40px auto;
-            border: 4px solid rgba(0, 217, 163, 0.2);
-            border-top-color: #00D9A3;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
+        .email-input-group {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
         }
 
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+        .email-input {
+            flex: 1;
+            padding: 18px 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            font-size: 17px;
+            color: var(--text);
+            outline: none;
+            transition: all 0.3s ease;
         }
 
-        .contact {
-            margin-top: 40px;
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.5);
+        .email-input::placeholder {
+            color: var(--text-secondary);
         }
 
-        .contact a {
-            color: #00D9A3;
+        .email-input:focus {
+            border-color: var(--emergency-red);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 0 4px rgba(255, 59, 92, 0.1);
+        }
+
+        .email-submit {
+            background: linear-gradient(135deg, var(--emergency-red) 0%, var(--emergency-red-light) 100%);
+            color: white;
+            padding: 18px 48px;
+            border: none;
+            border-radius: 16px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(255, 59, 92, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .email-submit::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .email-submit:hover::before {
+            left: 100%;
+        }
+
+        .email-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(255, 59, 92, 0.5);
+        }
+
+        .email-submit:active {
+            transform: translateY(0);
+        }
+
+        /* Hamburger Menu - Mobile Only */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            background: none;
+            border: none;
+            padding: 8px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translateY(10px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translateY(-10px);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 59, 92, 0.2);
+            flex-direction: column;
+            padding: 20px;
+            gap: 0;
+            z-index: 999;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 16px 20px;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .mobile-menu a:hover {
+            background: rgba(255, 59, 92, 0.1);
+            color: var(--emergency-red);
+        }
+
+        .platform-badges {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .platform-badge {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 16px 32px;
+            border-radius: 16px;
+            font-size: 17px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .platform-badge:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .platform-badge.available {
+            background: rgba(0, 217, 163, 0.15);
+            border-color: rgba(0, 217, 163, 0.3);
+        }
+
+        /* Screenshots Section - Modern Cards */
+        .screenshots {
+            padding: 160px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .screenshots::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--emergency-red), transparent);
+        }
+
+        .screenshots h2 {
+            font-size: 56px;
+            margin-bottom: 24px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .screenshots p {
+            color: var(--text-secondary);
+            margin-bottom: 70px;
+            font-size: 22px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .screenshot-item {
+            background: rgba(26, 26, 36, 0.4);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .screenshot-item:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 59, 92, 0.3);
+            box-shadow: 0 20px 60px rgba(255, 59, 92, 0.2);
+        }
+
+        .screenshot-placeholder {
+            width: 100%;
+            aspect-ratio: 9/16;
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.3) 0%, rgba(139, 92, 246, 0.3) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 56px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .screenshot-item h4 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .screenshot-item p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Features Section - Modern Grid */
+        .features {
+            padding: 160px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .features::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--emergency-red), transparent);
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 56px;
+            margin-bottom: 80px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 48px 40px;
+            background: linear-gradient(135deg, rgba(255, 59, 92, 0.1), rgba(255, 107, 138, 0.05));
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 59, 92, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 59, 92, 0.2), transparent);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 59, 92, 0.5);
+            box-shadow: 0 24px 64px rgba(255, 59, 92, 0.3);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-icon {
+            font-size: 72px;
+            margin-bottom: 28px;
+            filter: drop-shadow(0 4px 12px rgba(255, 59, 92, 0.4));
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card h3 {
+            font-size: 26px;
+            margin-bottom: 16px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 17px;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Pricing - Premium Card */
+        .pricing {
+            padding: 160px 40px;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .pricing::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--emergency-red), transparent);
+        }
+
+        .pricing h2 {
+            font-size: 56px;
+            margin-bottom: 50px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .price {
+            font-size: 80px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--emergency-red) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+            letter-spacing: -3px;
+        }
+
+        .price-period {
+            font-size: 28px;
+            color: var(--text-secondary);
+            margin-bottom: 50px;
+        }
+
+        .benefits {
+            text-align: left;
+            margin: 50px auto;
+            max-width: 500px;
+            background: rgba(26, 26, 36, 0.4);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .benefit {
+            padding: 16px 0;
+            font-size: 19px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .benefit::before {
+            content: "✓";
+            color: var(--test-green);
+            font-weight: bold;
+            font-size: 24px;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 217, 163, 0.15);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 160px 40px;
+            position: relative;
+        }
+
+        .faq::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--emergency-red), transparent);
+        }
+
+        .faq h2 {
+            text-align: center;
+            font-size: 56px;
+            margin-bottom: 80px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .faq-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: #000000;
+            border: 1px solid rgba(255, 59, 92, 0.3);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(255, 59, 92, 0.4);
+        }
+
+        .faq-item[open] {
+            border-color: rgba(255, 59, 92, 0.5);
+        }
+
+        .faq-item summary {
+            font-size: 18px;
+            font-weight: 450;
+            color: var(--text);
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: '+';
+            font-size: 28px;
+            color: var(--emergency-red);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item[open] summary::after {
+            content: '−';
+        }
+
+        .faq-item p {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        /* Timeline Section */
+        .timeline {
+            padding: 80px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 60px;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            align-items: flex-start;
+        }
+
+        .timeline-date {
+            min-width: 150px;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--emergency-red);
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: rgba(26, 26, 36, 0.4);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid var(--emergency-red);
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .timeline-content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        /* Footer - Modern Minimal */
+        .footer {
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 80px 20px 50px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 17px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--emergency-red);
+            transition: width 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--text);
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 15px;
+            margin-top: 40px;
+        }
+
+        .success-message {
+            display: none;
+            background: rgba(0, 217, 163, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 217, 163, 0.3);
+            color: var(--test-green);
+            padding: 20px;
+            border-radius: 16px;
+            margin-top: 20px;
+            font-weight: 600;
+            animation: slideIn 0.4s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        /* About Section Styles */
+        .about {
+            padding: 160px 40px;
+            position: relative;
+            background: linear-gradient(135deg, rgba(10, 10, 15, 0.95) 0%, rgba(26, 26, 36, 0.95) 100%);
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--emergency-red), transparent);
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about h2 {
+            text-align: center;
+            font-size: 56px;
+            margin-bottom: 60px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .about-hero {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px;
+            background: rgba(255, 59, 92, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 59, 92, 0.2);
+        }
+
+        .about-hero h3 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--emergency-red) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+        .about-intro {
+            font-size: 22px;
+            line-height: 1.7;
+            color: var(--text);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        .about-block {
+            background: rgba(26, 26, 36, 0.4);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .about-block p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .about-section {
+            background: rgba(26, 26, 36, 0.4);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .about-section:hover {
+            border-color: rgba(255, 59, 92, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .about-section h4 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        .about-section p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+
+        .about-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-commitments {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(79, 70, 229, 0.1) 100%);
+            backdrop-filter: blur(20px);
+            padding: 50px 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .about-commitments h4 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--text);
+        }
+
+        .commitment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .commitment-card {
+            background: rgba(26, 26, 36, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 32px 24px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .commitment-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(139, 92, 246, 0.4);
+            box-shadow: 0 12px 40px rgba(139, 92, 246, 0.2);
+        }
+
+        .commitment-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            filter: drop-shadow(0 4px 12px rgba(139, 92, 246, 0.4));
+        }
+
+        .commitment-card h5 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .commitment-card p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text);
+        }
+
+        .about-list {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+        }
+
+        .about-list li {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text);
+            padding: 12px 0 12px 40px;
+            position: relative;
+        }
+
+        .about-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--test-green);
+            font-weight: bold;
+            font-size: 20px;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 217, 163, 0.15);
+            border-radius: 50%;
+            top: 8px;
+        }
+
+        .about-note {
+            margin-top: 24px;
+            padding: 20px;
+            background: rgba(0, 217, 163, 0.1);
+            border-left: 4px solid var(--test-green);
+            border-radius: 8px;
+        }
+
+        .about-note p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text);
+            margin: 0;
+        }
+
+        .about-note strong {
+            color: var(--test-green);
+        }
+
+        .about-cta {
+            text-align: center;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, rgba(255, 59, 92, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 59, 92, 0.3);
+        }
+
+        .about-cta h3 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        .about-cta p {
+            font-size: 20px;
+            line-height: 1.7;
+            color: var(--text);
+            margin-bottom: 16px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about-tagline {
+            font-size: 22px;
+            margin-bottom: 40px;
+        }
+
+        .about-tagline strong {
+            color: var(--emergency-red);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--emergency-red) 0%, var(--emergency-red-light) 100%);
+            color: white;
+            padding: 20px 50px;
+            border-radius: 16px;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 12px 40px rgba(255, 59, 92, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(255, 59, 92, 0.5);
+        }
+
+        /* Show hamburger on mobile */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* Responsive - Mobile First */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+
+            .header {
+                padding: 16px 24px;
+            }
+
+            .header-logo {
+                width: 40px;
+                height: 40px;
+            }
+
+            .app-name-header {
+                font-size: 1.25rem;
+            }
+
+            .nav-links {
+                gap: 24px;
+            }
+
+            .nav-links a {
+                font-size: 0.9rem;
+            }
+
+            h1 {
+                font-size: 48px;
+                letter-spacing: -1px;
+            }
+
+            .tagline {
+                font-size: 20px;
+            }
+
+            .coming-soon h2 {
+                font-size: 40px;
+            }
+
+            .launch-date {
+                font-size: 24px;
+                padding: 16px 32px;
+            }
+
+            .email-input-group {
+                flex-direction: column;
+            }
+
+            .email-submit {
+                width: 100%;
+            }
+
+            .email-form {
+                padding: 40px 30px;
+            }
+
+            .features h2,
+            .pricing h2,
+            .screenshots h2 {
+                font-size: 40px;
+            }
+
+            .price {
+                font-size: 64px;
+                letter-spacing: -2px;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .timeline-date {
+                min-width: auto;
+            }
+
+            .feature-grid,
+            .screenshot-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .hero {
+                padding: 80px 20px 60px;
+                min-height: 80vh;
+            }
+
+            .app-icon {
+                width: 120px;
+                height: 120px;
+            }
+
+            .about h2 {
+                font-size: 40px;
+            }
+
+            .about-hero h3 {
+                font-size: 28px;
+            }
+
+            .about-intro {
+                font-size: 18px;
+            }
+
+            .about-section h4 {
+                font-size: 24px;
+            }
+
+            .about-commitments h4 {
+                font-size: 28px;
+            }
+
+            .commitment-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-cta h3 {
+                font-size: 28px;
+            }
+
+            .about-cta p {
+                font-size: 18px;
+            }
+
+            .about-tagline {
+                font-size: 19px;
+            }
+
+            .cta-button {
+                padding: 18px 40px;
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 40px;
+            }
+
+            .coming-soon h2 {
+                font-size: 32px;
+            }
+
+            .features h2,
+            .pricing h2,
+            .screenshots h2 {
+                font-size: 32px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">🚨</div>
-        <h1>Under Maintenance</h1>
-        <p>We're currently working on improvements to bring you a better experience.</p>
-        <p>The site will be back online shortly.</p>
-        <div class="spinner"></div>
-        <div class="contact">
-            Questions? Contact us at <a href="mailto:support@scream4u.icu">support@scream4u.icu</a>
+    <!-- Fixed Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="app-icon.png" alt="Scream4U.icu" class="header-logo">
+                <span class="app-name-header">Scream4U.icu</span>
+            </div>
+            <!-- Desktop Navigation -->
+            <nav class="nav-links">
+                <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Home</a>
+                <a href="#about">About</a>
+                <a href="#action">Action</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <!-- Mobile Hamburger Button -->
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-    </div>
+        <!-- Mobile Menu -->
+        <nav class="mobile-menu" id="mobileMenu">
+            <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); closeMobileMenu(); return false;">Home</a>
+            <a href="#about" onclick="closeMobileMenu()">About</a>
+            <a href="#action" onclick="closeMobileMenu()">Action</a>
+            <a href="#pricing" onclick="closeMobileMenu()">Pricing</a>
+            <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+            <a href="contact.html" onclick="closeMobileMenu()">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="app-icon">
+            <img src="app-icon.png" alt="Scream4U.icu App Icon" style="width: 100%; height: 100%; border-radius: 24px;">
+        </div>
+        <h1>Scream4U.icu</h1>
+        <p class="tagline">Fast emergency alerts when you need help<br>Works without internet</p>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <h2>About Scream4U.icu</h2>
+            
+            <div class="about-hero">
+                <h3>Your Safety. Your Voice. Always Within Reach.</h3>
+                <p class="about-intro">
+                    Scream4U.icu was born from a simple but powerful belief: everyone deserves to feel safe, and help should never be more than a button press away.
+                </p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-block">
+                    <p>
+                        In moments of crisis, seconds matter. Whether you're facing a medical emergency, feeling threatened, or need urgent assistance, Scream4U.icu ensures your voice is heard instantly—by the people who matter most to you. Our mission is to empower individuals and communities with a reliable, accessible emergency alert system that works when it matters most.
+                    </p>
+                </div>
+
+                <div class="about-section">
+                    <h4>🎯 What Makes Us Different</h4>
+                    <p>
+                        We built Scream4U.icu with a deep respect for your privacy and a commitment to reliability. Unlike other safety apps that require constant internet connectivity and track your location in the background, Scream4U.icu works without internet using SMS technology—the most reliable form of mobile communication. As long as you have cellular signal, your emergency alerts reach your trusted contacts even when data networks fail.
+                    </p>
+                    <p>
+                        With just two taps, your chosen emergency contacts receive an SMS with your location, the nature of your emergency, and a plea for immediate help. No complicated setup. No monthly fees eating away at your budget. No invasive tracking. Just straightforward, dependable protection.
+                    </p>
+                </div>
+
+                <div class="about-section">
+                    <h4>🤝 Empowering Communities, One Person at a Time</h4>
+                    <p>
+                        Safety isn't just an individual concern—it's a community responsibility. Scream4U.icu strengthens the bonds between family members, friends, neighbors, and colleagues by creating instant communication channels when emergencies strike. When you activate an alert, you're not just calling for help—you're activating your personal safety network, empowering those who care about you to respond quickly and effectively.
+                    </p>
+                    <p>
+                        We believe that by giving individuals the tools to protect themselves and others, we build stronger, more resilient communities where people look out for one another. From parents ensuring their children's safety to elderly individuals maintaining their independence, Scream4U.icu serves as a quiet guardian—always ready, never intrusive.
+                    </p>
+                </div>
+
+                <div class="about-commitments">
+                    <h4>💎 Our Commitment to You</h4>
+                    <div class="commitment-grid">
+                        <div class="commitment-card">
+                            <div class="commitment-icon">🔒</div>
+                            <h5>Privacy First</h5>
+                            <p>Your location is only accessed when you press an emergency button. We don't track you, sell your data, or run background processes.</p>
+                        </div>
+                        <div class="commitment-card">
+                            <div class="commitment-icon">💰</div>
+                            <h5>Affordable Protection</h5>
+                            <p>For less than the cost of a monthly coffee, you get year-round peace of mind with our transparent annual subscription.</p>
+                        </div>
+                        <div class="commitment-card">
+                            <div class="commitment-icon">⚡</div>
+                            <h5>Simple and Reliable</h5>
+                            <p>No complex features to learn. No dependencies on app servers or internet connection. Just straightforward emergency alerts that work with cellular signal.</p>
+                        </div>
+                        <div class="commitment-card">
+                            <div class="commitment-icon">🎉</div>
+                            <h5>Founder Pricing</h5>
+                            <p>We're rewarding our early supporters with lifetime founder pricing—because those who believe in us first deserve to be recognized.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-section">
+                    <h4>👥 Who We Serve</h4>
+                    <p>Scream4U.icu is for anyone who values safety and independence:</p>
+                    <ul class="about-list">
+                        <li>Students living on or off campus who want quick access to emergency help</li>
+                        <li>Individuals living alone who want a reliable safety net</li>
+                        <li>Parents who want to ensure their children can call for help instantly</li>
+                        <li>Elderly users who want to maintain independence while staying protected</li>
+                        <li>Anyone who works late hours or travels through unfamiliar areas</li>
+                        <li>Communities that believe in looking out for one another</li>
+                    </ul>
+                    <div class="about-note">
+                        <p><strong>Note:</strong> GPS location sharing is completely optional. If your home address in the app matches your current location, you're already protected—your emergency contacts will receive your address with every alert. GPS simply adds a map link when you're away from home.</p>
+                    </div>
+                </div>
+
+                <div class="about-section">
+                    <h4>🚀 Looking Forward</h4>
+                    <p>
+                        We're just getting started. While Scream4U.icu currently serves Android users, we're committed to expanding our reach—bringing our offline emergency alert system to iOS, adding multi-language support, and continuously improving based on feedback from our community.
+                    </p>
+                    <p>
+                        Every subscription helps us grow and improve the service. Every user who activates Scream4U.icu becomes part of a community that believes safety should be simple, accessible, and reliable.
+                    </p>
+                </div>
+
+                <div class="about-cta">
+                    <h3>Ready to take control of your safety?</h3>
+                    <p>Join the Scream4U.icu community today. Because when it comes to emergencies, you shouldn't have to hope for connectivity—you should have certainty.</p>
+                    <p class="about-tagline"><strong>Scream4U.icu: Empowering you to protect yourself and those you love.</strong></p>
+                    <a href="#pricing" class="cta-button">Get Started Today</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Screenshots Section -->
+
+    <section class="screenshots" id="action">
+        <h2>See Scream4U.icu in Action</h2>
+        <p>Simple, fast, and designed for emergency alerts</p>
+        
+        <!-- App Screenshots -->
+        <div class="screenshot-grid">
+            <div class="screenshot-item">
+                <img src="screenshot1.png" alt="Emergency Buttons" style="width: 100%; border-radius: 20px;">
+                <h4 style="margin-top: 20px;">Emergency Buttons</h4>
+            </div>
+            <div class="screenshot-item">
+                <img src="screenshot2.png" alt="Welcome Screen" style="width: 100%; border-radius: 20px;">
+                <h4 style="margin-top: 20px;">Welcome Screen</h4>
+            </div>
+            <div class="screenshot-item">
+                <img src="screenshot3.png" alt="FAQ Screen" style="width: 100%; border-radius: 20px;">
+                <h4 style="margin-top: 20px;">FAQ Screen</h4>
+            </div>
+            <div class="screenshot-item">
+                <img src="screenshot4.png" alt="Settings Screen" style="width: 100%; border-radius: 20px;">
+                <h4 style="margin-top: 20px;">Settings Screen</h4>
+            </div>
+        </div>
+
+        <!-- SMS Messages -->
+        <h3 style="text-align: center; font-size: 36px; margin-top: 80px; margin-bottom: 40px; font-weight: 800; color: var(--text);">Pre-Populated Emergency SMS</h3>
+        <div class="screenshot-grid">
+            <div class="screenshot-item">
+                <img src="screenshot5.png" alt="Medical Emergency SMS" style="width: 100%; border-radius: 20px;">
+                <h4 style="margin-top: 20px;">Medical SMS</h4>
+            </div>
+            <div class="screenshot-item">
+                <img src="screenshot6.png" alt="Fire Emergency SMS" style="width: 100%; border-radius: 20px;">
+                <h4 style="margin-top: 20px;">Fire SMS</h4>
+            </div>
+            <div class="screenshot-item">
+                <img src="screenshot7.png" alt="Intruder Alert SMS" style="width: 100%; border-radius: 20px;">
+                <h4 style="margin-top: 20px;">Intruder SMS</h4>
+            </div>
+            <div class="screenshot-item">
+                <img src="screenshot8.png" alt="GBV SMS" style="width: 100%; border-radius: 20px;">
+                <h4 style="margin-top: 20px;">GBV SMS</h4>
+            </div>
+            <div class="screenshot-item" style="visibility: hidden;"></div>
+            <div class="screenshot-item">
+                <img src="screenshot9.png" alt="Robbery Alert SMS" style="width: 100%; border-radius: 20px;">
+                <h4 style="margin-top: 20px;">Robbery SMS</h4>
+            </div>
+            <div class="screenshot-item">
+                <img src="screenshot10.png" alt="Kidnapping Alert SMS" style="width: 100%; border-radius: 20px;">
+                <h4 style="margin-top: 20px;">Kidnapping SMS</h4>
+            </div>
+            <div class="screenshot-item" style="visibility: hidden;"></div>
+        </div>
+
+        <!-- SMS Messages with GPS Location -->
+        <h3 style="text-align: center; font-size: 36px; margin-top: 80px; margin-bottom: 20px; font-weight: 800; color: var(--text);">Emergency SMS with GPS Location</h3>
+        <p style="text-align: center; color: var(--text-secondary); font-size: 18px; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
+            When location permission is enabled, GPS coordinates are automatically included as a Google Maps link for precise location sharing. 📡 Works completely offline - GPS uses satellites, no internet or WiFi required.
+        </p>
+        <div class="screenshot-grid">
+            <div class="screenshot-item">
+                <img src="screenshot11.png" alt="Medical Emergency SMS with GPS" style="width: 100%; border-radius: 20px;">
+                <h4 style="margin-top: 20px;">Medical SMS (with GPS)</h4>
+            </div>
+            <div class="screenshot-item">
+                <img src="screenshot12.png" alt="Fire Emergency SMS with GPS" style="width: 100%; border-radius: 20px;">
+                <h4 style="margin-top: 20px;">Fire SMS (with GPS)</h4>
+            </div>
+            <div class="screenshot-item">
+                <img src="screenshot13.png" alt="Intruder Alert SMS with GPS" style="width: 100%; border-radius: 20px;">
+                <h4 style="margin-top: 20px;">Intruder SMS (with GPS)</h4>
+            </div>
+            <div class="screenshot-item">
+                <img src="screenshot14.png" alt="GBV SMS with GPS" style="width: 100%; border-radius: 20px;">
+                <h4 style="margin-top: 20px;">GBV SMS (with GPS)</h4>
+            </div>
+            <div class="screenshot-item" style="visibility: hidden;"></div>
+            <div class="screenshot-item">
+                <img src="screenshot15.png" alt="Robbery Alert SMS with GPS" style="width: 100%; border-radius: 20px;">
+                <h4 style="margin-top: 20px;">Robbery SMS (with GPS)</h4>
+            </div>
+            <div class="screenshot-item">
+                <img src="screenshot16.png" alt="Kidnapping Alert SMS with GPS" style="width: 100%; border-radius: 20px;">
+                <h4 style="margin-top: 20px;">Kidnapping SMS (with GPS)</h4>
+            </div>
+            <div class="screenshot-item" style="visibility: hidden;"></div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <h2 style="margin-top: 0;">Simple Pricing</h2>
+        <div class="price" id="displayPrice">
+    $19.99
+    <span class="price-period">/year</span>
+</div>
+
+<p style="color: #A0A0B8; margin-bottom: 20px; font-size: 18px;">
+   <strong>🎉 Launch Special:</strong> First 1000 subscribers get <strong style="color: var(--emergency-red);">LIFETIME 50% OFF</strong> - just <span id="discountPrice">$9.99</span>/year forever!
+</p>
+
+<p id="founderCounter" style="color: #FFD700; margin-bottom: 20px; font-size: 20px; font-weight: 700; text-align: center;">
+   ⏰ Loading founder spots...
+</p>
+
+<div style="background: rgba(255, 59, 92, 0.15); border: 2px solid rgba(255, 59, 92, 0.4); border-radius: 16px; padding: 20px; margin-bottom: 30px; text-align: left;">
+    <p style="color: #FF3B5C; font-size: 16px; font-weight: 600; margin: 0; line-height: 1.6;">
+        ⚠️ <strong>Important:</strong> This discount applies for the life of the subscription, provided the subscription remains active and does not lapse.
+    </p>
+</div>
+    <p style="color: #A0A0B8; font-size: 13px; margin-top: 0; margin-bottom: 30px; opacity: 0.7; font-style: italic;">
+    *Price based on USD but shown in your local currency. Final amount may vary slightly due to exchange rate fluctuations.
+</p>
+       
+    <div class="benefits">
+            <div class="benefit">Unlimited emergency alerts</div>
+            <div class="benefit">All 6 emergency types</div>
+            <div class="benefit">Free test alerts forever</div>
+            <div class="benefit">Works completely offline</div>
+            <div class="benefit">No hidden fees</div>
+            <div class="benefit">Cancel anytime</div>
+        </div>
+
+        <h2 style="margin-top: 80px;">📱 Android App NOW AVAILABLE!</h2>
+        <div class="launch-date" style="margin-bottom: 50px;">🎉 Download Now - December 24, 2025</div>
+        
+        <!-- Download Button -->
+        <div style="margin: 50px auto; max-width: 600px;">
+            <a href="https://github.com/Antongolivier/Scream4u.icu-APK/releases/download/v1.0.7/scream4u-v1.0.7.apk" 
+               id="downloadButton"
+               style="display: inline-block; background: linear-gradient(135deg, #00D9A3 0%, #00B386 100%); color: white; padding: 24px 60px; border-radius: 20px; font-size: 24px; font-weight: 700; text-decoration: none; box-shadow: 0 12px 40px rgba(0, 217, 163, 0.4); transition: all 0.3s ease;"
+               onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 16px 48px rgba(0, 217, 163, 0.5)';"
+               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 12px 40px rgba(0, 217, 163, 0.4)';"
+               onclick="return handleDownload(event);">
+                📥 Download APK (Android)
+            </a>
+            <p style="margin-top: 20px; color: var(--text-secondary); font-size: 16px;">
+                Version 1.0.7 • Direct Download
+            </p>
+            
+            <!-- Non-Android Device Message (Hidden by default) -->
+            <div id="nonAndroidMessage" style="display: none; margin-top: 30px; background: rgba(255, 107, 138, 0.15); border: 2px solid rgba(255, 59, 92, 0.3); padding: 30px; border-radius: 20px;">
+                <h3 style="color: #FF6B6B; margin-bottom: 15px; font-size: 22px;">📱 Android Device Required</h3>
+                <p style="color: var(--text); font-size: 18px; line-height: 1.6; margin-bottom: 20px;">
+                    This app is designed for Android devices only. To download and install:
+                </p>
+                <ol style="color: var(--text); font-size: 16px; line-height: 1.8; text-align: left; max-width: 500px; margin: 0 auto;">
+                    <li>Open this page on your Android phone or tablet</li>
+                    <li>Or scan the QR code below with your Android device</li>
+                    <li>Then tap the download button</li>
+                </ol>
+                <div style="margin-top: 30px; padding: 20px; background: rgba(0, 0, 0, 0.3); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                    <p style="color: var(--text); font-size: 15px; line-height: 1.7; text-align: left; margin: 0;">
+                        <strong style="color: var(--emergency-red);">Installation Note:</strong><br>
+                        On devices running Android 8.0 (API level 26) and higher, you must navigate to the <strong>Install unknown apps</strong> system settings screen to enable app installations from a particular location (i.e. the web browser you are downloading the app from).<br><br>
+                        On devices running Android 7.1.1 (API level 25) and lower, you should enable the <strong>Unknown sources</strong> system setting, found in Settings > Security on your device.
+                    </p>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 14px; margin-top: 20px;">
+                    iOS version coming Q2 2026
+                </p>
+            </div>
+        </div>
+
+        <!-- QR Code Section -->
+        <div style="margin: 50px auto; max-width: 400px; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); padding: 40px; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.1);">
+            <h3 style="margin-bottom: 20px; font-size: 24px;">📱 Scan to Download</h3>
+            <div id="qrcode" style="display: flex; justify-content: center; margin: 20px 0;"></div>
+            <p style="color: var(--text-secondary); font-size: 14px; margin-top: 20px;">
+                Scan this QR code with your Android phone to download the app
+            </p>
+        </div>
+        
+        <div class="email-form">
+            <h3>Get Updates</h3>
+            <p>Stay informed about new features and updates.</p>
+            
+            <form id="emailForm" action="https://formspree.io/f/xeovgdpr" method="POST">
+                <div class="email-input-group">
+                    <input 
+                        type="email" 
+                        name="email" 
+                        class="email-input" 
+                        placeholder="Enter your email" 
+                        required
+                    >
+                    <button type="submit" class="email-submit">Subscribe</button>
+                </div>
+                <input type="hidden" name="platform" value="Android">
+                <input type="hidden" name="_subject" value="New Scream4U Updates Subscription">
+            </form>
+            
+            <div id="successMessage" class="success-message">
+                ✓ Thanks! We'll keep you updated!
+            </div>
+        </div>
+
+        <div class="platform-badges">
+            <div class="platform-badge available">🤖 Android - AVAILABLE NOW!</div>
+            <div class="platform-badge">🍎 iOS - Q2 2026</div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-grid">
+                <details class="faq-item">
+                    <summary>Will I need an internet connection or mobile data for this app to work?</summary>
+                    <p>No! Scream4U works completely offline. Emergency alerts are sent via SMS directly from your phone - no internet required. You only need internet for: initial app download and subscribing (to receive your activation code via email). Once set up, all emergency features work offline.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>How do I add emergency contacts?</summary>
+                    <p>Go to Settings → Edit Emergency Contacts. You can add up to 5 contacts with their names and phone numbers. Make sure to include country codes for international numbers (e.g., +1 for US, +27 for South Africa).</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Why can't I send emergency alerts? The buttons are locked.</summary>
+                    <p>Emergency alert buttons require an active subscription. Only the Test Alert is free. Subscribe through the app to unlock all emergency features.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>How do I test if the app works?</summary>
+                    <p>Use the "Test Alert" button (green button on main screen, or in Settings if subscribed). Free users get 3 test alerts to verify the system works. Subscribers get unlimited testing. The test message clearly states it's not a real emergency.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>What information is included in emergency alerts?</summary>
+                    <p>Emergency alerts include: your name, your home address, GPS coordinates (if location permission enabled), the type of emergency, exact timestamp, and a message asking contacts to "Please assist immediately."</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Does the app track my location with GPS?</summary>
+                    <p>No! The app does NOT track your location. GPS is completely optional and only accessed when you press an emergency button - never in the background.<br><br>
+                    <strong>How it works:</strong><br>
+                    • During setup, you can grant location permission (optional)<br>
+                    • If enabled, GPS coordinates are added to emergency SMS as a Google Maps link<br>
+                    • Works offline (GPS uses satellites, no internet needed)<br>
+                    • You can enable/disable anytime in Settings → Location Permission<br>
+                    • If GPS fails or is disabled, SMS still sends with your home address<br><br>
+                    <strong>Important Privacy Note:</strong><br>
+                    GPS location is obtained directly on your phone at the moment you press an emergency button. The app retrieves your coordinates once, includes them in the SMS message, and then discards them immediately. Scream4U.icu never sees, tracks, or stores your GPS coordinates because we cannot access your phone's native SMS app. Everything happens locally on your device.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Can I transfer my subscription to a new phone?</summary>
+                    <p>Yes! You'll need internet connection on your new device. Simply enter your activation code on your new device - the app will contact our server to transfer your subscription to the new device and deactivate the old one. Your activation code is valid for 365 days and works on one device at a time.</p>
+                    <p><strong>Transfer Limit:</strong> You can transfer your subscription up to 3 times per year. If you need additional transfers, contact support@scream4u.icu for assistance.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>How do I cancel my subscription?</summary>
+                    <p>Go to Settings → Subscription Status → Manage Subscription. Contact our support team at support@scream4u.icu to cancel your subscription. We'll process your request promptly and confirm the cancellation.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>What happens if I accidentally press an emergency button?</summary>
+                    <p>You have one chance to cancel: The SMS app will open with pre-filled messages. This is your one chance - simply close the SMS app or don't tap 'Send', and no messages will be sent.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>How are emergency SMS messages sent?</summary>
+                    <p>When you press an emergency button, the app opens your phone's SMS app with pre-filled messages for all your emergency contacts. You'll see the messages ready to send - just tap the Send button. This works completely offline, requiring only cellular signal for SMS delivery.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Why does my phone ask 'WhatsApp or SMS' when I press emergency buttons?</summary>
+                    <p>Your phone needs a default SMS app configured. Go to <strong>Settings → Apps → Default apps → SMS app</strong> and select your SMS app (like Messages). This ensures alerts send immediately without asking.</p>
+                    <p><strong>Note:</strong> WhatsApp cannot send to multiple contacts at once and requires internet connection. Scream4U uses SMS for reliability and works offline, which is critical during emergencies when internet may be unavailable.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>How do I subscribe and get my activation code?</summary>
+                    <p>Subscribe through the app using PayPal for 365 days (1 year) of access. Pricing: $9.99 for Founders (first 1,000 subscribers) or $19.99 for Regular subscribers. After payment, you'll receive an activation code via email within 2-5 minutes. Enter this code in the app's green "Enter Emailed Code" box to unlock all emergency features.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Is there an iPhone/iOS version?</summary>
+                    <p>Currently Scream4U.icu is available for Android only. We're working on an iOS version planned for release in Q2 2026 (April-June). Want to be notified? Email support@scream4u.icu with 'iOS Waitlist' in the subject line.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="timeline">
+        <h2>Launch Timeline</h2>
+        
+        <div class="timeline-item">
+            <div class="timeline-date">November 2025</div>
+            <div class="timeline-content">
+                <h3>✅ Website Launch</h3>
+                <p>Collecting emails, building anticipation, showcasing features</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">December 2025</div>
+            <div class="timeline-content">
+                <h3>🚀 Android APK Release</h3>
+                <p>Direct download from website. Email notification to waitlist with discount code.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">January 2026</div>
+            <div class="timeline-content">
+                <h3>📲 Google Play Store</h3>
+                <p>Official Play Store listing for easier discovery and updates</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">Q2 2026</div>
+            <div class="timeline-content">
+                <h3>🍎 iOS Version</h3>
+                <p>Apple App Store release. Email notification to iOS waitlist.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+            <a href="contact.html">Contact Support</a>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Scream4U.icu. All rights reserved.</p>
+            <p style="margin-top: 12px; font-size: 12px;">
+                Android launch: December 2025 | iOS launch: Q2 2026
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Handle form submission
+        document.getElementById('emailForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const formData = new FormData(form);
+            
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById('successMessage').classList.add('show');
+                    form.reset();
+                    setTimeout(() => {
+                        document.getElementById('successMessage').classList.remove('show');
+                    }, 5000);
+                }
+            }).catch(error => {
+                alert('Oops! There was a problem. Please try again or email us directly at support@scream4u.icu');
+            });
+        });
+
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        function closeMobileMenu() {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideMenu = mobileMenu.contains(event.target);
+            const isClickOnHamburger = hamburger.contains(event.target);
+            
+            if (!isClickInsideMenu && !isClickOnHamburger && mobileMenu.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+// Dynamic currency conversion with live exchange rates
+        async function updatePrices() {
+            const usdPrice = 19.99;
+            const specialPrice = 9.99; // 50% discount
+
+            try {
+                // Step 1: Detect user's currency via IP geolocation
+                let currency = "USD";
+                let countryCode = "US";
+                
+                console.log("Fetching geolocation data...");
+                const geoRes = await fetch("https://ipapi.co/json/");
+                const geoData = await geoRes.json();
+                console.log("Geolocation data:", geoData);
+                
+                if (geoData.currency) {
+                    currency = geoData.currency;
+                    console.log("Detected currency:", currency);
+                }
+                if (geoData.country_code) {
+                    countryCode = geoData.country_code;
+                    console.log("Detected country:", countryCode);
+                }
+
+                // Step 2: Fetch live exchange rates
+                console.log("Fetching exchange rates...");
+                const rateRes = await fetch(`https://api.exchangerate-api.com/v4/latest/USD`);
+                const rateData = await rateRes.json();
+                console.log("Exchange rate data:", rateData);
+                
+                const rate = rateData.rates[currency] || 1;
+                console.log(`Exchange rate for ${currency}:`, rate);
+
+                // Step 3: Convert prices
+                const localAnnual = usdPrice * rate;
+                const localSpecial = specialPrice * rate;
+                console.log("Converted annual price:", localAnnual);
+                console.log("Converted special price:", localSpecial);
+
+                // Step 4: Format and display prices
+                const userLocale = countryCode === 'ZA' ? 'en-ZA' : 
+                                   countryCode === 'GB' ? 'en-GB' :
+                                   countryCode === 'AU' ? 'en-AU' :
+                                   countryCode === 'CA' ? 'en-CA' :
+                                   navigator.language || 'en-US';
+
+                const priceElement = document.getElementById("displayPrice");
+                if (priceElement) {
+                    const formattedPrice = new Intl.NumberFormat(userLocale, { 
+                        style: "currency", 
+                        currency: currency
+                    }).format(localAnnual);
+                    
+                    console.log("Formatted price:", formattedPrice);
+                    
+                    priceElement.innerHTML = `
+                        ${formattedPrice}
+                        <span class="price-period">/year</span>
+                    `;
+                }
+
+                const discountPriceElement = document.getElementById("discountPrice");
+                if (discountPriceElement) {
+                    const formattedDiscount = new Intl.NumberFormat(userLocale, { 
+                        style: "currency", 
+                        currency: currency
+                    }).format(localSpecial);
+                    
+                    console.log("Formatted discount price:", formattedDiscount);
+                    discountPriceElement.textContent = formattedDiscount;
+                }
+
+                console.log("Price update completed successfully!");
+
+            } catch (e) {
+                console.error("Currency update failed:", e);
+                // Fallback to USD if API fails
+                const priceElement = document.getElementById("displayPrice");
+                if (priceElement) {
+                    priceElement.innerHTML = `
+                        $19.99
+                        <span class="price-period">/year</span>
+                    `;
+                }
+                const discountPriceElement = document.getElementById("discountPrice");
+                if (discountPriceElement) {
+                    discountPriceElement.textContent = "$9.99";
+                }
+            }
+        }
+
+        // Run price update when page loads
+        updatePrices();
+
+        // Fetch and display founder count
+        async function updateFounderCount() {
+            try {
+                const apiUrl = 'https://script.google.com/macros/s/AKfycbw9MtiKec4ymiIlsg0Pw5dyVzCNkOnldjByqyUMOxG9hkJLiJ5qvn1FzKc28jZfGr3v/exec';
+                const response = await fetch(`${apiUrl}?action=getFounderCount`);
+                
+                if (!response.ok) {
+                    throw new Error('Failed to fetch founder count');
+                }
+                
+                const data = await response.json();
+                const counterElement = document.getElementById('founderCounter');
+                
+                if (counterElement && data.success) {
+                    const remaining = data.foundersRemaining;
+                    const total = data.founderLimit;
+                    
+                    if (remaining > 0) {
+                        counterElement.innerHTML = `⏰ Only <strong>${remaining}</strong> of ${total} Founder spots remaining!`;
+                        counterElement.style.color = '#FFD700';
+                    } else {
+                        counterElement.innerHTML = `🎉 Founder tier is full! (${data.founderCount}/${total})`;
+                        counterElement.style.color = '#FF3B5C';
+                    }
+                }
+            } catch (error) {
+                console.error('Failed to fetch founder count:', error);
+                const counterElement = document.getElementById('founderCounter');
+                if (counterElement) {
+                    counterElement.style.display = 'none';
+                }
+            }
+        }
+
+        // Update founder count on page load
+        updateFounderCount();
+
+    </script>
+
+    <!-- QR Code Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+        // Device Detection and Download Handler
+        function isAndroidDevice() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            return /android/i.test(userAgent);
+        }
+
+        function handleDownload(event) {
+            if (!isAndroidDevice()) {
+                event.preventDefault();
+                
+                // Hide download button
+                document.getElementById('downloadButton').style.display = 'none';
+                
+                // Show non-Android message
+                document.getElementById('nonAndroidMessage').style.display = 'block';
+                
+                // Scroll to message
+                document.getElementById('nonAndroidMessage').scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+                
+                return false;
+            }
+            // Allow download for Android devices
+            return true;
+        }
+
+        // Generate QR Code for APK download
+        if (document.getElementById('qrcode')) {
+            new QRCode(document.getElementById('qrcode'), {
+                text: 'https://github.com/Antongolivier/Scream4u.icu-APK/releases/download/v1.0.7/scream4u-v1.0.7.apk',
+                width: 200,
+                height: 200,
+                colorDark: '#FFFFFF',
+                colorLight: '#000000',
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        }
+    </script>
+
 </body>
+</html>
 </html>
