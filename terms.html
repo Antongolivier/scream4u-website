@@ -109,11 +109,13 @@
         <p><strong>Optional GPS Location (v1.0.2+):</strong></p>
         <ul>
             <li>The app offers optional GPS location access for more accurate emergency alerts</li>
+            <li><strong>GPS coordinates are NOT guaranteed</strong> - many devices require internet for GPS to work</li>
             <li>GPS is ONLY accessed when you send an emergency alert (not tracked in background)</li>
-            <li>GPS coordinates are included in SMS as a Google Maps link if permission granted</li>
+            <li>GPS coordinates are included in SMS as a Google Maps link if permission granted and GPS is available</li>
             <li>You can enable or disable location permission anytime in Settings</li>
             <li>If GPS fails or is disabled, SMS still sends with your home address</li>
         </ul>
+        <p><strong>Critical: GPS Limitations:</strong> GPS coordinates depend on your device hardware and internet connection. Many devices cannot obtain GPS coordinates without WiFi/data. Your home address is the ONLY guaranteed location information - keep it current.</p>
         <p><strong>Privacy Note:</strong> GPS location is obtained directly on your phone at the moment you press an emergency button. The app retrieves your coordinates once, includes them in the SMS message, and then discards them immediately. Scream4U.icu never sees, tracks, or stores your GPS coordinates because we cannot access your phone's native SMS app. Everything happens locally on your device.</p>
         <p><strong>Your Responsibility:</strong> You are solely responsible for keeping your address accurate and current. Emergency contacts receive the address you provide - if it's wrong or outdated, they cannot find you.</p>
         <p><strong>Update Anytime:</strong> Settings → Edit Home Address | Settings → Location Permission</p>
