@@ -1371,6 +1371,7 @@
                 <a href="#action">Action</a>
                 <a href="#pricing">Pricing</a>
                 <a href="#download">Download</a>
+                <a href="#subscribe">Subscribe</a>
                 <a href="#faq">FAQ</a>
                 <a href="contact.html">Contact</a>
             </nav>
@@ -1388,6 +1389,7 @@
             <a href="#action" onclick="closeMobileMenu()">Action</a>
             <a href="#pricing" onclick="closeMobileMenu()">Pricing</a>
             <a href="#download" onclick="closeMobileMenu()">Download</a>
+            <a href="#subscribe" onclick="closeMobileMenu()">Subscribe</a>
             <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
             <a href="contact.html" onclick="closeMobileMenu()">Contact</a>
         </nav>
@@ -1634,7 +1636,78 @@
             <div class="benefit">Cancel anytime</div>
         </div>
 
-        <h2 style="margin-top: 80px;" id="download">📱 Android App NOW AVAILABLE!</h2>
+        <!-- ===== DOWNLOAD SECTION ===== -->
+        <h2 style="margin-top: 80px;" id="download">📱 Download the App</h2>
+
+        <!-- Download Options -->
+        <div style="margin: 30px auto 50px; max-width: 600px; display: flex; flex-direction: column; align-items: center; gap: 24px;">
+
+            <!-- Google Play Badge (Coming Soon) -->
+            <div style="text-align: center;">
+                <a href="https://play.google.com/store/apps/details?id=com.scream4u.app"
+                   target="_blank"
+                   style="display: inline-block; transition: all 0.3s ease; opacity: 0.6; pointer-events: none;"
+                   title="Coming soon to Google Play">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                         alt="Get it on Google Play"
+                         style="height: 80px; border-radius: 12px;">
+                </a>
+                <p style="color: var(--text-secondary); font-size: 13px; margin-top: 8px;">Google Play — Coming Soon</p>
+            </div>
+
+            <p style="color: var(--text-secondary); font-size: 16px; margin: 0;">— or —</p>
+
+            <!-- Direct APK Download -->
+            <div style="text-align: center;">
+                <a href="https://github.com/Antongolivier/Scream4u.icu-APK/releases/download/v1.0.18/v1.0.18.apk"
+                   id="apkDownloadBtn"
+                   style="display: inline-block; background: linear-gradient(135deg, #00D9A3 0%, #00B386 100%); color: white; padding: 20px 50px; border-radius: 20px; font-size: 20px; font-weight: 700; text-decoration: none; box-shadow: 0 12px 40px rgba(0, 217, 163, 0.4); transition: all 0.3s ease;"
+                   onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 16px 48px rgba(0, 217, 163, 0.5)';"
+                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 12px 40px rgba(0, 217, 163, 0.4)';"
+                   onclick="return handleApkDownload(event);">
+                    📥 Download APK Directly
+                </a>
+                <p style="color: var(--text-secondary); font-size: 13px; margin-top: 12px;">
+                    Version 1.0.18 • Android only<br>
+                    <span style="font-size: 12px; opacity: 0.7;">You may need to allow "Install from unknown sources" in your device settings</span>
+                </p>
+
+                <!-- Non-Android warning (hidden by default) -->
+                <div id="nonAndroidMessage" style="display: none; margin-top: 24px; background: rgba(255, 107, 138, 0.15); border: 2px solid rgba(255, 59, 92, 0.3); padding: 24px; border-radius: 20px; text-align: left;">
+                    <h3 style="color: #FF6B6B; margin-bottom: 12px; font-size: 20px;">📱 Android Device Required</h3>
+                    <p style="color: var(--text); font-size: 16px; line-height: 1.6; margin-bottom: 16px;">
+                        This app is for Android only. To install it:
+                    </p>
+                    <ol style="color: var(--text); font-size: 15px; line-height: 1.8; padding-left: 20px;">
+                        <li>Open this page on your Android phone</li>
+                        <li>Tap "Download APK Directly"</li>
+                        <li>Open the downloaded file to install</li>
+                    </ol>
+                    <p style="color: var(--text-secondary); font-size: 13px; margin-top: 16px;">
+                        iOS version coming Q2 2026
+                    </p>
+                </div>
+            </div>
+
+            <p style="color: var(--text-secondary); font-size: 13px; margin-top: 8px;">
+                iOS version coming Q2 2026
+            </p>
+        </div>
+
+        <!-- QR Code Section -->
+        <div style="margin: 20px auto 60px; max-width: 400px; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); padding: 40px; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.1);">
+            <h3 style="margin-bottom: 20px; font-size: 24px;">📱 Scan to Download</h3>
+            <div id="qrcode" style="display: flex; justify-content: center; margin: 20px 0;"></div>
+            <p style="color: var(--text-secondary); font-size: 14px; margin-top: 20px;">
+                Scan this QR code with your Android phone to find us on Google Play
+            </p>
+        </div>
+
+        <!-- ===== SUBSCRIBE SECTION ===== -->
+        <h2 style="margin-top: 20px;" id="subscribe">💳 Subscribe to Unlock All Features</h2>
+        <p style="color: var(--text-secondary); font-size: 16px; margin-bottom: 30px;">
+            Already have the app? Subscribe below to unlock all 6 emergency alert types.
+        </p>
 
         <!-- Email input + Subscribe button -->
         <div style="max-width: 480px; margin: 0 auto 50px;">
@@ -1677,69 +1750,6 @@
             <p style="color: var(--text-secondary); font-size: 13px; margin-top: 14px; line-height: 1.6; text-align: center;">
                 After payment, your activation code arrives via email within 2–5 minutes.<br>
                 Enter it in the app under Subscription → "Enter Emailed Code".
-            </p>
-
-        <!-- Download Options -->
-        <div style="margin: 50px auto; max-width: 600px; display: flex; flex-direction: column; align-items: center; gap: 24px;">
-
-            <!-- Google Play Badge (Coming Soon) -->
-            <div style="text-align: center;">
-                <a href="https://play.google.com/store/apps/details?id=com.scream4u.app"
-                   target="_blank"
-                   style="display: inline-block; transition: all 0.3s ease; opacity: 0.6; pointer-events: none;"
-                   title="Coming soon to Google Play">
-                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-                         alt="Get it on Google Play"
-                         style="height: 80px; border-radius: 12px;">
-                </a>
-                <p style="color: var(--text-secondary); font-size: 13px; margin-top: 8px;">Google Play — Coming Soon</p>
-            </div>
-
-            <p style="color: var(--text-secondary); font-size: 16px; margin: 0;">— or —</p>
-
-            <!-- Direct APK Download -->
-            <div style="text-align: center;">
-                <a href="https://github.com/Antongolivier/Scream4u.icu-APK/releases/download/v1.0.18/v1.0.18.apk"
-                   id="apkDownloadBtn"
-                   style="display: inline-block; background: linear-gradient(135deg, #00D9A3 0%, #00B386 100%); color: white; padding: 20px 50px; border-radius: 20px; font-size: 20px; font-weight: 700; text-decoration: none; box-shadow: 0 12px 40px rgba(0, 217, 163, 0.4); transition: all 0.3s ease;"
-                   onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 16px 48px rgba(0, 217, 163, 0.5)';"
-                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 12px 40px rgba(0, 217, 163, 0.4)';"
-                   onclick="return handleApkDownload(event);">
-                    📥 Download APK Directly
-                </a>
-                <p style="color: var(--text-secondary); font-size: 13px; margin-top: 12px;">
-                    Version 1.0.18 • Android only<br>
-                    <span style="font-size: 12px; opacity: 0.7;">You may need to allow "Install from unknown sources" in your device settings</span>
-
-                <!-- Non-Android warning (hidden by default) -->
-                <div id="nonAndroidMessage" style="display: none; margin-top: 24px; background: rgba(255, 107, 138, 0.15); border: 2px solid rgba(255, 59, 92, 0.3); padding: 24px; border-radius: 20px; text-align: left;">
-                    <h3 style="color: #FF6B6B; margin-bottom: 12px; font-size: 20px;">📱 Android Device Required</h3>
-                    <p style="color: var(--text); font-size: 16px; line-height: 1.6; margin-bottom: 16px;">
-                        This app is for Android only. To install it:
-                    </p>
-                    <ol style="color: var(--text); font-size: 15px; line-height: 1.8; padding-left: 20px;">
-                        <li>Open this page on your Android phone</li>
-                        <li>Tap "Download APK Directly"</li>
-                        <li>Open the downloaded file to install</li>
-                    </ol>
-                    <p style="color: var(--text-secondary); font-size: 13px; margin-top: 16px;">
-                        iOS version coming Q2 2026
-                    </p>
-                </div>
-                </p>
-            </div>
-
-            <p style="color: var(--text-secondary); font-size: 13px; margin-top: 8px;">
-                iOS version coming Q2 2026
-            </p>
-        </div>
-
-        <!-- QR Code Section -->
-        <div style="margin: 50px auto; max-width: 400px; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); padding: 40px; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.1);">
-            <h3 style="margin-bottom: 20px; font-size: 24px;">📱 Scan to Download</h3>
-            <div id="qrcode" style="display: flex; justify-content: center; margin: 20px 0;"></div>
-            <p style="color: var(--text-secondary); font-size: 14px; margin-top: 20px;">
-                Scan this QR code with your Android phone to find us on Google Play
             </p>
         </div>
         
