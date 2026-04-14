@@ -3,7 +3,7 @@
 <head>
     <!-- MAINTENANCE MODE TOGGLE: Set to true to show maintenance page -->
     <script>
-        const MAINTENANCE_MODE = true; // Change to true to enable maintenance mode
+        const MAINTENANCE_MODE = false; // Change to true to enable maintenance mode
     </script>
     
     <!-- Google tag (gtag.js) -->
@@ -1635,44 +1635,43 @@
         </div>
 
         <h2 style="margin-top: 80px;" id="download">📱 Android App NOW AVAILABLE!</h2>
-        <div class="launch-date" style="margin-bottom: 50px;">🎉 Download Now - December 24, 2025</div>
-        
-        <!-- Download Button -->
-        <div style="margin: 50px auto; max-width: 600px;">
-            <a href="https://github.com/Antongolivier/Scream4u.icu-APK/releases/download/v1.0.17/scream4u.icu-v1.0.17.apk" 
-               id="downloadButton"
-               style="display: inline-block; background: linear-gradient(135deg, #00D9A3 0%, #00B386 100%); color: white; padding: 24px 60px; border-radius: 20px; font-size: 24px; font-weight: 700; text-decoration: none; box-shadow: 0 12px 40px rgba(0, 217, 163, 0.4); transition: all 0.3s ease;"
-               onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 16px 48px rgba(0, 217, 163, 0.5)';"
-               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 12px 40px rgba(0, 217, 163, 0.4)';"
-               onclick="return handleDownload(event);">
-                📥 Download APK (Android)
-            </a>
-            <p style="margin-top: 20px; color: var(--text-secondary); font-size: 16px;">
-                Version 1.0.17 • Direct Download
-            </p>
-            
-            <!-- Non-Android Device Message (Hidden by default) -->
-            <div id="nonAndroidMessage" style="display: none; margin-top: 30px; background: rgba(255, 107, 138, 0.15); border: 2px solid rgba(255, 59, 92, 0.3); padding: 30px; border-radius: 20px;">
-                <h3 style="color: #FF6B6B; margin-bottom: 15px; font-size: 22px;">📱 Android Device Required</h3>
-                <p style="color: var(--text); font-size: 18px; line-height: 1.6; margin-bottom: 20px;">
-                    This app is designed for Android devices only. To download and install:
-                </p>
-                <ol style="color: var(--text); font-size: 16px; line-height: 1.8; text-align: left; max-width: 500px; margin: 0 auto;">
-                    <li>Open this page on your Android phone or tablet</li>
-                    <li>Or scan the QR code below with your Android device</li>
-                    <li>Then tap the download button</li>
-                </ol>
-                <div style="margin-top: 30px; padding: 20px; background: rgba(0, 0, 0, 0.3); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
-                    <p style="color: var(--text); font-size: 15px; line-height: 1.7; text-align: left; margin: 0;">
-                        <strong style="color: var(--emergency-red);">Installation Note:</strong><br>
-                        On devices running Android 8.0 (API level 26) and higher, you must navigate to the <strong>Install unknown apps</strong> system settings screen to enable app installations from a particular location (i.e. the web browser you are downloading the app from).<br><br>
-                        On devices running Android 7.1.1 (API level 25) and lower, you should enable the <strong>Unknown sources</strong> system setting, found in Settings > Security on your device.
-                    </p>
-                </div>
-                <p style="color: var(--text-secondary); font-size: 14px; margin-top: 20px;">
-                    iOS version coming Q2 2026
+        <div class="launch-date" style="margin-bottom: 50px;">🎉 Download Now - Version 1.0.18</div>
+
+        <!-- Download Options -->
+        <div style="margin: 50px auto; max-width: 600px; display: flex; flex-direction: column; align-items: center; gap: 24px;">
+
+            <!-- Google Play Badge (Coming Soon) -->
+            <div style="text-align: center;">
+                <a href="https://play.google.com/store/apps/details?id=com.scream4u.app"
+                   target="_blank"
+                   style="display: inline-block; transition: all 0.3s ease; opacity: 0.6; pointer-events: none;"
+                   title="Coming soon to Google Play">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                         alt="Get it on Google Play"
+                         style="height: 80px; border-radius: 12px;">
+                </a>
+                <p style="color: var(--text-secondary); font-size: 13px; margin-top: 8px;">Google Play — Coming Soon</p>
+            </div>
+
+            <p style="color: var(--text-secondary); font-size: 16px; margin: 0;">— or —</p>
+
+            <!-- Direct APK Download -->
+            <div style="text-align: center;">
+                <a href="https://github.com/Antongolivier/Scream4u.icu-APK/releases/download/v1.0.18/v1.0.18.apk"
+                   style="display: inline-block; background: linear-gradient(135deg, #00D9A3 0%, #00B386 100%); color: white; padding: 20px 50px; border-radius: 20px; font-size: 20px; font-weight: 700; text-decoration: none; box-shadow: 0 12px 40px rgba(0, 217, 163, 0.4); transition: all 0.3s ease;"
+                   onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 16px 48px rgba(0, 217, 163, 0.5)';"
+                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 12px 40px rgba(0, 217, 163, 0.4)';">
+                    📥 Download APK Directly
+                </a>
+                <p style="color: var(--text-secondary); font-size: 13px; margin-top: 12px;">
+                    Version 1.0.18 • Android only<br>
+                    <span style="font-size: 12px; opacity: 0.7;">You may need to allow "Install from unknown sources" in your device settings</span>
                 </p>
             </div>
+
+            <p style="color: var(--text-secondary); font-size: 13px; margin-top: 8px;">
+                iOS version coming Q2 2026
+            </p>
         </div>
 
         <!-- QR Code Section -->
@@ -1680,7 +1679,7 @@
             <h3 style="margin-bottom: 20px; font-size: 24px;">📱 Scan to Download</h3>
             <div id="qrcode" style="display: flex; justify-content: center; margin: 20px 0;"></div>
             <p style="color: var(--text-secondary); font-size: 14px; margin-top: 20px;">
-                Scan this QR code with your Android phone to download the app
+                Scan this QR code with your Android phone to find us on Google Play
             </p>
         </div>
         
@@ -1732,7 +1731,7 @@
 
                 <details class="faq-item">
                     <summary>Why can't I send emergency alerts? The buttons are locked.</summary>
-                    <p>Emergency alert buttons require an active subscription. Only the Test Alert is free. Subscribe through the app to unlock all emergency features.</p>
+                    <p>Emergency alert buttons require an active subscription. Only the Test Alert is free. Subscribe at <a href="https://scream4u.icu/#pricing" style="color: var(--emergency-red);">scream4u.icu</a> to unlock all emergency features.</p>
                 </details>
 
                 <details class="faq-item">
@@ -1787,7 +1786,7 @@
 
                 <details class="faq-item">
                     <summary>How do I subscribe and get my activation code?</summary>
-                    <p>Subscribe through the app using PayPal for 365 days (1 year) of access. Pricing: $9.99 for Founders (first 1,000 subscribers) or $19.99 for Regular subscribers. After payment, you'll receive an activation code via email within 2-5 minutes. Enter this code in the app's green "Enter Emailed Code" box to unlock all emergency features.</p>
+                    <p>Subscribe at <a href="https://scream4u.icu/#pricing" style="color: var(--emergency-red);">scream4u.icu</a> via PayPal for 365 days (1 year) of access. Pricing: $9.99 for Founders (first 1,000 subscribers) or $19.99 for Regular subscribers. After payment, you'll receive an activation code via email within 2-5 minutes. Enter this code in the app's Subscription screen under "Enter Emailed Code" to unlock all emergency features.</p>
                 </details>
 
                 <details class="faq-item">
@@ -2074,7 +2073,7 @@
         // Generate QR Code for APK download
         if (document.getElementById('qrcode')) {
             new QRCode(document.getElementById('qrcode'), {
-                text: 'https://github.com/Antongolivier/Scream4u.icu-APK/releases/download/v1.0.17/scream4u.icu-v1.0.17.apk',
+                text: 'https://play.google.com/store/apps/details?id=com.scream4u.app',
                 width: 200,
                 height: 200,
                 colorDark: '#FFFFFF',
