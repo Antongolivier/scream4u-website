@@ -1635,7 +1635,16 @@
         </div>
 
         <h2 style="margin-top: 80px;" id="download">📱 Android App NOW AVAILABLE!</h2>
-        <div class="launch-date" style="margin-bottom: 50px;">🎉 Download Now - Version 1.0.18</div>
+        <a id="subscribeBtn" href="https://paypal.me/scream4u/9.99" target="_blank"
+           style="display: inline-block; background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%); color: white; padding: 14px 36px; border-radius: 50px; font-size: 17px; font-weight: 700; text-decoration: none; box-shadow: 0 8px 24px rgba(79, 70, 229, 0.4); transition: all 0.3s ease;"
+           onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 32px rgba(79, 70, 229, 0.5)';"
+           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(79, 70, 229, 0.4)';">
+            💳 Subscribe Now via PayPal
+        </a>
+        <p style="color: var(--text-secondary); font-size: 14px; margin-top: 16px; margin-bottom: 50px; line-height: 1.6;">
+            After payment, you'll receive an activation code via email within 2–5 minutes.<br>
+            Enter it in the app under Subscription → "Enter Emailed Code" to unlock all features.
+        </p>
 
         <!-- Download Options -->
         <div style="margin: 50px auto; max-width: 600px; display: flex; flex-direction: column; align-items: center; gap: 24px;">
@@ -2038,9 +2047,15 @@
                     if (remaining > 0) {
                         counterElement.innerHTML = `⏰ Only <strong>${remaining}</strong> of ${total} Founder spots remaining!`;
                         counterElement.style.color = '#FFD700';
+                        // Set subscribe button to Founder price
+                        const btn = document.getElementById('subscribeBtn');
+                        if (btn) btn.href = 'https://paypal.me/scream4u/9.99';
                     } else {
                         counterElement.innerHTML = `🎉 Founder tier is full! (${data.founderCount}/${total})`;
                         counterElement.style.color = '#FF3B5C';
+                        // Set subscribe button to Regular price
+                        const btn = document.getElementById('subscribeBtn');
+                        if (btn) btn.href = 'https://paypal.me/scream4u/19.99';
                     }
                 }
             } catch (error) {
