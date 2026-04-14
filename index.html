@@ -1656,11 +1656,28 @@
                data-enabled="false">
                 💳 Subscribe Now via PayPal
             </a>
+
+            <!-- Email confirmation box (hidden by default) -->
+            <div id="emailConfirmBox" style="display: none; margin-top: 16px; background: rgba(79,70,229,0.15); border: 2px solid rgba(79,70,229,0.4); border-radius: 14px; padding: 18px 20px; text-align: center;">
+                <p style="color: var(--text); font-size: 15px; margin: 0 0 14px;">
+                    We'll send your activation code to:<br>
+                    <strong id="confirmEmailDisplay" style="color: #A78BFA; font-size: 16px;"></strong>
+                </p>
+                <p style="color: var(--text-secondary); font-size: 13px; margin: 0 0 16px;">Is this correct?</p>
+                <div style="display: flex; gap: 12px; justify-content: center;">
+                    <button onclick="cancelConfirm()" style="padding: 10px 24px; border-radius: 50px; border: 2px solid rgba(255,255,255,0.2); background: transparent; color: var(--text); font-size: 14px; font-weight: 600; cursor: pointer;">
+                        ✏️ Edit
+                    </button>
+                    <button onclick="proceedToPayPal()" style="padding: 10px 24px; border-radius: 50px; border: none; background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%); color: white; font-size: 14px; font-weight: 700; cursor: pointer; box-shadow: 0 4px 12px rgba(79,70,229,0.4);">
+                        ✅ Yes, Continue to PayPal
+                    </button>
+                </div>
+            </div>
+
             <p style="color: var(--text-secondary); font-size: 13px; margin-top: 14px; line-height: 1.6; text-align: center;">
                 After payment, your activation code arrives via email within 2–5 minutes.<br>
                 Enter it in the app under Subscription → "Enter Emailed Code".
             </p>
-        </div>
 
         <!-- Download Options -->
         <div style="margin: 50px auto; max-width: 600px; display: flex; flex-direction: column; align-items: center; gap: 24px;">
@@ -1903,9 +1920,8 @@
         function validateSubscribeEmail() {
             const email = document.getElementById('subscribeEmail').value.trim();
             const btn = document.getElementById('subscribeBtn');
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
             const valid = emailRegex.test(email);
-
             if (valid) {
                 btn.style.background = 'linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%)';
                 btn.style.color = 'white';
@@ -1925,14 +1941,29 @@
 
         function handleSubscribeClick(event) {
             const email = document.getElementById('subscribeEmail').value.trim();
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
             if (!emailRegex.test(email)) {
                 event.preventDefault();
                 return false;
             }
-            // Store email in sessionStorage so it can be referenced if needed
+            // Show confirmation box instead of going straight to PayPal
+            event.preventDefault();
+            document.getElementById('confirmEmailDisplay').textContent = email;
+            document.getElementById('emailConfirmBox').style.display = 'block';
+            document.getElementById('emailConfirmBox').scrollIntoView({ behavior: 'smooth', block: 'center' });
             sessionStorage.setItem('subscribeEmail', email);
-            return true;
+            return false;
+        }
+
+        function cancelConfirm() {
+            document.getElementById('emailConfirmBox').style.display = 'none';
+            document.getElementById('subscribeEmail').focus();
+        }
+
+        function proceedToPayPal() {
+            const btn = document.getElementById('subscribeBtn');
+            window.open(btn.href, '_blank');
+            document.getElementById('emailConfirmBox').style.display = 'none';
         }
 
         // Handle form submission
