@@ -1635,16 +1635,32 @@
         </div>
 
         <h2 style="margin-top: 80px;" id="download">📱 Android App NOW AVAILABLE!</h2>
-        <a id="subscribeBtn" href="https://paypal.me/scream4u/9.99" target="_blank"
-           style="display: inline-block; background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%); color: white; padding: 14px 36px; border-radius: 50px; font-size: 17px; font-weight: 700; text-decoration: none; box-shadow: 0 8px 24px rgba(79, 70, 229, 0.4); transition: all 0.3s ease;"
-           onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 32px rgba(79, 70, 229, 0.5)';"
-           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(79, 70, 229, 0.4)';">
-            💳 Subscribe Now via PayPal
-        </a>
-        <p style="color: var(--text-secondary); font-size: 14px; margin-top: 16px; margin-bottom: 50px; line-height: 1.6;">
-            After payment, you'll receive an activation code via email within 2–5 minutes.<br>
-            Enter it in the app under Subscription → "Enter Emailed Code" to unlock all features.
-        </p>
+
+        <!-- Email input + Subscribe button -->
+        <div style="max-width: 480px; margin: 0 auto 50px;">
+            <label for="subscribeEmail" style="display: block; color: var(--text-secondary); font-size: 14px; margin-bottom: 8px; text-align: left;">
+                📧 Your email — we'll send your activation code here
+            </label>
+            <input 
+                type="email" 
+                id="subscribeEmail" 
+                placeholder="you@example.com"
+                oninput="validateSubscribeEmail()"
+                style="width: 100%; padding: 14px 18px; background: rgba(255,255,255,0.05); border: 2px solid rgba(255,255,255,0.15); border-radius: 14px; font-size: 16px; color: var(--text); outline: none; margin-bottom: 16px; box-sizing: border-box; transition: border-color 0.3s;"
+                onfocus="this.style.borderColor='#4F46E5';"
+                onblur="this.style.borderColor='rgba(255,255,255,0.15)';"
+            >
+            <a id="subscribeBtn" href="https://paypal.me/scream4u/9.99" target="_blank"
+               onclick="return handleSubscribeClick(event);"
+               style="display: block; background: rgba(79,70,229,0.3); color: rgba(255,255,255,0.4); padding: 14px 36px; border-radius: 50px; font-size: 17px; font-weight: 700; text-decoration: none; text-align: center; cursor: not-allowed; transition: all 0.3s ease; pointer-events: none;"
+               data-enabled="false">
+                💳 Subscribe Now via PayPal
+            </a>
+            <p style="color: var(--text-secondary); font-size: 13px; margin-top: 14px; line-height: 1.6; text-align: center;">
+                After payment, your activation code arrives via email within 2–5 minutes.<br>
+                Enter it in the app under Subscription → "Enter Emailed Code".
+            </p>
+        </div>
 
         <!-- Download Options -->
         <div style="margin: 50px auto; max-width: 600px; display: flex; flex-direction: column; align-items: center; gap: 24px;">
@@ -1883,6 +1899,42 @@
     </footer>
 
     <script>
+        // Subscribe email validation
+        function validateSubscribeEmail() {
+            const email = document.getElementById('subscribeEmail').value.trim();
+            const btn = document.getElementById('subscribeBtn');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const valid = emailRegex.test(email);
+
+            if (valid) {
+                btn.style.background = 'linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%)';
+                btn.style.color = 'white';
+                btn.style.cursor = 'pointer';
+                btn.style.pointerEvents = 'auto';
+                btn.style.boxShadow = '0 8px 24px rgba(79, 70, 229, 0.4)';
+                btn.setAttribute('data-enabled', 'true');
+            } else {
+                btn.style.background = 'rgba(79,70,229,0.3)';
+                btn.style.color = 'rgba(255,255,255,0.4)';
+                btn.style.cursor = 'not-allowed';
+                btn.style.pointerEvents = 'none';
+                btn.style.boxShadow = 'none';
+                btn.setAttribute('data-enabled', 'false');
+            }
+        }
+
+        function handleSubscribeClick(event) {
+            const email = document.getElementById('subscribeEmail').value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                event.preventDefault();
+                return false;
+            }
+            // Store email in sessionStorage so it can be referenced if needed
+            sessionStorage.setItem('subscribeEmail', email);
+            return true;
+        }
+
         // Handle form submission
         document.getElementById('emailForm').addEventListener('submit', function(e) {
             e.preventDefault();
