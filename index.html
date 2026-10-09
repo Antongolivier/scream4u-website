@@ -1660,14 +1660,7 @@
             </p>
         </div>
 
-        <!-- QR Code Section -->
-        <div style="margin: 20px auto 60px; max-width: 400px; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); padding: 40px; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.1);">
-            <h3 style="margin-bottom: 20px; font-size: 24px;">📱 Scan to Download</h3>
-            <div id="qrcode" style="display: flex; justify-content: center; margin: 20px 0;"></div>
-            <p style="color: var(--text-secondary); font-size: 14px; margin-top: 20px;">
-                Scan this QR code with your Android phone to find us on Google Play
-            </p>
-        </div>
+
 
         <!-- ===== SUBSCRIBE SECTION ===== -->
         <h2 style="margin-top: 20px; scroll-margin-top: 100px;" id="subscribe">💳 Subscribe to Unlock All Features</h2>
@@ -1853,8 +1846,8 @@
         <div class="timeline-item">
             <div class="timeline-date">December 2025</div>
             <div class="timeline-content">
-                <h3>🚀 Android APK Release</h3>
-                <p>Direct download from website. Email notification to waitlist with discount code.</p>
+                <h3>🚀 Android Launch</h3>
+                <p>Available on Google Play. Email notification to waitlist.</p>
             </div>
         </div>
 
@@ -2131,40 +2124,6 @@
 
     </script>
 
-    <!-- QR Code Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <script>
-        // Device Detection and Download Handler
-        function isAndroidDevice() {
-            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-            return /android/i.test(userAgent);
-        }
-
-        function handleApkDownload(event) {
-            if (!isAndroidDevice()) {
-                event.preventDefault();
-                document.getElementById('apkDownloadBtn').style.display = 'none';
-                document.getElementById('nonAndroidMessage').style.display = 'block';
-                document.getElementById('nonAndroidMessage').scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'center' 
-                });
-                return false;
-            }
-            return true;
-        }
-
-        // Generate QR Code for APK download
-        if (document.getElementById('qrcode')) {
-            new QRCode(document.getElementById('qrcode'), {
-                text: 'https://play.google.com/store/apps/details?id=com.scream4u.app',
-                width: 200,
-                height: 200,
-                colorDark: '#FFFFFF',
-                colorLight: '#000000',
-                correctLevel: QRCode.CorrectLevel.H
-            });
-        }
     </script>
 
     </div> <!-- End mainContent -->
