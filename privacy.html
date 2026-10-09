@@ -88,7 +88,7 @@
 
     <div class="local-storage-box">
         <h3>📱 Local Storage Model</h3>
-        <p><strong>Scream4U.icu is designed with privacy as its foundation.</strong> All your personal information is stored exclusively on your device using secure local storage (React Native AsyncStorage, encrypted by iOS Keychain or Android Keystore).</p>
+        <p><strong>Scream4U.icu is designed with privacy as its foundation.</strong> All your personal information is stored exclusively on your device using secure local storage (React Native AsyncStorage, encrypted by Android Keystore).</p>
         <p><strong>What this means:</strong></p>
         <ul>
             <li>Your name, address, and emergency contacts <strong>never leave your device</strong></li>
@@ -485,7 +485,7 @@
     <h3>6.1 Technical Security Measures</h3>
 
     <ul>
-        <li><strong>Device Encryption:</strong> All local data encrypted by iOS Keychain (iOS) or Android Keystore (Android)</li>
+        <li><strong>Device Encryption:</strong> All local data encrypted by Android Keystore</li>
         <li><strong>HTTPS Only:</strong> All network communications use encrypted HTTPS connections</li>
         <li><strong>No Backend Servers:</strong> We don't operate servers that could store or compromise your personal data</li>
         <li><strong>Minimal Data Collection:</strong> We only collect email address for activation code delivery</li>
@@ -777,7 +777,7 @@
         <tr>
             <td>Device backups</td>
             <td>Per your device backup settings</td>
-            <td>Managed by iOS iCloud or Android Google Drive</td>
+            <td>Managed by Android Google Drive backup settings</td>
         </tr>
     </table>
 
@@ -984,16 +984,7 @@
         <li><strong>User Control:</strong> Cannot be denied (required for subscription)</li>
         <li><strong>When Used:</strong> Only during subscription purchase, email changes, and pricing fetch</li>
 
-    <h3>12.2 iOS Permissions</h3>
-
-    </ul>
-
-    <p><strong>No Special Permissions Required:</strong></p>
-    <ul>
-        <li>iOS does not require permission to open native SMS app via `sms://` URL scheme</li>
-        <li>No location, contacts, or other sensitive permissions requested</li>
-
-    <h3>12.3 Permissions NOT Required</h3>
+    <h3>12.2 Permissions NOT Required</h3>
 
     </ul>
 
