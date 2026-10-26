@@ -1614,9 +1614,7 @@
    <strong>🎉 Launch Special:</strong> First 1000 subscribers get <strong style="color: var(--emergency-red);">LIFETIME 50% OFF</strong> - just <span id="discountPrice">$9.99</span>/year forever!
 </p>
 
-<p id="founderCounter" style="display: none; color: #FFD700; margin-bottom: 20px; font-size: 20px; font-weight: 700; text-align: center;">
-   ⏰ Loading founder spots...
-</p>
+<p id="founderCounter" style="display: none;"></p>
 
 <div style="background: rgba(255, 59, 92, 0.15); border: 2px solid rgba(255, 59, 92, 0.4); border-radius: 16px; padding: 20px; margin-bottom: 30px; text-align: left;">
     <p style="color: #FF3B5C; font-size: 16px; font-weight: 600; margin: 0; line-height: 1.6;">
@@ -1668,48 +1666,15 @@
             Already have the app? Subscribe below to unlock all 6 emergency alert types.
         </p>
 
-        <!-- Email input + Subscribe button -->
-        <div style="max-width: 480px; margin: 0 auto 50px;">
-            <label for="subscribeEmail" style="display: block; color: var(--text-secondary); font-size: 14px; margin-bottom: 8px; text-align: left;">
-                📧 Your email — we'll send your activation code here
-            </label>
-            <input 
-                type="email" 
-                id="subscribeEmail" 
-                placeholder="you@example.com"
-                oninput="validateSubscribeEmail()"
-                style="width: 100%; padding: 14px 18px; background: rgba(255,255,255,0.05); border: 2px solid rgba(255,255,255,0.15); border-radius: 14px; font-size: 16px; color: var(--text); outline: none; margin-bottom: 16px; box-sizing: border-box; transition: border-color 0.3s;"
-                onfocus="this.style.borderColor='#4F46E5';"
-                onblur="this.style.borderColor='rgba(255,255,255,0.15)';"
-            >
-            <a id="subscribeBtn" href="https://paypal.me/scream4u/9.99" target="_blank"
-               onclick="return handleSubscribeClick(event);"
-               style="display: block; background: rgba(79,70,229,0.3); color: rgba(255,255,255,0.4); padding: 14px 36px; border-radius: 50px; font-size: 17px; font-weight: 700; text-decoration: none; text-align: center; cursor: not-allowed; transition: all 0.3s ease; pointer-events: none;"
-               data-enabled="false">
-                💳 Subscribe Now via PayPal
-            </a>
-
-            <!-- Email confirmation box (hidden by default) -->
-            <div id="emailConfirmBox" style="display: none; margin-top: 16px; background: rgba(79,70,229,0.15); border: 2px solid rgba(79,70,229,0.4); border-radius: 14px; padding: 18px 20px; text-align: center;">
-                <p style="color: var(--text); font-size: 15px; margin: 0 0 14px;">
-                    We'll send your activation code to:<br>
-                    <strong id="confirmEmailDisplay" style="color: #A78BFA; font-size: 16px;"></strong>
+        <!-- Subscribe Section -->
+        <div style="max-width: 480px; margin: 0 auto 50px; text-align: center;">
+            <div style="background: rgba(79,70,229,0.15); border: 2px solid rgba(79,70,229,0.4); border-radius: 20px; padding: 32px;">
+                <p style="color: var(--text); font-size: 20px; font-weight: 700; margin-bottom: 12px;">🚀 Coming to Google Play</p>
+                <p style="color: var(--text-secondary); font-size: 16px; line-height: 1.6;">
+                    Subscriptions will be available through Google Play once the app is listed.<br><br>
+                    Want to be notified when we launch?
                 </p>
-                <p style="color: var(--text-secondary); font-size: 13px; margin: 0 0 16px;">Is this correct?</p>
-                <div style="display: flex; gap: 12px; justify-content: center;">
-                    <button onclick="cancelConfirm()" style="padding: 10px 24px; border-radius: 50px; border: 2px solid rgba(255,255,255,0.2); background: transparent; color: var(--text); font-size: 14px; font-weight: 600; cursor: pointer;">
-                        ✏️ Edit
-                    </button>
-                    <button onclick="proceedToPayPal()" style="padding: 10px 24px; border-radius: 50px; border: none; background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%); color: white; font-size: 14px; font-weight: 700; cursor: pointer; box-shadow: 0 4px 12px rgba(79,70,229,0.4);">
-                        ✅ Yes, Continue to PayPal
-                    </button>
-                </div>
             </div>
-
-            <p style="color: var(--text-secondary); font-size: 13px; margin-top: 14px; line-height: 1.6; text-align: center;">
-                After payment, your activation code arrives via email within 2–5 minutes.<br>
-                Enter it in the app under Subscription → "Enter Emailed Code".
-            </p>
         </div>
         
         <div class="email-form">
@@ -1814,7 +1779,7 @@
 
                 <details class="faq-item">
                     <summary>How do I subscribe and get my activation code?</summary>
-                    <p>Subscribe at <a href="https://scream4u.icu/#pricing" style="color: var(--emergency-red);">scream4u.icu</a> via PayPal for 365 days (1 year) of access. Pricing: $9.99 for Founders (first 1,000 subscribers) or $19.99 for Regular subscribers. After payment, you'll receive an activation code via email within 2-5 minutes. Enter this code in the app's Subscription screen under "Enter Emailed Code" to unlock all emergency features.</p>
+                    <p>Subscriptions will be available through Google Play once the app is listed. You will be able to subscribe directly in the app and it will unlock automatically.</p>
                 </details>
 
                 <details class="faq-item">
@@ -1908,31 +1873,13 @@
         }
 
         function handleSubscribeClick(event) {
-            const email = document.getElementById('subscribeEmail').value.trim();
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-            if (!emailRegex.test(email)) {
-                event.preventDefault();
-                return false;
-            }
-            // Show confirmation box instead of going straight to PayPal
             event.preventDefault();
-            document.getElementById('confirmEmailDisplay').textContent = email;
-            document.getElementById('emailConfirmBox').style.display = 'block';
-            document.getElementById('emailConfirmBox').scrollIntoView({ behavior: 'smooth', block: 'center' });
-            sessionStorage.setItem('subscribeEmail', email);
             return false;
         }
 
-        function cancelConfirm() {
-            document.getElementById('emailConfirmBox').style.display = 'none';
-            document.getElementById('subscribeEmail').focus();
-        }
+        function cancelConfirm() {}
 
-        function proceedToPayPal() {
-            const btn = document.getElementById('subscribeBtn');
-            window.open(btn.href, '_blank');
-            document.getElementById('emailConfirmBox').style.display = 'none';
-        }
+        function proceedToPayPal() {}
 
         // Handle form submission
         document.getElementById('emailForm').addEventListener('submit', function(e) {
@@ -2078,48 +2025,7 @@
         // Run price update when page loads
         updatePrices();
 
-        // Fetch and display founder count
-        async function updateFounderCount() {
-            try {
-                const apiUrl = 'https://script.google.com/macros/s/AKfycbw9MtiKec4ymiIlsg0Pw5dyVzCNkOnldjByqyUMOxG9hkJLiJ5qvn1FzKc28jZfGr3v/exec';
-                const response = await fetch(`${apiUrl}?action=getFounderCount`);
-                
-                if (!response.ok) {
-                    throw new Error('Failed to fetch founder count');
-                }
-                
-                const data = await response.json();
-                const counterElement = document.getElementById('founderCounter');
-                
-                if (counterElement && data.success) {
-                    const remaining = data.foundersRemaining;
-                    const total = data.founderLimit;
-                    
-                    if (remaining > 0) {
-                        counterElement.innerHTML = `⏰ Only <strong>${remaining}</strong> of ${total} Founder spots remaining!`;
-                        counterElement.style.color = '#FFD700';
-                        // Set subscribe button to Founder price
-                        const btn = document.getElementById('subscribeBtn');
-                        if (btn) btn.href = 'https://paypal.me/scream4u/9.99';
-                    } else {
-                        counterElement.innerHTML = `🎉 Founder tier is full! (${data.founderCount}/${total})`;
-                        counterElement.style.color = '#FF3B5C';
-                        // Set subscribe button to Regular price
-                        const btn = document.getElementById('subscribeBtn');
-                        if (btn) btn.href = 'https://paypal.me/scream4u/19.99';
-                    }
-                }
-            } catch (error) {
-                console.error('Failed to fetch founder count:', error);
-                const counterElement = document.getElementById('founderCounter');
-                if (counterElement) {
-                    counterElement.style.display = 'none';
-                }
-            }
-        }
-
-        // Update founder count on page load
-        updateFounderCount();
+        // Pricing and founder count removed - moving to Google Play Billing
 
     </script>
 

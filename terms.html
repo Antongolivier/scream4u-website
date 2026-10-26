@@ -170,133 +170,47 @@
         </tr>
     </table>
 
-    <p><strong>Payment Processing:</strong> All payments processed securely by PayPal (https://paypal.com), a PCI-DSS compliant payment processor.</p>
+    <p><strong>Payment Processing:</strong> All payments are processed through Google Play Billing.</p>
     
-    <p><strong>Currency:</strong> Prices shown in USD. PayPal may process payments in your local currency depending on your location and bank. Exchange rates are determined by PayPal at time of payment.</p>
+    <p><strong>Currency:</strong> Prices shown in your local currency as determined by Google Play.</p>
 
-    <h3>3.2 Founders Tier - Lifetime Pricing Lock</h3>
-    <p><strong>Special Promotional Pricing:</strong> The first 1,000 subscribers receive "Founders" tier status with $9.99/year pricing locked for life.</p>
-    
-    <p><strong>Founders Tier Benefits:</strong></p>
-    <ul>
-        <li><strong>Lifetime Price Lock:</strong> Your rate remains $9.99/year forever, regardless of future price increases</li>
-        <li><strong>Guaranteed Forever:</strong> As long as your subscription remains active and in good standing</li>
-        <li><strong>Renewal Protection:</strong> You must use the personalized PayPal.me link in renewal reminder emails to maintain Founders pricing</li>
-        <li><strong>Transferable:</strong> Founders pricing transfers with your subscription to new devices</li>
-    </ul>
+    <h3>3.2 Subscription Pricing</h3>
+    <p>Subscription pricing is displayed in the Google Play Store at time of purchase.</p>
 
-    <p><strong>Founders Tier Terms:</strong></p>
-    <ul>
-        <li>Limited to first 1,000 subscribers only</li>
-        <li>Pricing maintained ONLY if subscription remains active without lapsing</li>
-        <li>If subscription lapses or is cancelled, Founders pricing is <strong>permanently lost</strong></li>
-        <li>Renewal reminders sent 30 days before expiration with personalized $9.99 PayPal link</li>
-        <li>Founders MUST use personalized link to maintain $9.99 pricing</li>
-        <li>After 1,000 redemptions, all new subscribers pay $19.99/year</li>
-    </ul>
-
-    <h3>3.3 Payment Flow and Activation</h3>
+    <h3>3.3 Payment Flow</h3>
     <p><strong>Payment Process:</strong></p>
     <ol>
-        <li>You initiate payment in app</li>
-        <li>App opens PayPal.me link with dynamic pricing</li>
-        <li>You complete payment via PayPal ($9.99 or $19.99)</li>
-        <li>PayPal sends confirmation to our Gmail account (pay@scream4u.icu)</li>
-        <li>Our automated system (Google Apps Script) processes payment every 5 minutes</li>
-        <li>System generates unique 16-character activation code (SUBS-XXXX-XXXX-XXXX-XXXX)</li>
-        <li>Code is emailed to your PayPal email address within 2-5 minutes</li>
-        <li>You enter code in app to activate 365-day subscription</li>
+        <li>Subscribe through Google Play in the app</li>
+        <li>Google Play processes payment and confirms subscription</li>
+        <li>App unlocks automatically upon successful payment</li>
     </ol>
-
-    <p><strong>Activation Code Details:</strong></p>
-    <ul>
-        <li>Code format: SUBS-XXXX-XXXX-XXXX-XXXX (16 alphanumeric characters)</li>
-        <li>Code does not expire and can be activated anytime after purchase</li>
-        <li>Once activated, subscription is valid for 365 days from activation date (not purchase date)</li>
-        <li>Code is stored hashed (SHA-256) on device for security</li>
-        <li>Device ID recorded when code is activated</li>
-    </ul>
 
     <h3>3.4 Billing and Renewal</h3>
     <ul>
-        <li>Billed annually in advance ($19.99/year or $9.99/year for Founders)</li>
-        <li><strong>No automatic renewal</strong> - you must manually purchase new subscription</li>
-        <li>Renewal reminder sent 30 days before expiration (daily check at 9 AM)</li>
-        <li>Renewal email contains personalized PayPal.me link with correct pricing for your tier</li>
-        <li>You receive a NEW activation code when you renew</li>
-        <li>New code starts a NEW 365-day period (doesn't extend old period)</li>
-        <li>Founders pricing maintained on renewal if subscription remains active</li>
+        <li>Billed annually in advance</li>
+        <li>Subscription renews automatically through Google Play unless cancelled</li>
+        <li>Cancel anytime through your Google Play account</li>
     </ul>
 
     <h3>3.5 Device Limitations</h3>
     <ul>
-        <li><strong>One Device Per Subscription:</strong> Each subscription is linked to one active device via device identifier</li>
-        <li><strong>Transfer Anytime:</strong> Enter same activation code on new device to transfer</li>
-        <li><strong>Transfer Process:</strong> On new device, enter activation code → old device auto-deactivated</li>
-        <li><strong>Transfer Limit:</strong> Maximum 3 device transfers per subscription period. Additional transfers require contacting support@scream4u.icu</li>
-        <li><strong>Note:</strong> Address information does NOT transfer - you must re-enter it on the new device</li>
-        <li><strong>Sharing Prohibited:</strong> Using one subscription on multiple devices simultaneously is prohibited and may result in termination</li>
+        <li>Subscription is linked to your Google Play account</li>
+        <li>Accessible on devices signed in to your Google account</li>
     </ul>
 
-    <h3>3.6 Email Requirements</h3>
-    <p><strong>Critical for Service:</strong> Your email address is the ONLY method we use to communicate:</p>
-    <ul>
-        <li>Activation code delivery after payment</li>
-        <li>Renewal reminders 30 days before expiration (sent at 9 AM daily when check runs)</li>
-        <li>Subscription status notifications</li>
-        <li>Service updates and important announcements</li>
-    </ul>
-
-    <p><strong>Your Responsibilities:</strong></p>
-    <ul>
-        <li>Provide valid, active email address</li>
-        <li>Maintain access to email account</li>
-        <li>Check email regularly for renewal reminders</li>
-        <li>Configure spam filters to allow messages from pay@scream4u.icu</li>
-        <li>Update email address if it changes (Settings → Update Email Address)</li>
-    </ul>
-
-    <p><strong>Consequences of Invalid Email:</strong> You will NOT receive renewal reminders and may miss expiration. We are NOT responsible for missed communications due to invalid email or spam filters.</p>
-
-    <h3>3.7 Promotional Free Subscription Codes</h3>
-    <p>We may grant select users complimentary activation codes for promotional, charitable, or testing purposes.</p>
+    <h3>3.6 Refunds and Cancellation</h3>
     
-    <p><strong>Promotional Code Terms:</strong></p>
+    <p><strong>Refunds:</strong></p>
     <ul>
-        <li><strong>Standard Duration:</strong> Promotional codes provide standard 365-day subscription access</li>
-        <li><strong>Non-Transferable:</strong> Codes cannot be shared, sold, or transferred</li>
-        <li><strong>Device-Locked:</strong> Once activated, codes are permanently locked to that device</li>
-        <li><strong>No Restoration:</strong> Codes cannot be restored or transferred to different device (Note: Device verification exception applies)</li>
-        <li><strong>No Monetary Value:</strong> Codes have no cash value and cannot be redeemed for refunds</li>
-        <li><strong>Revocable:</strong> We reserve the right to revoke codes for fraud, abuse, or Terms violations</li>
-        <li><strong>No Renewal Guarantee:</strong> No obligation to provide renewal codes after expiration</li>
-    </ul>
-
-    <p><strong>Lost Device:</strong> If you lose device with promotional code, the code cannot be recovered or reissued. Standard paid subscription required for new device.</p>
-
-    <h3>3.8 Refunds and Cancellation</h3>
-    
-    <p><strong>30-Day Money-Back Guarantee:</strong></p>
-    <ul>
-        <li>Full refund available within 30 days of purchase</li>
-        <li>Email support@scream4u.icu with "Refund Request"</li>
-        <li>Include: subscription email and reason</li>
-        <li>Refund processed manually via PayPal to original payment method</li>
+        <li>Refund requests are handled by Google Play's refund policy</li>
+        <li>Contact support@scream4u.icu for assistance</li>
         <li>Allow 3-5 business days for processing</li>
-    </ul>
-
-    <p><strong>Failed Payment Refunds:</strong></p>
-    <ul>
-        <li><strong>Incorrect Amount:</strong> If you pay amount other than $9.99 or $19.99, you receive automatic rejection email. Refund processed manually through PayPal within 3-5 business days.</li>
-        <li><strong>Founders Tier Full:</strong> If you pay $9.99 but Founders tier is full (1,000/1,000), you receive automatic rejection email offering Regular tier at $19.99. Refund processed manually through PayPal within 3-5 business days.</li>
     </ul>
 
     <p><strong>Cancellation:</strong></p>
     <ul>
-        <li>Cancel anytime by contacting support@scream4u.icu</li>
-        <li>Takes effect at end of billing period</li>
-        <li>Continue using paid features until expiration</li>
-        <li>No refund for remaining time after 30-day window</li>
+        <li>Cancel anytime through your Google Play account</li>
+        <li>Continue using paid features until end of billing period</li>
         <li>Local data remains on device after cancellation</li>
     </ul>
 
@@ -439,7 +353,7 @@
                 <li>Device malfunctions or battery failures</li>
                 <li>Actions or inactions of emergency contacts</li>
                 <li>Harm resulting from false, delayed, or failed alerts</li>
-                <li>Payment processing issues handled by PayPal</li>
+                <li>Payment processing issues handled by Google Play</li>
             </ul>
         </li>
     </ul>
@@ -463,7 +377,7 @@
     <ul>
         <li><strong>Local Only:</strong> Name, address, contacts stored on your device (we cannot access)</li>
         <li><strong>Google Sheets:</strong> Email, device ID, subscription status, activation codes, payment logs</li>
-        <li><strong>PayPal:</strong> Payment information (handled by PayPal)</li>
+        <li><strong>Google Play:</strong> Payment information (handled by Google Play)</li>
         <li><strong>No Cloud:</strong> We don't operate servers for your personal data</li>
         <li><strong>No Tracking:</strong> No analytics, GPS tracking, or location services</li>
     </ul>
@@ -575,7 +489,7 @@
     <p>You may not assign these Terms without our written consent. We may assign (e.g., merger/acquisition).</p>
 
     <h3>12.5 Force Majeure</h3>
-    <p>Not liable for delays due to circumstances beyond reasonable control (natural disasters, war, pandemics, network failures, PayPal service interruptions, etc.).</p>
+    <p>Not liable for delays due to circumstances beyond reasonable control (natural disasters, war, pandemics, network failures, Google Play service interruptions, etc.).</p>
 
     <h3>12.6 Age Requirements</h3>
     <ul>
@@ -585,7 +499,7 @@
     </ul>
 
     <h3>12.7 Third-Party Beneficiaries</h3>
-    <p>PayPal is a third-party beneficiary regarding payment processing provisions.</p>
+    <p>Google Play is a third-party beneficiary regarding payment processing provisions.</p>
 
     <div class="contact-info">
         <h2>13. Contact Information</h2>
