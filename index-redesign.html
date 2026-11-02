@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Scream4U.icu — Emergency Alerts That Work Without Internet</title>
-<meta name="description" content="Scream4U.icu sends emergency SMS alerts to your trusted contacts in two taps — no internet needed. Built for elderly users, students, and remote communities. Android app launching December 2025.">
+<meta name="description" content="Scream4U.icu sends emergency SMS alerts to your trusted contacts in two taps — no internet needed. Built for elderly users, students, and remote communities. Android app launching February 2027.">
 <meta name="theme-color" content="#07070C">
 <meta property="og:title" content="Scream4U.icu — Emergency Alerts That Work Without Internet">
 <meta property="og:description" content="Two taps. Your trusted contacts get an SMS with your location and emergency type. Works on cellular signal alone.">
@@ -408,14 +408,14 @@ p{text-wrap:pretty}
 }
 .phone-screen img{width:100%;display:block}
 
-/* ---- Authentic 6-button app mockup (replaces stale 4-button capture) ---- */
+/* ---- Accurate app mockup — matches actual Scream4U UI ---- */
 .appmock{
   --pad-top:32px;
   aspect-ratio:9 / 19.2;
-  background:linear-gradient(180deg,#FFFFFF,#F1F2F7);
+  background:#F2F2F2;
   display:flex;flex-direction:column;
-  padding:var(--pad-top) 12px 12px;
-  gap:9px;
+  padding:var(--pad-top) 10px 10px;
+  gap:7px;
   color:#1A1A24;
   font-family:'Inter',sans-serif;
   text-align:left;
@@ -434,30 +434,28 @@ p{text-wrap:pretty}
 .sw{width:24px;height:13px;border-radius:999px;background:#2F6BFF;position:relative;flex-shrink:0;box-shadow:inset 0 1px 2px rgba(0,0,0,.2)}
 .sw::after{content:"";position:absolute;right:2px;top:2px;width:9px;height:9px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.3)}
 
+/* Full-width stacked buttons — matches actual app layout */
 .appmock-grid{
-  flex:1;display:grid;
-  grid-template-columns:1fr 1fr;
-  grid-auto-rows:1fr;
-  gap:8px;
+  flex:1;display:flex;flex-direction:column;gap:6px;
 }
 .appbtn{
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;
-  background:linear-gradient(160deg,#FF8A80,#FF6A62);
-  border-radius:12px;padding:6px 4px;
-  box-shadow:0 3px 9px rgba(255,90,80,.34), inset 0 1px 0 rgba(255,255,255,.55), inset 0 -2px 4px rgba(150,30,25,.18);
-  text-align:center;
+  display:flex;flex-direction:row;align-items:center;gap:10px;
+  background:#FF3B5C;
+  border-radius:10px;padding:10px 12px;
+  box-shadow:0 3px 8px rgba(255,59,92,.35), inset 0 1px 0 rgba(255,255,255,.25);
+  flex:1;
 }
 .appbtn-ico{
-  width:26px;height:26px;border-radius:7px;background:#fff;
-  display:grid;place-items:center;font-size:14px;line-height:1;
-  box-shadow:0 1px 3px rgba(0,0,0,.2), inset 0 -1px 0 rgba(0,0,0,.06);
+  width:32px;height:32px;border-radius:8px;background:#fff;
+  display:grid;place-items:center;font-size:18px;line-height:1;flex-shrink:0;
+  box-shadow:0 1px 3px rgba(0,0,0,.2);
 }
 .appbtn-txt{
-  font-size:8.5px;font-weight:900;letter-spacing:.015em;
-  text-transform:uppercase;color:#5A1010;line-height:1.16;
+  font-size:11px;font-weight:900;letter-spacing:.04em;
+  text-transform:uppercase;color:#000;line-height:1.2;
 }
 .appmock-hint{
-  font-size:8px;color:#6E6E82;text-align:center;line-height:1.35;
+  font-size:7.5px;color:#6E6E82;text-align:center;line-height:1.35;
   margin:0;flex-shrink:0;
 }
 
@@ -1053,12 +1051,12 @@ p{text-wrap:pretty}
             </div>
 
             <div class="appmock-grid">
-              <div class="appbtn"><span class="appbtn-ico" aria-hidden="true">🚑</span><span class="appbtn-txt">Medical<br>Emergency</span></div>
-              <div class="appbtn"><span class="appbtn-ico" aria-hidden="true">🔥</span><span class="appbtn-txt">Fire<br>Emergency</span></div>
-              <div class="appbtn"><span class="appbtn-ico" aria-hidden="true">🛡️</span><span class="appbtn-txt">Intruder<br>Alert</span></div>
+              <div class="appbtn"><span class="appbtn-ico" aria-hidden="true">➕</span><span class="appbtn-txt">Medical Emergency</span></div>
+              <div class="appbtn"><span class="appbtn-ico" aria-hidden="true">🔥</span><span class="appbtn-txt">Fire Emergency</span></div>
+              <div class="appbtn"><span class="appbtn-ico" aria-hidden="true">🛡️</span><span class="appbtn-txt">Intruder Alert</span></div>
               <div class="appbtn"><span class="appbtn-ico" aria-hidden="true">⚠️</span><span class="appbtn-txt">GBV</span></div>
-              <div class="appbtn"><span class="appbtn-ico" aria-hidden="true">💰</span><span class="appbtn-txt">Robbery<br>Alert</span></div>
-              <div class="appbtn"><span class="appbtn-ico" aria-hidden="true">🚨</span><span class="appbtn-txt">Kidnapping<br>Alert</span></div>
+              <div class="appbtn"><span class="appbtn-ico" aria-hidden="true">❗</span><span class="appbtn-txt">Robbery Alert</span></div>
+              <div class="appbtn"><span class="appbtn-ico" aria-hidden="true">�</span><span class="appbtn-txt">Kidnapping Alert</span></div>
             </div>
 
             <p class="appmock-hint">💡 Need to test? Find the Test button in ⚙️ Settings</p>
@@ -1187,12 +1185,12 @@ p{text-wrap:pretty}
               <span class="sw" aria-hidden="true"></span>
             </div>
             <div class="appmock-grid">
-              <div class="appbtn"><span class="appbtn-ico" aria-hidden="true">🚑</span><span class="appbtn-txt">Medical<br>Emergency</span></div>
-              <div class="appbtn"><span class="appbtn-ico" aria-hidden="true">🔥</span><span class="appbtn-txt">Fire<br>Emergency</span></div>
-              <div class="appbtn"><span class="appbtn-ico" aria-hidden="true">🛡️</span><span class="appbtn-txt">Intruder<br>Alert</span></div>
+              <div class="appbtn"><span class="appbtn-ico" aria-hidden="true">➕</span><span class="appbtn-txt">Medical Emergency</span></div>
+              <div class="appbtn"><span class="appbtn-ico" aria-hidden="true">🔥</span><span class="appbtn-txt">Fire Emergency</span></div>
+              <div class="appbtn"><span class="appbtn-ico" aria-hidden="true">🛡️</span><span class="appbtn-txt">Intruder Alert</span></div>
               <div class="appbtn"><span class="appbtn-ico" aria-hidden="true">⚠️</span><span class="appbtn-txt">GBV</span></div>
-              <div class="appbtn"><span class="appbtn-ico" aria-hidden="true">💰</span><span class="appbtn-txt">Robbery<br>Alert</span></div>
-              <div class="appbtn"><span class="appbtn-ico" aria-hidden="true">🚨</span><span class="appbtn-txt">Kidnapping<br>Alert</span></div>
+              <div class="appbtn"><span class="appbtn-ico" aria-hidden="true">❗</span><span class="appbtn-txt">Robbery Alert</span></div>
+              <div class="appbtn"><span class="appbtn-ico" aria-hidden="true">�</span><span class="appbtn-txt">Kidnapping Alert</span></div>
             </div>
             <p class="appmock-hint">💡 Need to test? Find the Test button in ⚙️ Settings</p>
           </div>
@@ -1274,7 +1272,7 @@ p{text-wrap:pretty}
       <article class="aud reveal tilt">
         <div class="aud-ico" aria-hidden="true">👀</div>
         <h3>Witnesses</h3>
-        <p>See a crime or an accident? Alert your contacts for the person in danger while staying safely out of the way.</p>
+        <p>If you witness an incident and feel personally unsafe, you can use the app to alert your own contacts that you are in danger. The app notifies the people who look out for you — not emergency services.</p>
       </article>
 
       <article class="aud aud--wide reveal">
@@ -1439,12 +1437,12 @@ p{text-wrap:pretty}
 
       <details class="faq-item reveal">
         <summary>Can I move my subscription to a new phone?</summary>
-        <div class="faq-body"><p>Yes. You'll need an internet connection on the new device. Enter your activation code and the app transfers the subscription, deactivating the old device. Codes are valid for 365 days and work on one device at a time. You can transfer up to three times per year — email support@scream4u.icu if you need more.</p></div>
+        <div class="faq-body"><p>Yes. Your subscription is linked to your Google Play account, not your device. Simply sign in to the same Google account on your new phone, download the app from Google Play, and your subscription will be available automatically. No transfer limits apply.</p></div>
       </details>
 
       <details class="faq-item reveal">
         <summary>How do I cancel my subscription?</summary>
-        <div class="faq-body"><p>Go to <strong>Settings → Subscription Status → Manage Subscription</strong>, or email support@scream4u.icu. We'll process the cancellation promptly and confirm it with you.</p></div>
+        <div class="faq-body"><p>Cancel anytime through your Google Play account. Go to Google Play → Subscriptions → Scream4U and tap Cancel. You'll keep access until the end of your current billing period.</p></div>
       </details>
 
       <details class="faq-item reveal">
@@ -1464,17 +1462,12 @@ p{text-wrap:pretty}
 
       <details class="faq-item reveal">
         <summary>How do I subscribe and receive my activation code?</summary>
-        <div class="faq-body"><p>Subscriptions will be handled through Google Play once the app is listed. You'll subscribe inside the app and it unlocks automatically.</p></div>
+        <div class="faq-body"><p>Subscriptions are handled through Google Play. Open the app, go to the subscription screen, and subscribe directly through Google Play. The app unlocks automatically — no activation code needed.</p></div>
       </details>
 
       <details class="faq-item reveal">
         <summary>Is there an iPhone or iOS version?</summary>
         <div class="faq-body"><p>Scream4U is Android only. There are currently no plans for an iOS version.</p></div>
-      </details>
-
-      <details class="faq-item reveal">
-        <summary>Can I use it if I witness someone else in danger?</summary>
-        <div class="faq-body"><p>Absolutely. If you see a robbery, fire, assault or any emergency happening to someone else, press the matching button to alert your contacts. Your message includes your location and the emergency type, so help can reach them while you stay at a safe distance.</p></div>
       </details>
 
       <details class="faq-item reveal">
@@ -1500,17 +1493,17 @@ p{text-wrap:pretty}
         <p>Collecting waitlist emails, building anticipation and showcasing every feature.</p>
       </div>
       <div class="tl-item reveal">
-        <div class="tl-date">December 2025</div>
-        <h3>🚀 Android launch</h3>
-        <p>Available on Google Play. Everyone on the waitlist gets an email notification.</p>
+        <div class="tl-date">February 2027</div>
+        <h3>🚀 Submitted to Google Play</h3>
+        <p>App submitted for review. Everyone on the waitlist gets an email notification.</p>
       </div>
       <div class="tl-item reveal">
-        <div class="tl-date">January 2026</div>
-        <h3>📲 Google Play listing</h3>
+        <div class="tl-date">April 2027</div>
+        <h3>📲 Live on Google Play Store</h3>
         <p>Official store listing for easier discovery, reviews and automatic updates.</p>
       </div>
       <div class="tl-item reveal">
-        <div class="tl-date">2026</div>
+        <div class="tl-date">2027</div>
         <h3>🚀 Next phase</h3>
         <p>Feature updates, multi-language support and improvements driven by user feedback.</p>
       </div>
